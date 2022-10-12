@@ -1,0 +1,11 @@
+.home-row{
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.category{
+    font-size: 13px;
+    cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}

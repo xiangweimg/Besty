@@ -30,11 +30,9 @@ export const login = ({credential,password}) => async dispatch => {
 }
 
 export const logout = () => async dispatch => {
-    console.log("in logout")
   const res = await csrfFetch('/api/session', {
     method: 'DELETE'
   })
-  console.log("in logout2")
     storeCurrentUser(null)
     // sessionStorage.removeItem("currentUser")
     dispatch(logoutUser())

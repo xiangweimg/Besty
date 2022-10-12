@@ -9,21 +9,25 @@ function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
-  
+
   let email;
   let password2;
   useEffect(() => {
     email = document.getElementById('email')
     password2 = document.getElementById('password')
   }, [])
+  useEffect(() => {
+    email = document.getElementById('email')
+    password2 = document.getElementById('password')
+  }, [credential, password])
   
   function checkInputs(){
-    if(credential === "") {
+    if(credential.length === 0) {
       //show error
       //add error class
       setErrorFor(email, "Email can't be blank")
     }
-    if(password === '') {
+    if(password.length === 0) {
       setErrorFor(password2,"Password can't be blank")
     }
   }
@@ -89,7 +93,7 @@ function LoginForm() {
       <div>
         <DemoUser/>
       </div>
-      
+
     </>
   );
 }

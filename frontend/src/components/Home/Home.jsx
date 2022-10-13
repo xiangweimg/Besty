@@ -6,13 +6,13 @@ function Home() {
         <div className="home-container">
             <div className="home-row">
             <ul>
-            <li><a href="#">Halloween Hub</a></li> 
-            <li><a href="#">Pets</a></li>
-            <li><a href="#">Pokemon</a></li>
-            <li><a href="#">Toys & Entertainment</a></li>
-            <li><a href="#">Art & Collectibles</a></li>
-            <li><a href="#">Clothing & Shoes</a></li>
-            <li><a href="#">Home & Living</a></li>
+            <li><a className="category" href="#">Halloween Hub</a></li> 
+            <li><a className="category" href="#">Pets</a></li>
+            <li><a className="category" href="#">Pokemon</a></li>
+            <li><a className="category" href="#">Toys & Entertainment</a></li>
+            <li><a className="category" href="#">Art & Collectibles</a></li>
+            <li><a className="category" href="#">Clothing & Shoes</a></li>
+            <li><a className="category" href="#">Home & Living</a></li>
             </ul>
             </div>
             <hr />

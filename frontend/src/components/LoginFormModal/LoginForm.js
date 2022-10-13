@@ -26,16 +26,25 @@ function LoginForm() {
       //show error
       //add error class
       setErrorFor(email, "Email can't be blank")
+    }else{
+      setSuccessFor(email)
     }
     if(password.length === 0) {
       setErrorFor(password2,"Password can't be blank")
+    }else if(password.length < 6){
+      setErrorFor(password2,"Password was incorrect ")
+    }else{
+      setSuccessFor(password2)
     }
   }
 
-  function setErrorFor(input, message){
-    console.log(input)
+  function setSuccessFor(input){
     const formControl = input.parentElement;
-    console.log(formControl)
+    formControl.className = 'form-control'
+  }
+
+  function setErrorFor(input, message){
+    const formControl = input.parentElement;
     const small = formControl.querySelector('small')
     //add error message inside small
     small.innerText = message
@@ -64,7 +73,7 @@ function LoginForm() {
     <>
       <form className="login_form" id = "form" onSubmit={handleSubmit} method='post' name = 'form'>
         <div className="form-control">
-          <label className="login_element">Email address</label>
+          <label className="login-element">Email address</label>
           <input
             type="text"
             value={credential}
@@ -74,7 +83,7 @@ function LoginForm() {
         </div>
 
         <div className="form-control">
-          <label className="login_element">Password</label >
+          <label className="login-element">Password</label >
           <input
             type="password"
             value={password}

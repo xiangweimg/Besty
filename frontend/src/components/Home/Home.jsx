@@ -5,30 +5,15 @@ function Home() {
     <div className="home">
         <div className="home-container">
             <div className="home-row">
-            <span className="category">
-                Halloween Hub
-                </span>
-                <span className="category">
-                Pets
-                </span>
-                <span className="category">
-                Pokemon
-                </span>
-                <span className="category">
-                Toys & Entertainment
-                </span>
-                <span className="category">
-                Clothing & Shoes
-                </span>
-                <span className="category">
-                Home & Living
-                </span>
-                <span className="category">
-                Art & Collectibles
-                </span>
-                <span className="category">
-                Gits & Gift Cards
-                </span>
+            <ul>
+            <li><a href="#">Halloween Hub</a></li> 
+            <li><a href="#">Pets</a></li>
+            <li><a href="#">Pokemon</a></li>
+            <li><a href="#">Toys & Entertainment</a></li>
+            <li><a href="#">Art & Collectibles</a></li>
+            <li><a href="#">Clothing & Shoes</a></li>
+            <li><a href="#">Home & Living</a></li>
+            </ul>
             </div>
             <hr />
         </div>

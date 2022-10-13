@@ -16,6 +16,7 @@
   left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 #modal-content {
@@ -25,4 +26,5 @@
   padding-right: 30px;
   border-radius: 20px;
   padding-bottom: 20px;
+  z-index: 10;
 }

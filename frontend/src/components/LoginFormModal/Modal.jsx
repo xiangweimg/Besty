@@ -18,8 +18,7 @@ function LoginFormModal() {
         <Modal className = "Modal" onClose={() => {setShowModal(false); setSignup(false)}}>
           { signup && (
             <div>
-              <h3>Create your account</h3>
-              <p className='registration_is_easy'>Registration is easy.</p>
+
               <SignupForm className="signupform"/>
             </div>)
           }
@@ -27,7 +26,7 @@ function LoginFormModal() {
           { !signup && (
             <div>
               <div className='header_login_modal'>
-              <h2>Sign in</h2>
+              <p id='signin-modal'>Sign in</p>
               <input type="submit" className='register_on_modal' onClick={handleClick} value="Register"/>
               </div>
 

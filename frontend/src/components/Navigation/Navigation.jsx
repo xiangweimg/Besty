@@ -7,7 +7,7 @@ import './Navigation.css';
 import logo from "../../img/logo.png"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import Home from '../Home/Home'
+import NavBar from '../NavBar/NavBar'
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -43,13 +43,13 @@ function Navigation() {
            {sessionLinks}
         </div>
         <div className='header_basket'>
-          <Link to='/checkout'>
+          <Link to='/cart'>
           <ShoppingCartOutlinedIcon className='shoppingIcon'/>
           </Link>
           <span className='basket_count'>0</span>
         </div>
       </div>
-        <Home/>
+        <NavBar/>
     </div>
   );
 }

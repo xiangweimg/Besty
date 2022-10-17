@@ -1,19 +1,25 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
+import cartReducer from './cart'
+import productReducer from './product'
 import sessionReducer from './session'
+import shopReducer from './shop' 
 
 const rootReducer = combineReducers({
-  session: sessionReducer
+  session: sessionReducer,
+  product: productReducer,
+  shop: shopReducer,
+  cart: cartReducer
 })
 
 let enhancer 
 if (process.env.NODE_ENV === 'production') {
     enhancer = applyMiddleware(thunk);
   } else {
-    const logger = require('redux-logger').default;
+    // const logger = require('redux-logger').default;
     const composeEnhancers =
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-    enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+    enhancer = composeEnhancers(applyMiddleware(thunk));
   }
 
   const configureStore = (preloadedState) => {

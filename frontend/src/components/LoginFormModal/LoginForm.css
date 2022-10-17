@@ -8,7 +8,7 @@
     text-align: center;
     vertical-align: middle;
     z-index:10;
-    margin-right: 10px !important;
+    margin-right: 5px !important;
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -101,9 +101,6 @@
     font-size: 16px;
     font-family: inherit;
 }
-.form-control.success input{
-    border-color: #2ecc71; 
-}
 .form-control.error input{
     border-color: rgba(166, 26, 46, 0.35); 
     background-color: #FDDCD8;
@@ -111,7 +108,6 @@
 .login_form input:hover{
     border: 1px solid gray;
 }
-
 .or-login {
     text-align: center;
     width: 40px;

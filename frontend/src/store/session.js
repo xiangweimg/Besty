@@ -4,6 +4,7 @@ const LOGIN_USER = "session/LOGIN_USER";
 const LOGOUT_USER = "session/LOGOUT_USER";
 
 const loginUser = (user) => { // an action creator
+  debugger
   return {
     type: LOGIN_USER,
     payload: user
@@ -17,13 +18,14 @@ const logoutUser = () => { // an action creator
 }
 
 export const login = ({credential,password}) => async dispatch => { 
+  debugger
   const res = await csrfFetch('/api/session', { 
     method: 'POST', //create a new session/login
     body: JSON.stringify({credential, password})
   })
   if (res.ok) {
+    debugger
     const data = await res.json();
-    console.log(data)
     sessionStorage.setItem("currentUser", JSON.stringify(data.user))
     dispatch(loginUser(data.user));
   }
@@ -36,6 +38,7 @@ export const logout = () => async dispatch => {
     storeCurrentUser(null)
     // sessionStorage.removeItem("currentUser")
     dispatch(logoutUser())
+    return res
 }
 
 export const restoreSession = () => async dispatch => {
@@ -72,14 +75,13 @@ export const signup = (user) => async dispatch => {
 }
 
 
-export default function sessionReducer (state = {'user': JSON.parse(sessionStorage.getItem("currentUser"))}, action) {
+export default function sessionReducer (state = {user: JSON.parse(sessionStorage.getItem("currentUser"))}, action) {
   const newState = {...state}
   switch (action.type) {
     case LOGIN_USER:
       newState['user'] = action.payload;
       return newState; //让state上显示出current user
     case LOGOUT_USER:
-      console.log('logging out')
       newState['user'] = null;
       return newState;
     default:

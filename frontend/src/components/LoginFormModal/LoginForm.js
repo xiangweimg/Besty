@@ -12,10 +12,12 @@ function LoginForm() {
 
   let email;
   let password2;
+  
   useEffect(() => {
     email = document.getElementById('email')
     password2 = document.getElementById('password')
   }, [])
+
   useEffect(() => {
     email = document.getElementById('email')
     password2 = document.getElementById('password')
@@ -55,7 +57,6 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setErrors([]);
     checkInputs()
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {

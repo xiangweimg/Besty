@@ -1,0 +1,91 @@
+.product{
+    display: flex;
+}
+.product-container{
+    display: flex;
+    flex-direction:column;
+    width: 30%;
+    align-items:left;
+    position: relative;
+    left: 66%;
+    margin-top: 34px;
+}
+.store-name{
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    color: black;
+}
+.product-name{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    font-size: 26px;
+    margin-top:20px;
+    margin-bottom: 25px;
+}
+.product-price{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0;
+}
+.product-options{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    margin-top: 20px;    
+}
+.product-option-title{
+    font-size: 13px;
+}
+.product-option{
+    appearance: none;
+    text-indent: 10px;
+    font-weight: 350;
+    display: block;
+    box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+    height: 48px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 8px;
+    transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
+}
+.product-img{
+    width: 60%;
+    max-width:790px;
+    max-height: 526px;
+    position: relative;
+    right: 28%;
+    margin-top: 34px;
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+    border-radius: 18px !important;
+}
+.product-img > img {
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+}
+.product-description{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.product-description > p{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    font-weight: 500;
+    font-size: 16px;
+}
+.add-to-cart{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+}

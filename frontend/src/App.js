@@ -1,21 +1,39 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
-import Home from "./components/Home/Home"
-import Checkout from './components/Cart/Checkout'
+import Home from './components/Home/Home'
+import Cart from './components/Cart/Cart'
 import "./App.css"
+import ProductShow from "./components/Product/ProductShow";
+import ShopPage from "./components/Shop/ShopPage";
+
 
 function App() {
+
   return (
     <div className="app">
     <Switch>
-      <Route path='/checkout'>
-          <Navigation />
-          <Checkout/>
+      <Route path='/cart'>
+        <Navigation />
+        <Cart/>
       </Route>
+
+      <Route exact path='/products/:productId'>
+        <Navigation />
+        <ProductShow/>
+      </Route>
+
+      <Route exact path='/shops/:shopId'>
+        <Navigation />
+        <ShopPage/>
+      </Route>
+
       <Route path='/'>
-      <Navigation className='navigation'/>
+        <Navigation className='navigation'/>
+        <Home/>
       </Route>
+
+      
     </Switch>
     </div>
 

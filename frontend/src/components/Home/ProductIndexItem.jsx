@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './ProductIndexItem.css'
 
 
-const ProductIndexItem = ({product: {id, productName, img}}) => {
+const ProductIndexItem = ({product}) => {
 
     return(
-        <li className='home-product'>
-            <Link to={`/products/${id}`}>{productName}<img src={img} alt="" />
+        <li key={product.id} className='home-product'>
+            <Link className='home-product-img' to={`/products/${product.id}`}>
+                <img src={product.img} alt="" />
             </Link>
         </li>
     )

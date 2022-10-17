@@ -5,11 +5,12 @@
 #  id         :bigint           not null, primary key
 #  buyer_id   :bigint           not null
 #  product_id :bigint           not null
+#  quantity   :integer          default(0), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Cart < ApplicationRecord
-    validates :buyer_id, :product_id, presence: true
+    validates :buyer_id, :product_id, :quantity, presence: true
     
     belongs_to :buyer,
     foreign_key: :buyer_id,

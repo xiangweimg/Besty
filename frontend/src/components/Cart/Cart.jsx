@@ -2,17 +2,21 @@ import React from "react";
 import CartItem from './CartItem';
 import { getCarts } from "../../store/cart";
 import { useSelector } from "react-redux";
+import CartNotice from "./CartNotice";
+import { Link } from "react-router-dom";
+import EmptyCart from "./EmptyCart";
 import './Cart.css';
 
 function Cart() {
 
   const carts = useSelector(getCarts);
-  // [1:{id: 1,count: 1, product: "xxx"}, 2:];
   const cartItems =  carts.map(item => <CartItem item={item}></CartItem>)
 
   if (!cartItems || !cartItems.length) return (
-    <div className="cart">
-      Your cart is empty.
+    <div>
+      <CartNotice/>
+      <EmptyCart/>
+      <hr />
     </div>
   );
 
@@ -27,7 +31,7 @@ function Cart() {
   return (
     <div className="cart">
       <h1>{carts.length} items in your cart</h1>
-      <p className="cart-policy">Betsy Purchase Protection: Shop confidently on Betsy knowing if something goes wrong with an order, we've got your back.</p>
+      <CartNotice/>
       <div className="cart-main">
         <ul>
           {cartItems}

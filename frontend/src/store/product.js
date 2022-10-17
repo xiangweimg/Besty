@@ -39,6 +39,7 @@ export const getProducts = ({ product }) => product? Object.values(product) : []
 export const getProduct = (productId) => ({product}) => product ? product[productId] : null
 
   export default function productReducer (state = {}, action) {
+    Object.freeze(state)
     let newState = {...state}
     switch (action.type) {
       case FIND_PRODUCT:

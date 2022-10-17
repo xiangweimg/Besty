@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import {removeCart, deleteCart, getCarts} from '../../store/cart'
 
 
-
-  // [1:{id: 1,count: 1, product: "xxx"}, 2:];
 function CartItem({item}) {
-  // const [count1, setCount] = useState(count);
-
-  // useEffect(() => {
-  //   setCount(count);
-  // }, [count]);
-
+  //buyer_id:, product_id, quantity
+  const dispatch = useDispatch() 
+  const [count, setCount] = useState(item.count);
+  const handleClick = e =>{
+    dispatch(deleteCart(item.id))
+  }
   return (
-    <li className="cart-item">
-
+    <li key={item.id} className="cart-item">
+      <img src={item.img} alt="" />
       <div className="cart-item-header">
           <Link to={`/shops/${item.storeId}`}>{item.storeName}</Link>
       </div>
@@ -23,15 +23,15 @@ function CartItem({item}) {
         </div>
         <input
           type="number"
-          value={item.count}
+          value={count}
+          onChange={(e) => setCount(e.target.value)}
         />
         <button
           className="cart-item-button">
           +
         </button>
       </div>
-        <button
-          className="cart-remove-button">
+        <button className="cart-remove-button" onClick={handleClick}>
           Remove
         </button>
     </li>

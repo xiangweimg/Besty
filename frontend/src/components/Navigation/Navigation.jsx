@@ -26,7 +26,7 @@ function Navigation() {
   }
 
   return (
-    <div>
+    <div className='header-main'>
       <div className='header'>
         <Link to= "/">
           <img className='logo' src={logo} alt="logo" /> 

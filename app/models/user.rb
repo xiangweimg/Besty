@@ -32,7 +32,7 @@ class User < ApplicationRecord
     foreign_key: :liker_id,
     class_name: :Like
 
-    has_many :items_in_cart,
+    has_many :cart,
     foreign_key: :buyer_id,
     class_name: :Cart
     

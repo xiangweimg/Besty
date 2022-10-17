@@ -1,0 +1,16 @@
+.cart-empty{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+  }
+.cart-empty > h1{
+    font-weight: 200;
+}
+.cart-empty>p{
+    margin-top:60px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

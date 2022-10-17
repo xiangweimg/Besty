@@ -1,0 +1,51 @@
+.shop-container{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+    display: flex;   
+    height: 169px;
+    background-color: #FAFAFA;
+    margin-top: 0;
+    max-width: 1350px;
+}
+.shop-container p {
+    margin: 5px;
+    font-size: 13px;
+}
+.shop-header-img{
+    width: 100%;
+    background-image: url('../../img/2749398.jpg');
+    height:360px;
+    object-fit: contain;
+}
+.shop-nav-left{
+    max-width: 50%;
+    flex-basis: 50%;
+}
+.shop-name{
+    font-size: 32px;
+    font-weight: 200;
+}
+.shop-icons{
+    display: flex;
+    width: 30%;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.shop-icon{
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+    font-size: 13px;
+}
+.shop-icon span{
+ font-weight: 400;
+}
+
+#seller{
+    text-decoration: none;
+    margin-right: -20px;
+    color: black;
+    font-weight: 100;
+    position: relative;
+    right: -100px;
+}

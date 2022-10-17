@@ -90,7 +90,7 @@ ApplicationRecord.transaction do
       owner_id: 5
     )
     puts "Creating products..."
-    product1 = Product.create!({
+  product1 = Product.create!({
         product_name: "Gengar VMAX (Alternate Art Secret) - SWSH08: Fusion Strike (SWSH08)",
         seller_id: 2,
         description: "Alternate-art Gengar VMAX is one of the most-desired cards from 
@@ -115,7 +115,7 @@ ApplicationRecord.transaction do
         category:"Pokemon"
       })
 
-    Product.create!({
+  product3= Product.create!({
         product_name: "Pikachu Large Microbead Plush - 13 ¾ In",
         seller_id: 3,
         description: "Just when you thought it wasn't possible, Pikachu has gotten even cuter than ever before! This microbead plush features the famous Electric-type Pokémon from Kanto in the form of a rotund orb with tiny arms and feet. 
@@ -125,7 +125,10 @@ ApplicationRecord.transaction do
         store_id: 3,
         category:"Toys"
     })
-    Product.create!({
+    product3_pic = File.open('./app/asset/images/product_3.jpg')
+    product3.photo.attach(io:product3_pic, filename: "product_3.jpg")
+    
+  product4= Product.create!({
       product_name: "Mew Pokémon Comfy Cuddlers Plush",
       seller_id: 3,
       description: "JMerrily mysterious Mew offers comfort and friendship with this soft, soothing plush that features a washable design so it's easy to keep clean. 
@@ -136,8 +139,9 @@ ApplicationRecord.transaction do
       store_id: 3,
       category:"Toys"
   })
-
-    Product.create!({
+    product4_pic = File.open('./app/asset/images/product_4.jpg')
+    product4.photo.attach(io:product4_pic, filename: "product_4.jpg")
+  product5= Product.create!({
       product_name: "Instinct Ultimate Protein Grain-Free Cage-Free Duck Recipe Freeze-Dried Raw Coated Dry Cat Food, 4-lb bag",
       seller_id: 1,
       description: "Guaranteed levels of live, natural probiotics, 
@@ -148,7 +152,7 @@ ApplicationRecord.transaction do
       category:"Pets"
     })
 
-    Product.create!({
+  product6= Product.create!({
       product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
       seller_id: 4,
       description: Faker::Lorem.sentence(word_count:15),

@@ -1,0 +1,16 @@
+.cart-policy{
+    font-weight: 400;
+    font-size: 13px;
+    padding: 12px;
+    border-radius: 12px !important;
+    background-color: #D7E6F5 !important;
+    width: 100%;    
+    display: flex;
+    justify-content:left;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.cart-policy-icon{
+    margin-left: 10px;
+    margin-right: 10px;
+}

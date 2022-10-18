@@ -31,7 +31,7 @@
     flex: 1 0 100%
 }
 .home-products li{
-    flex: 1 1 260px;
+    flex: 1 1 260px 100px;
     height:200px;
     list-style: none;
     margin: 5px;

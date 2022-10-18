@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== "production") {
 
 function Root() {
   return (
+    <div className='all-website'>
     <ModalProvider>
       <Provider store={store}>
         <BrowserRouter>
@@ -28,6 +29,7 @@ function Root() {
         </BrowserRouter>
       </Provider>
     </ModalProvider>
+    </div>
   );
 }
 
@@ -40,19 +42,19 @@ const renderApplication = () => {
   );
 }
 
-// if (
-//   sessionStorage.getItem("currentUser") === null ||
-//   sessionStorage.getItem("X-CSRF-Token") === null 
-// ) {
-//   store.dispatch(sessionActions.restoreSession()).then(renderApplication);
-// } else {
-//   renderApplication();
-// }
-
-if (sessionStorage.getItem("X-CSRF-Token") === null) {
-  console.log('before')
-  restoreCSRF().then(renderApplication);
+if (
+  sessionStorage.getItem("currentUser") === null ||
+  sessionStorage.getItem("X-CSRF-Token") === null 
+) {
+  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
 } else {
-  console.log('after')
   renderApplication();
 }
+
+// if (sessionStorage.getItem("X-CSRF-Token") === null) {
+//   console.log('before')
+//   restoreCSRF().then(renderApplication);
+// } else {
+//   console.log('after')
+//   renderApplication();
+// }

@@ -4,7 +4,7 @@ const LOGIN_USER = "session/LOGIN_USER";
 const LOGOUT_USER = "session/LOGOUT_USER";
 
 const loginUser = (user) => { // an action creator
-  debugger
+  // debugger
   return {
     type: LOGIN_USER,
     payload: user
@@ -18,16 +18,15 @@ const logoutUser = () => { // an action creator
 }
 
 export const login = ({credential,password}) => async dispatch => { 
-  debugger
+  console.log(credential, password)
   const res = await csrfFetch('/api/session', { 
     method: 'POST', //create a new session/login
     body: JSON.stringify({credential, password})
   })
   if (res.ok) {
-    debugger
     const data = await res.json();
-    sessionStorage.setItem("currentUser", JSON.stringify(data.user))
-    dispatch(loginUser(data.user));
+    sessionStorage.setItem("currentUser", JSON.stringify(data))
+    dispatch(loginUser(data));
   }
 }
 
@@ -50,7 +49,12 @@ export const restoreSession = () => async dispatch => {
 }
 
 const storeCurrentUser = (user) => {
-  sessionStorage.setItem("currentUser", JSON.stringify(user))
+  if (user == undefined) {
+    sessionStorage.setItem("currentUser", JSON.stringify(user))
+  } else {
+    sessionStorage.setItem("currentUser", null)
+  }
+  
 }
 
 export function storeCSRFToken(responseObj) { //send Xtoken to session storage
@@ -76,6 +80,7 @@ export const signup = (user) => async dispatch => {
 
 
 export default function sessionReducer (state = {user: JSON.parse(sessionStorage.getItem("currentUser"))}, action) {
+  Object.freeze(state)
   const newState = {...state}
   switch (action.type) {
     case LOGIN_USER:

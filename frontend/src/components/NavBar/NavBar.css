@@ -1,7 +1,7 @@
-.home-container {
+.home-navbar-container {
     width: 100%;
 }
-.home-row{
+.home-navbar-row{
     display: flex;
    height: 35px;
 }
@@ -14,13 +14,13 @@
 .catergory-bar ul li {
     position: relative;
 }
-.home-row ul{
+.home-navbar-row ul{
     list-style: none;    
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
-.home-row ul li a{
+.home-navbar-row ul li a{
     text-decoration: none;
     color: black;
 }

@@ -1,6 +1,7 @@
 .product{
     display: flex;
     max-width: 1350px;
+    margin: auto;
 }
 .product-container{
     display: flex;
@@ -10,6 +11,7 @@
     position: relative;
     left: 66%;
     margin-top: 34px;
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
 }
 .store-name{
     text-decoration: none;
@@ -32,10 +34,31 @@
 }
 .product-options{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
-    margin-top: 20px;    
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.product-options input{
+    height: 35px;
+    max-width:35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.product-options button{
+    all: unset;
+    cursor: pointer;
+    font-size: 40px;
 }
 .product-option-title{
     font-size: 13px;
+    display: flex;
+    justify-content: center;
+}
+.product-quantity-text{
+    margin-bottom: 6px;
+    text-indent: 15px;
+    font-weight: 200;
 }
 .product-option{
     appearance: none;

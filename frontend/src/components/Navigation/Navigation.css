@@ -1,16 +1,20 @@
 .header-main{
-  max-width: 1350px;
+  width: 100%
+  /* max-width: 1350px; */
+  /* margin: auto; */
 }
 .profile-dropdown {
   position: absolute;
 }
 .header{
   display: flex;
+  max-width: 1350px;
   position: sticky;
   height: 60px;
   align-items: center;
   top: 0;
   z-index: 0;
+  margin: auto;
 }
 .logo{
   width: 120px;

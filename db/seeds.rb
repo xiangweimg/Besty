@@ -161,18 +161,43 @@ ApplicationRecord.transaction do
       store_id: 4,
       category:"Art & Collectibles"
     })
+    product7= Product.create!({
+      product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
+      seller_id: 4,
+      description: Faker::Lorem.sentence(word_count:15),
+      price:"200.89",
+      availability:1,
+      store_id: 4,
+      category:"Art & Collectibles"
+    })
+    product8= Product.create!({
+      product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
+      seller_id: 4,
+      description: Faker::Lorem.sentence(word_count:15),
+      price:"200.89",
+      availability:1,
+      store_id: 4,
+      category:"Art & Collectibles"
+    })
+    product9= Product.create!({
+      product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
+      seller_id: 4,
+      description: Faker::Lorem.sentence(word_count:15),
+      price:"200.89",
+      availability:1,
+      store_id: 4,
+      category:"Art & Collectibles"
+    })
+    product10= Product.create!({
+      product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
+      seller_id: 4,
+      description: Faker::Lorem.sentence(word_count:15),
+      price:"200.89",
+      availability:1,
+      store_id: 4,
+      category:"Art & Collectibles"
+    })
 
-    # 5.times do 
-    # Product.create!({
-    #     product_name: Faker::Internet.unique.username(specifier: 3),
-    #     seller_id: [1,2,3,4,5].sample,
-    #     description: Faker::Lorem.sentence(word_count:4),
-    #     price:(1..100).to_a.sample,
-    #     availability:10,
-    #     store_id: [1,2,3,4,5].sample,
-    #     category:["Pets",'Pokemon','Toys'].sample
-    # }) 
-    # end
    
   
 end

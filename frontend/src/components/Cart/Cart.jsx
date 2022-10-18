@@ -8,9 +8,11 @@ import EmptyCart from "./EmptyCart";
 import './Cart.css';
 
 function Cart() {
-
-  const carts = useSelector(getCarts);
-  const cartItems =  carts.map(item => <CartItem item={item}></CartItem>)
+  //buyer_id:, product_id, quantity
+  const stateSession = useSelector(state => state.session)
+  let currentUser
+  if (stateSession) currentUser = stateSession.user
+  const cartItems =  currentUser.carts.map(item => <CartItem item={item}></CartItem>)
 
   if (!cartItems || !cartItems.length) return (
     <div>
@@ -24,13 +26,13 @@ function Cart() {
     e.preventDefault();
     window.alert(
       "Purchased the following:\n" +
-      `${carts.map(item => `${item.count} of ${item.productName}`).join('\n')}`
+      `${cartItems.map(item => `${item.count} of ${item.productName}`).join('\n')}`
     );
   }
 
   return (
     <div className="cart">
-      <h1>{carts.length} items in your cart</h1>
+      <h1>{cartItems.length.length} items in your cart</h1>
       <CartNotice/>
       <div className="cart-main">
         <ul>

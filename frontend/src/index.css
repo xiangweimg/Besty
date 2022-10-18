@@ -1,1 +1,13 @@
 /* TODO Add site wide styles */
+.all-website{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* background-image: url(./img/olga-thelavart-vS3idIiYxX0-unsplash.png);
+        background-size:cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; */
+}
+
+body {
+    margin: 0px;
+}

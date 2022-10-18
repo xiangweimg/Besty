@@ -3,5 +3,6 @@
 
   json.owner @shop.owner.username
   json.products @shop.products.each do |product|
-    json.extract! product, :product_name
+    json.extract! product, :product_name, :id
+    json.img product.photo.url
   end

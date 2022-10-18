@@ -9,13 +9,13 @@ function Home() {
         dispatch(fetchProducts())
     },[])
     return(
-    <div className="home">
-        <div className="home-container">
-            <div className="home-row">
+    <div className="home-navbar">
+        <div className="home-navbar-container">
+            <div className="home-navbar-row">
             <ul className="catergory-bar">
             <li><a className="category" href="#">Halloween Hub</a></li> 
             <li><a className="category" href="#">Pets</a>
-                <div className="dropdown-menu">
+                {/* <div className="dropdown-menu">
                     <ul>
                         <li><a href="#">All Pets</a></li>
                         <li><a href="#"></a>Accessories</li>
@@ -23,7 +23,7 @@ function Home() {
                         <li><a href="#"></a>Dogs</li>
                         <li><a href="#"></a>Cats</li>
                     </ul>
-                </div>
+                </div> */}
             </li>
             <li><a className="category" href="#">Pokemon</a></li>
             <li><a className="category" href="#">Toys & Entertainment</a></li>

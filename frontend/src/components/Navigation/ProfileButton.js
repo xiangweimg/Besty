@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {Redirect} from 'react-router-dom'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        Profile
+        <AccountCircleIcon/>
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (

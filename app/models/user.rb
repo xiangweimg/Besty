@@ -20,21 +20,26 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :username, format: { without: URI::MailTo::EMAIL_REGEXP, message: "can't be an email" }
     #SPIRE G
+    
     has_many :products,
     foreign_key: :seller_id,
-    class_name: :Product
+    class_name: :Product,
+    dependent: :destroy 
 
     has_many :stores,
     foreign_key: :owner_id,
-    class_name: :Store
+    class_name: :Store,
+    dependent: :destroy 
 
     has_many :likes,
     foreign_key: :liker_id,
-    class_name: :Like
+    class_name: :Like,
+    dependent: :destroy 
 
-    has_many :cart,
+    has_many :cartitems,
     foreign_key: :buyer_id,
-    class_name: :Cart
+    class_name: :CartItem,
+    dependent: :destroy 
     
     def self.find_by_credentials(credential, password)
         if URI::MailTo::EMAIL_REGEXP.match(credential)

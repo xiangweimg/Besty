@@ -24,14 +24,19 @@ export const deleteCart = (productId) => { //action
     };
 };
 
-export const getCarts = ({ cart }) => cart? Object.values(cart) : []
+// export const getCarts = ({ cart }) => cart? Object.values(cart) : []
 
-export const createCart = (add_product) => async dispatch => { 
+export const createCart = (product_id, quantity, buyer_id) => async dispatch => { 
+    // console.log(productId);
+    // console.log(quantity);
+    // console.log(buyerId);
+    const add_product = {product_id, quantity, buyer_id}
     const res = await csrfFetch('/api/carts', {
         method: "POST",
         body: JSON.stringify(add_product)
   })
   if (res.ok) {
+    console.log(res);
       const data = await res.json();
       dispatch(populateCart(data));
   }

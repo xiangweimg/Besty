@@ -7,7 +7,8 @@ import {removeCart, deleteCart, getCarts} from '../../store/cart'
 function CartItem({item}) {
   //buyer_id:, product_id, quantity
   const dispatch = useDispatch() 
-  const [count, setCount] = useState(item.count);
+  const [count, setCount] = useState(item.quantity);
+
   const handleClick = e =>{
     dispatch(deleteCart(item.id))
   }

@@ -7,7 +7,7 @@ function DemoUser() {
     const dispatch = useDispatch()
 
     const handleClick = (e) => {
-        debugger
+        // debugger
         e.preventDefault();
         return dispatch(sessionActions.login(
             { credential: "Demo-lition", 

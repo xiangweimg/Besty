@@ -29,7 +29,8 @@ class Product < ApplicationRecord
 
     has_many :in_cart,
     foreign_key: :product_id,
-    class_name: :Cart
+    class_name: :CartItem,
+    dependent: :destroy 
 
     has_one_attached :photo
 

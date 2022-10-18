@@ -23,7 +23,8 @@ class Store < ApplicationRecord
 
     has_many :products,
     foreign_key: :store_id,
-    class_name: :Product
+    class_name: :Product,
+    dependent: :destroy 
 
     has_many :likes, as: :likable
 

@@ -15,16 +15,28 @@ function Home() {
         dispatch(fetchProducts())
     },[])
     return(
-        <div className="home">
+        <div style={{width: "100%"}}>
+
             <div className="home-header">
                 <br />
                 <h1>Fresh finds fit for cozy season.</h1>
             </div>
-            <h3>Recently viewed & more</h3>
-            <ul className="home-products">
-                {productList}
-            </ul>
+        <div className="home">
+            <div style={{width: '100%'}}>
+                <div className="home-products-wrapper">
+                    <div style={{width: '100%'}}>
+                        <h3 >Recently viewed & more</h3>
+                    </div>
+                    <ul className="home-products">
+                    <br />
+                <br />
+                    {productList}
+                </ul>
+                </div>
+            </div>
         </div>
+        </div>
+
     )
 }
 

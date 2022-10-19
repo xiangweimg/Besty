@@ -26,7 +26,7 @@ class User < ApplicationRecord
     class_name: :Product,
     dependent: :destroy 
 
-    has_many :stores,
+    has_one :store,
     foreign_key: :owner_id,
     class_name: :Store,
     dependent: :destroy 

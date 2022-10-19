@@ -31,10 +31,10 @@ class User < ApplicationRecord
     class_name: :Store,
     dependent: :destroy 
 
-    has_many :likes,
-    foreign_key: :liker_id,
-    class_name: :Like,
-    dependent: :destroy 
+    # has_many :likes,
+    # foreign_key: :liker_id,
+    # class_name: :Like,
+    # dependent: :destroy 
 
     has_many :cartitems,
     foreign_key: :buyer_id,

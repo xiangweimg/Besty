@@ -1,8 +1,14 @@
+.home-products-wrapper {
+    margin: auto;
+    max-width: 1350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .home{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
     max-width: 1350px;
     margin: auto;
-    /* padding-top: 165px; */
 }
 .home-header{
     background-color: #F8EAE6;
@@ -35,13 +41,4 @@
     height:200px;
     list-style: none;
     margin: 5px;
-}
-
-.home-products-wrapper {
-    margin: auto;
-    max-width: 1350px;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    flex-wrap: wrap;
 }

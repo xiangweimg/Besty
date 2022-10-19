@@ -1,13 +1,13 @@
 import csrfFetch from "./csrf";
 
-const LOGIN_USER = "session/LOGIN_USER";
-const LOGOUT_USER = "session/LOGOUT_USER";
+export const LOGIN_USER = "session/LOGIN_USER";
+export const LOGOUT_USER = "session/LOGOUT_USER";
 
-const loginUser = (user) => { // an action creator
+const loginUser = (payload) => { // an action creator
   // debugger
   return {
     type: LOGIN_USER,
-    payload: user
+    payload
   }
 }
 
@@ -18,14 +18,13 @@ const logoutUser = () => { // an action creator
 }
 
 export const login = ({credential,password}) => async dispatch => { 
-  console.log(credential, password)
   const res = await csrfFetch('/api/session', { 
     method: 'POST', //create a new session/login
     body: JSON.stringify({credential, password})
   })
   if (res.ok) {
     const data = await res.json();
-    sessionStorage.setItem("currentUser", JSON.stringify(data))
+    sessionStorage.setItem("currentUser", JSON.stringify(data.user))
     dispatch(loginUser(data));
   }
 }
@@ -45,7 +44,7 @@ export const restoreSession = () => async dispatch => {
   storeCSRFToken(res) // csrfFetch会拿到一个Xtoken，然后storeCSRFToken会把这个存入sessionStorage
   const data = await res.json() //from a promise to json
   storeCurrentUser(data.user)
-  dispatch(loginUser(JSON.stringify(data.user)));
+  dispatch(loginUser(data));
 }
 
 const storeCurrentUser = (user) => {
@@ -74,7 +73,7 @@ export const signup = (user) => async dispatch => {
   });
   const data = await res.json();
   storeCurrentUser(data.user)
-  dispatch(loginUser(data.user))
+  dispatch(loginUser(data))
   return res
 }
 
@@ -84,7 +83,7 @@ export default function sessionReducer (state = {user: JSON.parse(sessionStorage
   const newState = {...state}
   switch (action.type) {
     case LOGIN_USER:
-      newState['user'] = action.payload;
+      newState['user'] = action.payload.user;
       return newState; //让state上显示出current user
     case LOGOUT_USER:
       newState['user'] = null;

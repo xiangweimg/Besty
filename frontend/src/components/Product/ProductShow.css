@@ -2,22 +2,32 @@
     display: flex;
     max-width: 1350px;
     margin: auto;
+    margin-top: 34px; 
 }
 .product-container{
+    min-height: 1000px;
     display: flex;
+    flex: 1 0 30%;
     flex-direction:column;
-    width: 30%;
+    /* width: 30%; */
     align-items:left;
-    position: relative;
+    /* position: relative; */
     left: 66%;
-    margin-top: 34px;
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
 }
-.store-name{
+.store-name, .store-sales{
     text-decoration: none;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 200;
     color: black;
+    font-size: 18px;
+}
+.store-name{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.store-sales{
+    font-size: 13px;
 }
 .product-name{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -42,23 +52,41 @@
 .product-options input{
     height: 35px;
     max-width:35px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .product-options button{
     all: unset;
-    cursor: pointer;
     font-size: 40px;
+    margin-bottom: 5px;
+    font-weight: 200;
 }
+.product-option-button{
+    height: 35px;
+    width: 35px;
+    border: 1px solid rgba(34, 34, 34, 0.15) !important;
+    box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 .product-option-title{
     font-size: 13px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .product-quantity-text{
     margin-bottom: 6px;
     text-indent: 15px;
     font-weight: 200;
+}
+#product-stock{
+    font-weight: 200;
+    margin-bottom: 6px;
+    text-indent: 15px;
 }
 .product-option{
     appearance: none;
@@ -75,20 +103,19 @@
     margin-top: 8px;
     transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
 }
-.product-img{
-    width: 60%;
+.product-img-reviews{
+    width: 100%;
+    height: 100%;
     max-width:790px;
     max-height: 526px;
-    position: relative;
     right: 28%;
-    margin-top: 34px;
     box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
     border-radius: 18px !important;
 }
-.product-img > img {
+.product-img-reviews > img {
     width: 100%;
-    height: 95%;
     object-fit: contain;
+    height: 100%;
 }
 .product-description{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
@@ -113,3 +140,12 @@
     font-size: 15px;
     margin-top: 15px;
 }
+.product-left{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    display: flex;
+    flex: 1 0 60%;
+    margin-right: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+

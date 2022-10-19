@@ -1,0 +1,28 @@
+/* .reviews-wrapper{
+    text-align:left;
+} */
+.reviews{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.product-reviews{
+    width: 100%;
+    font-weight: 200;
+    border-bottom: 2px solid rgba(34, 34, 34, 0.15);
+    height: 49px;
+    display: flex;
+    align-items: center;
+}
+
+.review-header{
+    align-self: flex-start;
+}
+.review-header h1{
+    font-weight: 200;
+    font-size: 26px;
+}

@@ -40,6 +40,10 @@ class User < ApplicationRecord
     foreign_key: :buyer_id,
     class_name: :CartItem,
     dependent: :destroy 
+
+    has_many :buyer_items,
+    through: :cartitems,
+    source: :product
     
     def self.find_by_credentials(credential, password)
         if URI::MailTo::EMAIL_REGEXP.match(credential)

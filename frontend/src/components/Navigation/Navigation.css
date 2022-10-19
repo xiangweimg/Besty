@@ -1,25 +1,31 @@
+
 .header-main{
-  width: 100%
-  /* max-width: 1350px; */
-  /* margin: auto; */
+  width: 100%;
+}
+.header-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .profile-dropdown {
   position: absolute;
 }
 .header{
+  width: 100%;
   display: flex;
   max-width: 1350px;
+  margin: auto;
   position: sticky;
   height: 60px;
   align-items: center;
+  justify-content: center;
   top: 0;
   z-index: 0;
-  margin: auto;
 }
 .logo{
   width: 120px;
   object-fit: contain;
-  margin-left: 10px;
   margin-top: 5px;
 }
 
@@ -58,7 +64,7 @@
 .shoppingIcon{
   padding: 14px;
   border-radius: 100%;
-  margin-left: -20px;
+  /* margin-left: -20px; */
   margin-right: -25px;
 }
 .shoppingIcon:hover{

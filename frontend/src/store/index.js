@@ -5,12 +5,14 @@ import productReducer from './product'
 import sessionReducer from './session'
 import shopReducer from './shop' 
 import logger from 'redux-logger'
+import usersReducer from './users'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   product: productReducer,
   shop: shopReducer,
-  cart: cartReducer
+  carts: cartReducer,
+  users: usersReducer
 })
 
 let enhancer 

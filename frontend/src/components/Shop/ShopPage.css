@@ -1,19 +1,23 @@
-/* .shop-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+.shop-main{
+    width: 100%;
+}
 
 .shop-container{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
     display: flex;   
+    justify-content: center;
     height: 169px;
     background-color: #FAFAFA;
     margin-top: 0;
 }
-.shop-container p {
+.shop-nav-left p {
     margin: 5px;
     font-size: 13px;
+}
+
+.shop-info{
+    max-width: 1350px;
+    display: flex;
 }
 .shop-header-img{
     width: 100%;
@@ -21,9 +25,20 @@
     height:360px;
     object-fit: contain;
 }
+.shop-store-info{
+    display: flex;
+    align-items: center;
+}
 .shop-nav-left{
     max-width: 50%;
-    flex-basis: 50%;
+    width: 470px;
+}
+#shop-head-icon{
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
 }
 .shop-name{
     font-size: 32px;
@@ -48,11 +63,9 @@
 
 #seller{
     text-decoration: none;
-    margin-right: -20px;
     color: black;
     font-weight: 100;
     position: relative;
-    right: -100px;
 }
 .shop-products{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 

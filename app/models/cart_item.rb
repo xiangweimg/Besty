@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class CartItem < ApplicationRecord
-    validates :buyer_id, :product_id, :quantity, null: false
+    validates :buyer_id, :product_id, :quantity, presence: true
     
     belongs_to :buyer,
     foreign_key: :buyer_id,
@@ -19,4 +19,11 @@ class CartItem < ApplicationRecord
     belongs_to :product,
     foreign_key: :product_id,
     class_name: :Product
+
+
+    def self.find_by_user_and_product(user_id,product_id)
+        cart_item = CartItem.find_by(buyer_id: user_id, product_id: product_id)
+        return cart_item
+    end
+
 end

@@ -27,7 +27,7 @@ function Navigation() {
 
   return (
     
-
+<div className='header-wrapper'>
     <div className='header-main'>
       <div className='header'>
         <Link to= "/">
@@ -53,6 +53,7 @@ function Navigation() {
       </div>
         <NavBar/>
     </div>
+</div>
   );
 }
 

@@ -5,6 +5,7 @@ import { getProduct, fetchProduct } from '../../store/product';
 import { populateCart, createCart } from '../../store/cart';
 import LoginFormModal from '../LoginFormModal/Modal';
 import {Modal} from '../../context/Modal'
+import ReviewShow from './Reviews';
 import './ProductShow.css'
 
 const ProductShow = () => {
@@ -50,8 +51,17 @@ const ProductShow = () => {
         <div>
 
         <div className='product'>
+            <div className='product-left'>
+                <div className='product-img-reviews'>
+                    <img src={product.img} alt="" />
+                    <ReviewShow/>
+                </div>
+            </div>
             <div className='product-container'>
                 <Link className='store-name' to={`/shops/${product.storeId}`}>{product.storeName}</Link>
+                <div className="store-sales">
+                    {product.storeSales} Sales
+                </div>
                 <div className='product-name'>
                     { product.productName }
                 </div>
@@ -60,26 +70,27 @@ const ProductShow = () => {
                 <p className='product-quantity-text'>Quantity:</p>
                 <div className='product-options'>
                     <label className='product-option-title'>
-                    <button onClick={decrement}> - </button>
-                    <input type="text" 
+                    <div className='product-option-button' onClick={decrement}>
+                        <button> - </button>
+                    </div>
+                    <input type="number" 
                         value={quantity}
-                        onChange={(e)=> setQuantity(parseInt(e.target.value))}/>
-                    <button onClick={increment}> + </button>
+                        onChange={(e)=> setQuantity(e.target.value)}/>
+                    <div className='product-option-button' onClick={increment}>
+                        <button> + </button>
+                    </div>
                     </label>
                 </div>
-                <div>Stock: { product.availability }</div>
+                <div id='product-stock'>Stock: 
+                { product.availability }</div>
                 {dynamicAddToCartButton}
                 <div className='product-description'>
                     <p>Description:</p>
                     <span>{ product.description }</span>
                 </div>
             </div>
-            <div className='product-img'>
-                <img src={product.img} alt="" />
-            </div>
         </div>
         </div>
-
         )
     }
 }

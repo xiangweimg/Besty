@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Home/Home'
@@ -6,9 +6,16 @@ import Cart from './components/Cart/Cart'
 import "./App.css"
 import ProductShow from "./components/Product/ProductShow";
 import ShopPage from "./components/Shop/ShopPage";
+import { useDispatch } from "react-redux";
+import { fetchUsers } from "./store/users";
 
 
 function App() {
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchUsers())
+  },[])
 
   return (
     <div className="app">

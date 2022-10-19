@@ -162,14 +162,17 @@ ApplicationRecord.transaction do
       category:"Art & Collectibles"
     })
     product7= Product.create!({
-      product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
+      product_name: "Linen Duvet Cover Set. Soft Organic Linen Bedding Set in 30 colors. Twin Full King Queen CalKing Duvet Cover and two pillowcases. Bedding",
       seller_id: 4,
       description: Faker::Lorem.sentence(word_count:15),
-      price:"200.89",
-      availability:1,
+      price:"172.72",
+      availability:99,
       store_id: 4,
-      category:"Art & Collectibles"
+      category:"Home & Living"
     })
+    product7_pic = File.open('./app/asset/images/product_7.jpg')
+    product7.photo.attach(io:product7_pic, filename: "product_7.jpg")
+    
     product8= Product.create!({
       product_name: "LUKA DONCIC BGS 9.5 2018-19 COURT KINGS HEIR APPARENT ROOKIE AUTO /199 MAVS 4068",
       seller_id: 4,

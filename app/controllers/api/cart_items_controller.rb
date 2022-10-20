@@ -21,7 +21,6 @@ class Api::CartItemsController < ApplicationController
       else
         @cart = CartItem.new(cart_params)
       end
-
       if @cart.save
         render :show
       else
@@ -30,7 +29,13 @@ class Api::CartItemsController < ApplicationController
     end
     
     def update
-
+      @cart = CartItem.find_by(id: params[:id])
+      
+      if @cart.update(cart_params)
+        render :show
+      else
+        render json: { errors: @cart.errors.full_messages }, status: :unprocessable_entity
+      end
     end
 
     def destroy

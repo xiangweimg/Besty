@@ -17,7 +17,7 @@
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
     margin-top: 16px;
     padding: 0 8px;
-    width: 100%;
+    width: 1350px;
   }
 .cart > h1{
   margin-bottom: -30px;
@@ -29,6 +29,8 @@
 }
 .cart-main{
     display: flex;
+    justify-content: center;
+    width: 1350px;
 }
 .cart-item {
     display: flex;
@@ -37,17 +39,5 @@
 }
 .cart-item-main{
     display: flex;
-}
-.cart button[type="submit"] {
-    background-color: black;
-    color: white;
-    padding: 15px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 15px;
-    margin-top: 15px;
-    width: 100%;
 }
 

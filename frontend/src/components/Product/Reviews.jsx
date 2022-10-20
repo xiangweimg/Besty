@@ -20,12 +20,12 @@ const ReviewShow = () => {
         <div className='reviews-wrapper'>
             <div className='reviews'>
                 <div className='review-header'>
-                    <h1>4049 Reviews</h1>
+                    <h1>0 Reviews</h1>
                 </div>
                 <div className='product-reviews'>
                     Reviews for this item
                 </div>
-                <span>1111</span>
+                <span>No reviews yet</span>
             </div>
         </div>
 

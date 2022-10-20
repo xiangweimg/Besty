@@ -15,7 +15,7 @@ function LoginFormModal({type}) {
   return (
     <>
       <div className={type === 'add-to-cart-button' ? "add-to-cart-button-for-modal" : "login-button-nav"} 
-      onClick={() => setShowModal(true)}>{type === "add-to-cart-button" ? "Add to Cart" : "Sign in123"}</div>
+      onClick={() => setShowModal(true)}>{type === "add-to-cart-button" ? "Add to Cart" : "Sign in"}</div>
       {showModal && (
         <Modal className = "Modal" onClose={() => {setShowModal(false); setSignup(false)}}>
           { signup && (

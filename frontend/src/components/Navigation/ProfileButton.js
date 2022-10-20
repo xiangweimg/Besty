@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {Redirect} from 'react-router-dom'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import "./ProfileButton.css"
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -33,9 +34,8 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button className="profile-button" onClick={openMenu}>
         <AccountCircleIcon/>
-        <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

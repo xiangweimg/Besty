@@ -9,7 +9,7 @@ function EmptyCart() {
             <h1>
                 Your cart is empty.
             </h1> 
-            <Link className="link" to='/'>Discover something unique to fill it up</Link>
+            <Link id="link" to='/'>Discover something unique to fill it up</Link>
             <p>
                <EnergySavingsLeafIcon/> Betsy offsets carbon emissions from every delivery
             </p> 

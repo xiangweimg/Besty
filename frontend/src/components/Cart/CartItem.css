@@ -1,42 +1,53 @@
 .each-item{
-    border: 1px solid black;
-    height: 470px;
+    height: 400px;
     width: 860px !important;
 }
 .cart-item-storename{
-    border: 1px solid black;
     height: 40px;
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
-#cart-storename{
+.cart-storename{
     all:unset;
+    cursor: pointer;
     font-weight: 500;
+}
+.cart-storename:hover{
+    text-decoration: underline;
 }
 .cart-item-main{
     display: flex;
     justify-content: space-between;
     height: 180px;
-    border: 1px solid black;
 }
 .cart-item-img{
     width: 210px;
     height: 100%;
-    border: 1px solid black;
 }
 
 .cart-item-img > img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+    box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 6px;
+    
 }
 .cart-item-name{
     width: 388px;
     display: flex;
     flex-direction: column;
 }
-
+.cart-item-name-link{  
+    text-decoration: none;
+    color: black;
+    font: 16px;
+    margin-top: 5px;
+}
+.cart-item-name-link:hover{
+    text-decoration: underline;
+}
 .cart-remove-button > button{
     all:unset;
     width: 36px;
@@ -52,10 +63,10 @@
     -moz-appearance: none;
     appearance: none;
     box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+    border: 1px solid rgba(34, 34, 34, 0.15);
     font-size: 16px;
     height: 48px;
     border-radius: 6px;
-    border: 1px solid rgba(34, 34, 34, 0.15);
     cursor: pointer;
     width: 70px;
     text-align: center;
@@ -85,21 +96,44 @@
     text-align: right !important;
 }
 .order-options{
-    margin-top: 50px;
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    margin-top: 24px;
+    font-weight: 200;
+}
+.order-options form{
+    font-size: 20px;
 }
 .cart-note{
     padding-top: 9px;
     padding-bottom: 9px;
     padding-right: 12px;
-    height: 75px;
-    width: 430px;
-}
-.cart-note textarea{
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-note textarea{
+    font-size: 15px;
+    height: 75px;
+    width: 430px;
     box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
     border-color: rgba(34, 34, 34, 0.15);
     border-style: solid;
     border-width: 1px;
     border-radius: 6px;
+}
+#shipping-info{
+    display: flex;
+    align-items: center;
+}
+#shipping-info > p{
+    color: #258635;
+    margin-left: 10px;
+    font-weight: 300;
+}
+.cart-explore{
+    all: unset;
+    font-weight: 500;
+    cursor: pointer;
+    justify-self: end;
 }

@@ -12,6 +12,8 @@ json.carts do
     carts.each do |cart|
         json.set! cart.id do
             json.extract! cart, :id, :product_id, :buyer_id, :quantity
+            json.price cart.product.price
+            json.product cart.product.product_name
         end
     end
 end

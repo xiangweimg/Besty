@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal/Modal';
-import './Navigation.css';
 import logo from "../../img/logo.png"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NavBar from '../NavBar/NavBar'
+import './Navigation.css';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const carts = useSelector(state => Object.values(state.carts))
+  let total = 0
+  carts.forEach(element => total += element.quantity)
   
+  useEffect(()=>{
+    total = 0
+  }, [sessionUser])
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -45,10 +51,10 @@ function Navigation() {
            {sessionLinks}
         </div>
         <div className='header_basket'>
-          <Link to='/cart'>
+          <Link id='cart-icon' to='/cart'>
           <ShoppingCartOutlinedIcon className='shoppingIcon'/>
           </Link>
-          <span className='basket_count'>0</span>
+          <span className='basket_count'>{total}</span>
         </div>
       </div>
         <NavBar/>

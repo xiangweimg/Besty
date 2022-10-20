@@ -10,17 +10,17 @@ import './Cart.css';
 function Cart() {
   const sessionUser = useSelector(state => state.session.user) //currentuser
   const [shopperId, setShopperId] = useState(sessionUser?.id);
-
+  let total = 0;
   useEffect(() => {
     if (sessionUser) setShopperId(sessionUser.id);
   }, [sessionUser])
   
   const carts = useSelector(({carts}) => {
-    // debugger;
     return Object.values(carts).filter(cart => cart.buyerId === sessionUser?.id);
   });
+  let cart_arr = Object.values(carts)
+   cart_arr.forEach(element => total+= element.quantity)
   const shopper = useSelector(getUser(shopperId))
-  // debugger;
   if (!carts.length) return (
     <div>
       <CartNotice/>
@@ -33,8 +33,6 @@ function Cart() {
   if(shopper){
     cartItems = carts.map(item => <CartItem key={item.id} item={item}></CartItem>)
   }
-  let checkout = carts.map(item => <Checkout key={item.id} item={item}></Checkout>)
-
   // const onSubmit = (e) => {
   //   e.preventDefault();
   //   window.alert(
@@ -46,7 +44,7 @@ function Cart() {
   return (
     <div className="cart-wrapper">
     <div className="cart">
-      <h1>{cartItems.length.length} items in your cart</h1>
+      <h1>{total} item(s) in your cart</h1>
       <CartNotice/>
       <div className="cart-main">
         <ul>

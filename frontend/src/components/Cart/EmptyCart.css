@@ -14,3 +14,6 @@
     align-items: center;
     justify-content: center;
 }
+.cart-empty>#link{
+    color: black;
+}

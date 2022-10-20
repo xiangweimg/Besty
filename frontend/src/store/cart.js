@@ -29,10 +29,20 @@ export const deleteCart = (cartId) => { //action
 // export const getCarts = ({ cart }) => cart? Object.values(cart) : []
 
 export const createCart = (product_id, quantity, buyer_id) => async dispatch => { 
-
     const add_product = {product_id, quantity, buyer_id}
     const res = await csrfFetch('/api/cart_items', {
         method: "POST",
+        body: JSON.stringify(add_product)
+  })
+  if (res.ok) {
+      const data = await res.json();
+      dispatch(populateCart(data));
+  }
+}
+export const updateCart = (cart_id, product_id, quantity, buyer_id) => async dispatch => { 
+    const add_product = {product_id, quantity, buyer_id}
+    const res = await csrfFetch(`/api/cart_items/${cart_id}`, {
+        method: "PATCH",
         body: JSON.stringify(add_product)
   })
   if (res.ok) {

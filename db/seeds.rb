@@ -200,8 +200,8 @@ ApplicationRecord.transaction do
       store_id: 4,
       category:"Pets"
     })
-    product9_pic = File.open('./app/asset/images/product_9.jpg')
-    product9.photo.attach(io:product9_pic, filename: "product_9.jpg")
+    product9_pic = File.open('./app/asset/images/product9.jpg')
+    product9.photo.attach(io:product9_pic, filename: "product9.jpg")
     product10= Product.create!({
       product_name: "Custom Pet Pillow | Personalized Pillow | Pet Memorial Gift | Custom shaped pillow | Dog Pillow | Cat Pillow | Pet Lover Gift",
       seller_id: 4,

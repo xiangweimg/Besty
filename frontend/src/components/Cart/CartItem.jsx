@@ -57,7 +57,7 @@ function CartItem({item}) {
               </button>
               <input
                 id='enter-box'
-                type="number"
+                type="text"
                 value={count}
                 onChange={(e) => setCount(parseInt(e.target.value))}
                 required min ="0"

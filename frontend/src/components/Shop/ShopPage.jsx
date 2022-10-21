@@ -7,6 +7,9 @@ import SendIcon from '@mui/icons-material/Send';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import ShopProductList from './ShopProductList'
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import { purple } from '@mui/material/colors';
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+import seller_logo from '../../img/seller_logo.png'
 import './ShopPage.css'
 
 const ShopPage = () => {
@@ -29,11 +32,11 @@ const ShopPage = () => {
                 <img src="frontend/src/img/2749398.jpg" alt="" />
             </div>
                 <div className='shop-container'>
-                        <div className='shop-info'>
-                            <div className='shop-store-info'>
-                                <div id="shop-head-icon">
+                    <div className='shop-info'>
+                        <div className='shop-store-info'>
+                            <div id="shop-head-icon">
                                     <StorefrontIcon sx={{ fontSize: 100 }}/>
-                                </div>
+                            </div>
                                 <div className='shop-nav-left'>
                                     <div className='shop-name'>
                                         { shop.storeName }
@@ -44,23 +47,25 @@ const ShopPage = () => {
                                     <p className='shop-city'>Rating: { shop.rating }</p>
                                 </div>
                             </div>
-                            <div className="shop-icons">
-                                <div className='shop-icon'><LocalShippingIcon color="secondary" /><span>Smooth shipping</span>Has a history of shipping on time with tracking.</div>
-                                <div className='shop-icon'><SendIcon color="secondary" /> <span>Speedy replies</span>Has a history of replying to messages quickly.</div>
-                                <div className='shop-icon'><ReviewsIcon color="secondary" /><span>Rave reviews</span>Average review rating is 4.8 or higher</div>
-                            </div>
-                            <div>
-                                <Link id="seller" to={`/users/${shop.ownerId}`}>{shop.owner}</Link>
+                                <div className="shop-icons">
+                                    <div className='shop-icon'><LocalShippingIcon sx={{ color: purple[300] }} /><span>Smooth shipping</span>Has a history of shipping on time with tracking.</div>
+                                    <div className='shop-icon'><SendIcon sx={{ color: purple[300] }} /> <span>Speedy replies</span>Has a history of replying to messages quickly.</div>
+                                    <div className='shop-icon'><ReviewsIcon sx={{ color: purple[300] }} /><span>Rave reviews</span>Average review rating is 4.8 or higher</div>
+                                </div>
+                                <div className='shop-owner'>
+                                        <img src={seller_logo} alt="" />
+                                    <Link id="seller" to={`/users/${shop.ownerId}`}>{shop.owner}</Link>
+                                    <span><MailOutlinedIcon/> Contact</span>
+                                </div>
                             </div>
                         </div>
-            </div>
 
-            <div className='shop-products'>
-                <h2>All Items</h2>
-                <hr />
-                <ul>
-                    {productList}
-                </ul>
+                    <div className='shop-products'>
+                    <h2>All Items</h2>
+                    <hr />
+                    <ul>
+                        {productList}
+                    </ul>
             </div>
         </div>
         )

@@ -42,7 +42,7 @@ function Navigation() {
   
         <div className='header_search'>
           <input className='header_searchInput' type="text" 
-          placeholder='  Search for anything'/>
+          placeholder='  Search feature is coming soon...'/>
           <span className='searchIcon'>
             <SearchIcon sx={{ fontSize: 30 }} />
           </span>

@@ -1,7 +1,8 @@
 import React from "react";
 import LockIcon from '@mui/icons-material/Lock';
-import './Checkout.css';
 import { useSelector } from "react-redux";
+import visaicon from "../../img/visaicon.png"
+import './Checkout.css';
 
 function Checkout() {
     // const carts = useSelector({carts})
@@ -23,6 +24,9 @@ function Checkout() {
         <div className="secure-payment-header">
             <LockIcon/>
             <p> Secure options in checkout</p>
+        </div>
+        <div id="visa-icon">
+            <img src={visaicon} alt="" />
         </div>
         <div className="items-total">
             <span>Item(s) total</span>

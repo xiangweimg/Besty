@@ -5,6 +5,7 @@
     box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
     border: 1px solid rgba(34, 34, 34, 0.15);
     max-width: 260px;
+    border-radius: 24px;
 }
 .home-product-img > img:hover{
     box-shadow: 0 1px 6px 0 rgba(26, 25, 25, 0.5);

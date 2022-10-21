@@ -25,6 +25,7 @@ const ReviewShow = () => {
                 <div className='product-reviews'>
                     Reviews for this item
                 </div>
+                <br />
                 <span>No reviews yet</span>
             </div>
         </div>

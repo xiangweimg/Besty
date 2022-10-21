@@ -73,9 +73,9 @@ const ProductShow = () => {
                     <div className='product-option-button' onClick={decrement}>
                         <button> - </button>
                     </div>
-                    <input type="number" 
+                    <input type="text" 
                         value={quantity}
-                        onChange={(e)=> setQuantity(e.target.value)}/>
+                        onChange={(e)=> setQuantity(parseInt(e.target.value))}/>
                     <div className='product-option-button' onClick={increment}>
                         <button> + </button>
                     </div>

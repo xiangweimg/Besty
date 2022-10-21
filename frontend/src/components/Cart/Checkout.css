@@ -33,6 +33,10 @@
 .secure-payment-header{
     display: flex;
     align-items: center;
+    margin-left: 15px;
+}
+#visa-icon>img{
+    width: 80%;
 }
 .checkout-button button[type="submit"] {
     background-color: black;

@@ -1,6 +1,7 @@
-/* .reviews-wrapper{
-    text-align:left;
-} */
+.reviews-wrapper{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    font-weight: 200;
+}
 .reviews{
     margin-top: 35px;
     width: 100%;

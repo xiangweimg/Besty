@@ -54,8 +54,8 @@
   top: 2px;
 }
 .searchIcon:hover{
-  background-color: rgb(237, 229, 229);
-  transition: all 0.5s ease-in-out;
+  background-color: #EFEFEF;
+  transition: all 0.2s ease-in-out;
 }
 .searchIcon:visited {
   color: black;
@@ -72,8 +72,8 @@
   margin-right: -25px;
 }
 .shoppingIcon:hover{
-  background-color: rgb(237, 229, 229);
-  transition: all 0.5s ease-in-out;
+  background-color: #EFEFEF;
+  transition: all 0.2s ease-in-out;
 }
 
 .shoppingIcon:visited {

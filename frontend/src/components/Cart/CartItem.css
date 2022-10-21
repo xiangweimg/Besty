@@ -24,7 +24,6 @@
     width: 210px;
     height: 100%;
 }
-
 .cart-item-img > img{
     width: 100%;
     height: 100%;
@@ -32,7 +31,6 @@
     box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
     border: 1px solid rgba(34, 34, 34, 0.15);
     border-radius: 6px;
-    
 }
 .cart-item-name{
     width: 388px;
@@ -50,11 +48,16 @@
 }
 .cart-remove-button > button{
     all:unset;
-    width: 36px;
     font-size:13px ;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
     cursor: pointer;
+    padding: 9px;
+    border-radius: 24px;
+}
+.cart-remove-button > button:hover{
+    background-color: rgb(237, 229, 229);
+    transition: all 0.2s ease-in-out;
 }
 #enter-box{
     transition: border-color 200ms ease-out,box-shadow 200ms ease-out;

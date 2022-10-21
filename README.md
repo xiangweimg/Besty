@@ -16,7 +16,7 @@ Besty is an Etsy clone, and like Etsy, it is an ecommerce site which will make s
 - SCSS
 - Heroku
 
-#Code Higlights
+# Code Higlights
 
 Add to cart:
 

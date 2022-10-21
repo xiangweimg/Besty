@@ -214,6 +214,4 @@ ApplicationRecord.transaction do
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
 
-   
-  
 end

@@ -59,6 +59,7 @@ function Navigation() {
       </div>
         <NavBar/>
     </div>
+    <hr />
 </div>
   );
 }

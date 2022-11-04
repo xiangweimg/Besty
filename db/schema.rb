@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_211420) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_201956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_211420) do
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "reviewer_id", null: false
+    t.bigint "product_id", null: false
+    t.text "review", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
   create_table "stores", force: :cascade do |t|
     t.string "store_name", null: false
     t.string "city", null: false
@@ -102,5 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_211420) do
   add_foreign_key "cart_items", "users", column: "buyer_id"
   add_foreign_key "products", "stores"
   add_foreign_key "products", "users", column: "seller_id"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "stores", "users", column: "owner_id"
 end

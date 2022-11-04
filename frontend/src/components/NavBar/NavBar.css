@@ -11,20 +11,17 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    /* justify-items: center; */
     align-self: center;
-    /* align-items: center; */
 }
 .category{
     font-size: 13px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 100;
 }
 .home-navbar-row ul{
     list-style: none;    
     display: flex;
-    /* width: 100%; */
 }
 .home-navbar-row ul li a{
     text-decoration: none;
@@ -41,7 +38,6 @@
     top: 100%;
 }
 .dropdown-menu ul{
-    /* display: block; */
     margin: 10px;
 }
 .nav-divider{

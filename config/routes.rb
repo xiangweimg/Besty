@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:index]
     resources :stores, only: [:show]
     resources :cart_items, only: [:index, :show, :create, :update, :destroy]
+    resources :reviews, only: [:show, :index, :create, :destroy, :update]
     resource :session, only: [:show, :create, :destroy]
   end
 

@@ -32,6 +32,10 @@ class Product < ApplicationRecord
     class_name: :CartItem,
     dependent: :destroy 
 
+    has_many :reviews,
+    foreign_key: :product_id,
+    class_name: :Review
+
     has_one_attached :photo
 
 end

@@ -4,7 +4,6 @@ import { GET_USERS } from './users';
 import { LOGIN_USER, LOGOUT_USER } from './session';
 
 const ADD_CART ="cart/ADD_CART"
-const ADD_IN_CART = 'cart/ADD_IN_CART'
 const REMOVE_CART="cart/REMOVE_CART"
 
 export const populateCart = (cart) => { //action
@@ -13,20 +12,13 @@ export const populateCart = (cart) => { //action
         payload:cart
     };
 };
-// export const addInCart = (product) => { //action
-//     return {
-//         type: ADD_IN_CART,
-//         payload:product
-//     };
-// };
+
 export const deleteCart = (cartId) => { //action
     return {
         type: REMOVE_CART,
         cartId
     };
 };
-
-// export const getCarts = ({ cart }) => cart? Object.values(cart) : []
 
 export const createCart = (product_id, quantity, buyer_id) => async dispatch => { 
     const add_product = {product_id, quantity, buyer_id}
@@ -55,7 +47,6 @@ export const removeCart = (cartId) => async dispatch => {
         method: "DELETE",
   })
   if (res.ok) {
-    //   const data = await res.json();
       dispatch(deleteCart(cartId));
   }
 }
@@ -68,8 +59,6 @@ export default function cartReducer(state = {}, action) {
         case GET_USERS:
             return { ...newState, ...action.payload.carts };
         case ADD_CART:
-            // newState[action.payload.carts.] = action.payload
-            // newState[action.payload.productId].count = action.payload.quantity
             return { ...newState, ...action.payload.carts }
         case REMOVE_CART:
             delete newState[action.cartId]

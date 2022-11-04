@@ -1,4 +1,4 @@
-import { useEffect} from 'react';
+import { useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct, fetchProduct } from '../../store/product';
@@ -9,11 +9,15 @@ const ReviewShow = () => {
     const {productId} = useParams(); 
     const product = useSelector(getProduct(productId))
     const sessionUser = useSelector(state => state.session.user);
+    const [review, setReview] = useState("No reviews yet")
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
     },[productId]);
 
+    const handleSubmit = () =>{
+        
+    }
 
     if(product){
         return (
@@ -26,7 +30,15 @@ const ReviewShow = () => {
                     Reviews for this item
                 </div>
                 <br />
-                <span>No reviews yet</span>
+                <span></span>
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <textarea cols="30" rows="10"
+                            value={review}
+                            onChange={(e)=> setReview(e.target.value)}></textarea>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
             </div>
         </div>
 

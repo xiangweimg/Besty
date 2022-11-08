@@ -59,15 +59,17 @@
     font-size: 40px;
     margin-bottom: 5px;
     font-weight: 200;
+    display: flex;
 }
 .product-option-button{
-    height: 35px;
-    width: 35px;
-    border: 1px solid rgba(34, 34, 34, 0.15) !important;
-    box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgba(34, 34, 34, 0) !important;
+    /* box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%); */
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
     border-radius: 12px;
     cursor: pointer;
 }

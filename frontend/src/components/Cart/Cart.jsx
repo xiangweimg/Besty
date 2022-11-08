@@ -33,13 +33,6 @@ function Cart() {
   if(shopper){
     cartItems = carts.map(item => <CartItem key={item.id} item={item}></CartItem>)
   }
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   window.alert(
-  //     "Purchased the following:\n" +
-  //     `${cartItems.map(item => `${item.count} of ${item.productName}`).join('\n')}`
-  //   );
-  // }
 
   return (
     <div className="cart-wrapper">

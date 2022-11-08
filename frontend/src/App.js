@@ -12,10 +12,10 @@ import { fetchUsers } from "./store/users";
 
 function App() {
 
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchUsers())
-  },[])
+  // const dispatch = useDispatch()
+  // useEffect(() => {
+  //   dispatch(fetchUsers())
+  // },[])
 
   return (
     <div className="app">

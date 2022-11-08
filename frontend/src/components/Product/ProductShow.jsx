@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProduct, fetchProduct } from '../../store/product';
 import { populateCart, createCart } from '../../store/cart';
 import LoginFormModal from '../LoginFormModal/Modal';
-import {Modal} from '../../context/Modal'
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ReviewShow from './Reviews';
 import './ProductShow.css'
 
@@ -71,13 +72,13 @@ const ProductShow = () => {
                 <div className='product-options'>
                     <label className='product-option-title'>
                     <div className='product-option-button' onClick={decrement}>
-                        <button> - </button>
+                        <button> <RemoveCircleOutlineIcon sx={{ fontSize: 40 }}/> </button>
                     </div>
                     <input type="text" 
                         value={quantity}
                         onChange={(e)=> setQuantity(parseInt(e.target.value))}/>
                     <div className='product-option-button' onClick={increment}>
-                        <button> + </button>
+                        <button> <AddCircleOutlineIcon sx={{ fontSize: 40 }}/> </button>
                     </div>
                     </label>
                 </div>

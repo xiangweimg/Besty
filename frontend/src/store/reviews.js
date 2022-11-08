@@ -15,7 +15,7 @@ export const addReview = (review) => { //action
 };
 export const findReviews = (reviews) => { //action
     return {
-        type: FIND_PRODUCTS,
+        type: FIND_REVIEWS,
         payload:reviews
     };
 };
@@ -27,10 +27,14 @@ export const findReviews = (reviews) => { //action
 //     };
 // };
 
-export const createReview = (review) => async dispatch => { 
+export const createReview = (review, rating, productId, reviewerId) => async dispatch => { 
     const res = await csrfFetch('/api/reviews', {
         method: "POST",
-        body: JSON.stringify(review)
+        body: JSON.stringify({
+            review, 
+            rating, 
+            productId, 
+            reviewerId})
   })
   if (res.ok) {
       const data = await res.json();
@@ -71,7 +75,7 @@ export default function reviewReducer(state = {}, action) {
     let newState= {...state}
     switch (action.type) {
         case ADD_REVIEW:
-            return { ...newState, ...action.payload.carts }
+            return { ...newState, ...action.payload.review }
         case FIND_REVIEWS:
             newState = action.payload;
             return newState;

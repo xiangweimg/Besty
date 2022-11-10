@@ -16,7 +16,13 @@ const ReviewShow = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        dispatch(createReview(content, rating, productId, sessionUser.id))
+        let review = {
+            content: content,
+            rating: rating,
+            productId: productId,
+            reviewerId: sessionUser.id
+        }
+        dispatch(createReview(review))
     }
 
     if(product){

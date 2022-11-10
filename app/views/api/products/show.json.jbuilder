@@ -8,7 +8,7 @@ json.img @product.photo.url
 json.reviews do
     @product.reviews.each do |review|
         json.set! review.id do 
-            json.extract! product, :id, :product_id, :reviewer_id, :review, :rating
+            json.extract! review, :id, :product_id, :reviewer_id, :content, :rating
         end
     end
 end

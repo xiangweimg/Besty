@@ -11,6 +11,7 @@ ApplicationRecord.transaction do
     # Like.destroy.all
     Product.destroy_all
     Store.destroy_all
+    Review.destroy_all
     User.destroy_all
   
     puts "Resetting primary keys..."
@@ -18,12 +19,12 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
     ApplicationRecord.connection.reset_pk_sequence!('stores')
-    # ApplicationRecord.connection.reset_pk_sequence!('likes')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
-    User.create!(
+    u = User.create!(
       username: 'Demo-lition', 
       email: 'demo@user.io', 
       password: 'password'
@@ -214,4 +215,11 @@ ApplicationRecord.transaction do
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
 
+    puts "Creating reviews..."
+    Review.create!(
+      content: Faker::Lorem.sentence(word_count:6),
+      rating:5,
+      reviewer_id: 2,
+      product_id: product1.id
+    )
 end

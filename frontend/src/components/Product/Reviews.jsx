@@ -36,11 +36,12 @@ const ReviewShow = () => {
                 <span></span>
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <textarea cols="30" rows="10"
+                        <textarea cols="50"rows="10" 
                             value={review}
                             onChange={(e)=> setReview(e.target.value)}></textarea>
                         <br />
-                       <label for="rating1">1
+                        Rating:  
+                       <label for="rating1"> 1
                         <input type="radio" id="rating1" name="rating" value="1"
                          onChange={(e) => {
                             setRating(1);
@@ -64,7 +65,7 @@ const ReviewShow = () => {
                         setRating(4);
                         }}/>
                        </label>
-                       <label for="rating5">5
+                       <label for="rating5">555
                         <input type="radio" id="rating5" name="rating" value="5"
                         onChange={(e) => {
                         setRating(5);

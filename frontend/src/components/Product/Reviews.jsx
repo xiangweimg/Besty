@@ -1,7 +1,7 @@
-import { useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {  useState} from 'react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProduct, fetchProduct } from '../../store/product';
+import { getProduct } from '../../store/product';
 import { createReview } from '../../store/reviews';
 import './Review.css'
 
@@ -10,16 +10,13 @@ const ReviewShow = () => {
     const {productId} = useParams(); 
     const product = useSelector(getProduct(productId))
     const sessionUser = useSelector(state => state.session.user);
-    const [review, setReview] = useState("No reviews yet")
+    const [content, setReview] = useState("")
     const [rating, setRating] = useState(0)
 
-    useEffect(()=>{
-        dispatch(fetchProduct(productId)) //change state
-    },[productId]);
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        dispatch(createReview(review, rating, productId, sessionUser.id))
+        dispatch(createReview(content, rating, productId, sessionUser.id))
     }
 
     if(product){
@@ -37,7 +34,7 @@ const ReviewShow = () => {
                 <div>
                     <form onSubmit={handleSubmit}>
                         <textarea cols="50"rows="10" 
-                            value={review}
+                            value={content}
                             onChange={(e)=> setReview(e.target.value)}></textarea>
                         <br />
                         Rating:  
@@ -65,7 +62,7 @@ const ReviewShow = () => {
                         setRating(4);
                         }}/>
                        </label>
-                       <label for="rating5">555
+                       <label for="rating5">5
                         <input type="radio" id="rating5" name="rating" value="5"
                         onChange={(e) => {
                         setRating(5);

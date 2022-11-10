@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_201956) do
   create_table "reviews", force: :cascade do |t|
     t.bigint "reviewer_id", null: false
     t.bigint "product_id", null: false
-    t.string "review", null: false
+    t.string "content", null: false
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

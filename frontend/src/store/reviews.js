@@ -1,7 +1,5 @@
 
 import csrfFetch from "./csrf";
-import { GET_USERS } from './users';
-import { LOGIN_USER, LOGOUT_USER } from './session';
 
 const ADD_REVIEW ="reviews/ADD_REVIEW"
 const FIND_REVIEWS = "reviews/FIND_REVIEWS"
@@ -27,11 +25,11 @@ export const findReviews = (reviews) => { //action
 //     };
 // };
 
-export const createReview = (review, rating, productId, reviewerId) => async dispatch => { 
+export const createReview = (content, rating, productId, reviewerId) => async dispatch => { 
     const res = await csrfFetch('/api/reviews', {
         method: "POST",
         body: JSON.stringify({
-            review, 
+            content, 
             rating, 
             productId, 
             reviewerId})

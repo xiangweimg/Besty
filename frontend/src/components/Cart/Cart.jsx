@@ -10,11 +10,13 @@ import './Cart.css';
 function Cart() {
   const sessionUser = useSelector(state => state.session.user) //currentuser
   const [shopperId, setShopperId] = useState(sessionUser?.id);
+  if(!sessionUser.carts){
+    sessionUser.carts = {}
+  }
   let total = 0;
   useEffect(() => {
     if (sessionUser) setShopperId(sessionUser.id);
   }, [sessionUser])
-  
   const carts = useSelector(({carts}) => {
     return Object.values(carts).filter(cart => cart.buyerId === sessionUser?.id);
   });

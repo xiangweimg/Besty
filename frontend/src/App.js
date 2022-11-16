@@ -1,26 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
 import "./App.css"
+import Category from "./components/Category/Category";
 import ProductShow from "./components/Product/ProductShow";
 import ShopPage from "./components/Shop/ShopPage";
-import { useDispatch } from "react-redux";
-import { fetchUsers } from "./store/users";
+
 
 
 function App() {
 
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(fetchUsers())
-  // },[])
-
   return (
     <div className="app">
     <Switch>
-      <Route path='/cart'>
+      <Route exact path='/cart'>
         <Navigation />
         <Cart/>
       </Route>
@@ -35,12 +30,14 @@ function App() {
         <ShopPage/>
       </Route>
 
-      <Route path='/'>
+      <Route exact path='/'>
         <Navigation className='navigation'/>
         <Home/>
       </Route>
+      <Route exact path='/category/:category'>
+        <Category/>
+      </Route>
 
-      
     </Switch>
     </div>
 

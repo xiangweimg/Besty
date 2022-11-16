@@ -2,24 +2,24 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct, fetchProduct } from '../../store/product';
-import { populateCart, createCart } from '../../store/cart';
+import { createCart } from '../../store/cart';
 import LoginFormModal from '../LoginFormModal/Modal';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ReviewShow from './Reviews';
+import Review from './Reviews';
 import './ProductShow.css'
 
 const ProductShow = () => {
     const dispatch = useDispatch();
     const [quantity, setQuantity]= useState(1)
     const {productId} = useParams(); 
-    const product = useSelector(getProduct(productId))
+    const product = useSelector(getProduct(productId)) //get product from state
     const sessionUser = useSelector(state => state.session.user);
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
-    },[productId]);
-    
+    },[productId]);//state add product
+
     const add_to_cart = (e) =>{
         e.preventDefault()
         dispatch(createCart(productId, quantity, sessionUser.id))
@@ -34,7 +34,6 @@ const ProductShow = () => {
         dynamicAddToCartButton = (
             <LoginFormModal type={"add-to-cart-button"}/>
         )
-
     }
     const increment = e =>{
          if(quantity < product.availability){
@@ -55,7 +54,7 @@ const ProductShow = () => {
             <div className='product-left'>
                 <div className='product-img-reviews'>
                     <img src={product.img} alt="" />
-                    <ReviewShow/>
+                    <Review/>
                 </div>
             </div>
             <div className='product-container'>

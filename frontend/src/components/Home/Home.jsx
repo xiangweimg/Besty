@@ -9,14 +9,13 @@ import "./Home.css"
 function Home() {
     const dispatch = useDispatch()
     const products = useSelector(getProducts)
-    const productList =  products.map(product => <ProductIndexItem product={product}></ProductIndexItem>)
+    const productList =  products.map(product => <ProductIndexItem key={product.id} product={product}></ProductIndexItem>)
 
     useEffect(() =>{
         dispatch(fetchProducts())
     },[])
     return(
         <div style={{width: "100%"}}>
-
             <div className="home-header">
                 <br />
                 <h1>Fresh finds fit for cozy season.</h1>

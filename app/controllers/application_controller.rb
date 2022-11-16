@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    
+
     rescue_from StandardError, with: :unhandled_error
     rescue_from ActionController::InvalidAuthenticityToken,
       with: :invalid_authenticity_token
@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
     include ActionController::RequestForgeryProtection
   
     protect_from_forgery with: :exception
-
+    # protect_from_forgery with: :null_session
     before_action :snake_case_params, :attach_authenticity_token
 
     def current_user

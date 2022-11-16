@@ -9,7 +9,7 @@ json.products do
     @cart.buyer.buyer_items.each do |product|
         json.set! product.id do 
             json.extract! product, :id, :product_name, :seller_id, :price, 
-            :category, :availability, :description, :store_id
+            :category_id, :availability, :description, :store_id
             if product.photo.attached?
                 json.img product.photo.url
             end

@@ -9,22 +9,42 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     # Like.destroy.all
-    Product.destroy_all
+    Category.destroy_all
     Store.destroy_all
     Review.destroy_all
+    Product.destroy_all
     User.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('categories')
     ApplicationRecord.connection.reset_pk_sequence!('products')
     ApplicationRecord.connection.reset_pk_sequence!('stores')
     ApplicationRecord.connection.reset_pk_sequence!('reviews')
-
   
+    puts "Creating categories..."
+    Category.create!(
+      name:'Pokemon'
+    )
+    Category.create!(
+      name: 'Pets'
+    )
+    Category.create!(
+      name: 'Toys & Entertainment'
+    )
+    Category.create!(
+      name: 'Home & Living'
+    )
+    Category.create!(
+      name: 'Art & Collectibles'
+    )
+    Category.create!(
+      name: 'Clothing & Shoes'
+    )
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
-    u = User.create!(
+    User.create!(
       username: 'Demo-lition', 
       email: 'demo@user.io', 
       password: 'password'
@@ -100,7 +120,7 @@ ApplicationRecord.transaction do
         price:"199.89",
         availability:2,
         store_id: 2,
-        category:"Pokemon"
+        category_id: 1
       })
     product1_pic = File.open('./app/asset/images/253266.jpg')
     product1.photo.attach(io:product1_pic, filename: "253266.jpg")
@@ -113,7 +133,7 @@ ApplicationRecord.transaction do
         price:"505.00",
         availability:1,
         store_id: 2,
-        category:"Pokemon"
+        category_id:1
       })
       product2_pic = File.open('./app/asset/images/product_2.jpg')
       product2.photo.attach(io:product2_pic, filename: "product_2.jpg")
@@ -125,7 +145,7 @@ ApplicationRecord.transaction do
         price:"35.99",
         availability:25,
         store_id: 3,
-        category:"Toys"
+        category_id:3
     })
     product3_pic = File.open('./app/asset/images/product_3.jpg')
     product3.photo.attach(io:product3_pic, filename: "product_3.jpg")
@@ -139,7 +159,7 @@ ApplicationRecord.transaction do
       price:"12.99",
       availability:10,
       store_id: 3,
-      category:"Toys"
+      category_id:3
   })
     product4_pic = File.open('./app/asset/images/product_4.jpg')
     product4.photo.attach(io:product4_pic, filename: "product_4.jpg")
@@ -152,7 +172,7 @@ ApplicationRecord.transaction do
       price:"32.00",
       availability:10,
       store_id: 1,
-      category:"Home & Living"
+      category_id:4
     })
     product5_pic = File.open('./app/asset/images/product_5.jpg')
     product5.photo.attach(io:product5_pic, filename: "product_5.jpg")
@@ -165,7 +185,7 @@ ApplicationRecord.transaction do
       price:"200.89",
       availability:1,
       store_id: 1,
-      category:"Home & Living"
+      category_id:4
     })
     product6_pic = File.open('./app/asset/images/product_6.jpg')
     product6.photo.attach(io:product6_pic, filename: "product_6.jpg")
@@ -176,7 +196,7 @@ ApplicationRecord.transaction do
       price:"172.72",
       availability:99,
       store_id: 1,
-      category:"Home & Living"
+      category_id:4
     })
     product7_pic = File.open('./app/asset/images/product_7.jpg')
     product7.photo.attach(io:product7_pic, filename: "product_7.jpg")
@@ -188,7 +208,7 @@ ApplicationRecord.transaction do
       price:"69.00",
       availability:1,
       store_id: 4,
-      category:"Pets"
+      category_id:2
     })
     product8_pic = File.open('./app/asset/images/product_8.jpg')
     product8.photo.attach(io:product8_pic, filename: "product_8.jpg")
@@ -199,7 +219,7 @@ ApplicationRecord.transaction do
       price:"1.00",
       availability:1,
       store_id: 4,
-      category:"Pets"
+      category_id:6
     })
     product9_pic = File.open('./app/asset/images/product9.jpg')
     product9.photo.attach(io:product9_pic, filename: "product9.jpg")
@@ -210,16 +230,16 @@ ApplicationRecord.transaction do
       price:"14.20",
       availability:1,
       store_id: 4,
-      category:"Pets"
+      category_id:2
     })
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
-
     puts "Creating reviews..."
     Review.create!(
-      content: Faker::Lorem.sentence(word_count:6),
-      rating:5,
-      reviewer_id: 2,
-      product_id: product1.id
+      reviewer_id: 1,
+      product_id:1,
+      content: "good",
+      rating: 5````
     )
+
 end

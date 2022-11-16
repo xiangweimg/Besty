@@ -48,7 +48,7 @@ export const restoreSession = () => async dispatch => {
 }
 
 const storeCurrentUser = (user) => {
-  if (user == undefined) {
+  if (user === undefined) {
     sessionStorage.setItem("currentUser", JSON.stringify(user))
   } else {
     sessionStorage.setItem("currentUser", null)
@@ -60,7 +60,6 @@ export function storeCSRFToken(responseObj) { //send Xtoken to session storage
   const csrfToken = responseObj.headers.get('X-CSRF-Token');
   if (csrfToken) sessionStorage.setItem('X-CSRF-Token', csrfToken);
 }
-
 export const signup = (user) => async dispatch => {
   const { username, email, password} = user
   const res = await csrfFetch(`/api/users`, {

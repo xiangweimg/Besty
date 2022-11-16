@@ -15,7 +15,6 @@ async function csrfFetch(url, options = {}) {
   
     // call fetch with the url and the updated options hash
     const res = await fetch(url, options);
-    console.log(res);
   
     // if the response status code is 400 or above, then throw an error with the
     // error being the response

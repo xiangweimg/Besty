@@ -18,7 +18,7 @@ const ShopPage = () => {
     const shop = useSelector(getShop(shopId))
     let productList
     if (shop){
-        productList = shop.products.map(product=><ShopProductList product={product}/>)
+        productList = shop.products.map(product=><ShopProductList key={product.id} product={product}/>)
     }
 
     useEffect(()=>{

@@ -3,6 +3,9 @@ json.carts do
         json.extract! @cart, :id, :buyer_id, :product_id, :quantity
         json.price @cart.product.price
         json.product @cart.product.product_name
+        json.img @cart.product.photo.url
+        json.store_id @cart.product.store.id
+        json.store_name @cart.product.store.store_name
     end
 end
 json.products do

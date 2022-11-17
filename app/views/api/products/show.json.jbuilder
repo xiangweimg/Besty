@@ -4,6 +4,8 @@ json.extract! @product, :id, :product_name, :seller_id, :price,
 json.store_name @product.store.store_name
 json.store_sales @product.store.sales
 json.img @product.photo.url
+json.category @product.category.name
+
 
 json.reviews do
     @product.reviews.each do |review|

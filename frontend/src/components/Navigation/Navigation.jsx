@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal/Modal';
 import logo from "../../img/logo.png"
+import { fetchCart } from "../../store/cart";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NavBar from '../NavBar/NavBar'
@@ -12,9 +13,16 @@ import './Navigation.css';
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const carts = useSelector(state => Object.values(state.carts))
+  const dispatch = useDispatch()
   let total = 0
   carts.forEach(element => total += element.quantity)
-  
+  // useEffect(() =>{
+  //   carts.forEach(element => total += element.quantity)
+  // },[carts])
+  useEffect(()=>{
+    if(sessionUser){
+      dispatch(fetchCart(sessionUser.id))
+    }},[])
   useEffect(()=>{
     total = 0
   }, [sessionUser])

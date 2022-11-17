@@ -24,7 +24,8 @@ export const login = ({credential,password}) => async dispatch => {
   })
   if (res.ok) {
     const data = await res.json();
-    sessionStorage.setItem("currentUser", JSON.stringify(data.user))
+    console.log(data);
+    sessionStorage.setItem("currentUser", JSON.stringify(data))
     dispatch(loginUser(data));
   }
 }
@@ -43,7 +44,7 @@ export const restoreSession = () => async dispatch => {
   const res = await csrfFetch('/api/session') //did what restoreCSRF did, provide Xtoken
   storeCSRFToken(res) // csrfFetch会拿到一个Xtoken，然后storeCSRFToken会把这个存入sessionStorage
   const data = await res.json() //from a promise to json
-  storeCurrentUser(data.user)
+  storeCurrentUser(data)
   dispatch(loginUser(data));
 }
 
@@ -82,7 +83,7 @@ export default function sessionReducer (state = {user: JSON.parse(sessionStorage
   const newState = {...state}
   switch (action.type) {
     case LOGIN_USER:
-      newState['user'] = action.payload.user;
+      newState['user'] = action.payload;
       return newState; //让state上显示出current user
     case LOGOUT_USER:
       newState['user'] = null;

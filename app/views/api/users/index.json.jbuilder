@@ -1,19 +1,22 @@
-carts = []
-json.users do
+# carts = []
+# json.users do
     @users.each do |user|
-        carts.concat(user.cartitems) #if user.cartitems.count > 0
         json.set! user.id do
-            json.extract! user, :id, :email, :username
+            carts.concat(user.cartitems) #if user.cartitems.count > 0
+                json.set! user.id do
+                    json.extract! user, :id, :email, :username
+                end
+        json.carts do
+            user.cartitems.each do |cart|
+                json.set! cart.id do
+                    json.extract! cart, :id, :product_id, :buyer_id, :quantity
+                    json.price cart.product.price
+                    json.product cart.product.
+                    json.img cart.product.photo.url
+                    json.store cart.product.store.store_name
+                end
+            end
         end
-    end
-end
-
-json.carts do
-    carts.each do |cart|
-        json.set! cart.id do
-            json.extract! cart, :id, :product_id, :buyer_id, :quantity
-            json.price cart.product.price
-            json.product cart.product.product_name
         end
-    end
-end
+    end    
+# end    

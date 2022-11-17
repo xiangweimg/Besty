@@ -1,23 +1,24 @@
 import React from "react";
 import "./NavBar.css"
 import { Link } from 'react-router-dom';
-import Category from "../Category/Category";
-function Home() {
+import { fetchProducts} from "../../store/product";
+import { useDispatch } from "react-redux";
 
-    // const dispatch = useDispatch()
+function Home() {
+    const dispatch = useDispatch()
     // useEffect(() =>{
     //     dispatch(fetchProducts())
     // },[])
     const handleClick = e =>{
         e.preventDefault()
-
+        dispatch(fetchProducts())
     }
     return(
     <div className="home-navbar">
             <div className="home-navbar-row">
                 <ul className="catergory-bar">
-                <li><a className="category" href="#">Halloween Hub</a></li> 
-                <li> <Link className="category" to={'/category/Pet'}>Pet</Link> 
+                {/* <li onClick={handleClick}><a className="category" href="#">Halloween Hub</a></li>  */}
+                <li onClick={handleClick}> <Link className="category" to={'/category/Pets'}>Pets</Link> 
                     {/* <div className="dropdown-menu">
                         <ul>
                             <li><a href="#">All Pets</a></li>
@@ -28,12 +29,12 @@ function Home() {
                         </ul>
                     </div> */}
                 </li>
-                <li><Link className="category" to={'/category/Pokemon'}>Pokemon</Link> </li>
-                <li><Link className="category" to={'/category/Toys & Entertainment'}>Toys & Entertainment</Link></li>
-                <li><Link className="category" to={'/category/Art & Collectibles'}>Art & Collectibles</Link></li>
-                <li><Link className="category" to={'/category/Clothing & Shoes'}>Clothing & Shoes</Link></li>
-                <li><Link className="category" to={'/category/Home & Living'}>Home & Living</Link></li>
-                <li><Link className="category" to={'/category/Gifts & Gift Cards'}>Gifts & Gift Cards</Link></li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Pokemon'}>Pokemon</Link> </li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Toys & Entertainment'}>Toys & Entertainment</Link></li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Art & Collectibles'}>Art & Collectibles</Link></li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Clothing & Shoes'}>Clothing & Shoes</Link></li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Home & Living'}>Home & Living</Link></li>
+                <li onClick={handleClick}><Link className="category" to={'/category/Gifts & Gift Cards'}>Gifts & Gift Cards</Link></li>
                 </ul>
             </div>
             {/* <hr className="nav-divider"/> */}

@@ -17,8 +17,6 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
 }
 
-
-
 function Root() {
   return (
     <div className='all-website'>

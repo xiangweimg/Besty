@@ -14,6 +14,7 @@ function Home() {
     useEffect(() =>{
         dispatch(fetchProducts())
     },[])
+
     return(
         <div style={{width: "100%"}}>
             <div className="home-header">

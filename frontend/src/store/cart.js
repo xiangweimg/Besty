@@ -5,21 +5,33 @@ import { LOGIN_USER, LOGOUT_USER } from './session';
 
 const ADD_CART ="cart/ADD_CART"
 const REMOVE_CART="cart/REMOVE_CART"
+const FIND_CART = "cart/FIND_CART"
 
+export const findCart = (cart) => { //action
+    return {
+        type: FIND_CART,
+        cart
+    };
+};
 export const populateCart = (cart) => { //action
     return {
         type: ADD_CART,
-        payload:cart
+        cart
     };
 };
-
 export const deleteCart = (cartId) => { //action
     return {
         type: REMOVE_CART,
         cartId
     };
 };
-
+export const fetchCart = (userId) => async(dispatch) => {
+    const res = await csrfFetch(`/api/users/${userId}`);
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(findCart(data.carts))
+    }
+}
 export const createCart = (product_id, quantity, buyer_id) => async dispatch => { 
     const add_product = {product_id, quantity, buyer_id}
     const res = await csrfFetch('/api/cart_items', {
@@ -53,18 +65,21 @@ export const removeCart = (cartId) => async dispatch => {
 
 export default function cartReducer(state = {}, action) {
     Object.freeze(state)
-    const newState= {...state}
+    let newState= {...state}
     switch (action.type) {
         case LOGIN_USER:
-        case GET_USERS:
             return { ...newState, ...action.payload.carts };
+        case GET_USERS:
+            return { ...newState, ...action.payload.carts };        
+        case LOGOUT_USER:
+            return {};
         case ADD_CART:
-            return { ...newState, ...action.payload.carts }
+            return { ...newState, ...action.cart.carts }
         case REMOVE_CART:
             delete newState[action.cartId]
             return newState;
-        case LOGOUT_USER:
-            return {};
+        case FIND_CART:
+            return { ...newState, ...action.cart }
         default:
         return state;
     }};

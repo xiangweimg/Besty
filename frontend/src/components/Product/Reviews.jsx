@@ -14,8 +14,9 @@ const ReviewShow = () => {
     if(!product.reviews){
         product.reviews = {}
     }
-    const reviews = Object.values(product.reviews)
+    // const reviews = Object.values(product.reviews)
     const sessionUser = useSelector(state => state.session.user);
+    const reviews = useSelector(state => state.reviews);
     const [content, setReview] = useState("")
     const [rating, setRating] = useState(0)
 
@@ -32,8 +33,9 @@ const ReviewShow = () => {
             reviewerId: sessionUser.id
         }
         dispatch(createReview(review))
+        setReview("")
     }
-    const reviewList = reviews.map(review => <ReviewList key={review.id} review={review}/>)
+    const reviewList = Object.values(reviews).map(review => <ReviewList key={review.id} review={review}/>)
 
     if(product){
         return (

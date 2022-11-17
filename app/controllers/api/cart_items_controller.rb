@@ -5,7 +5,6 @@ class Api::CartItemsController < ApplicationController
       else
         @carts = CartItem.all
       end
-      
       render :index
     end
 

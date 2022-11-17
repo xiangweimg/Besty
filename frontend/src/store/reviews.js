@@ -14,7 +14,7 @@ export const findReviews = (reviews) => { //action
 export const addReview = (review) => { //action
     return {
         type: ADD_REVIEW,
-        review
+        payload: review
     };
 };
 
@@ -72,7 +72,9 @@ export default function reviewReducer(state = {}, action) {
             newState = action.reviews;
             return newState;
         case ADD_REVIEW:
-            return { ...newState, ...action.review }
+            // return { ...newState, ...action.payload }
+            newState[action.payload.id] = action.payload;
+            return newState
         case REMOVE_REVIEW:
             delete newState[action.reivewId]
             return newState;

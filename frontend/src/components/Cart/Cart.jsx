@@ -3,26 +3,34 @@ import CartItem from './CartItem';
 import Checkout from "./Checkout";
 import CartNotice from "./CartNotice";
 import EmptyCart from "./EmptyCart";
-import { useSelector } from "react-redux";
-import { getUser} from "../../store/users";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser, fetchUser} from "../../store/users";
+import { fetchCart } from "../../store/cart";
 import './Cart.css';
 
 function Cart() {
+  const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user) //currentuser
-  const [shopperId, setShopperId] = useState(sessionUser?.id);
-  if(!sessionUser.carts){
-    sessionUser.carts = {}
-  }
-  let total = 0;
+  const [shopperId, setShopperId] = useState("");
+
   useEffect(() => {
     if (sessionUser) setShopperId(sessionUser.id);
   }, [sessionUser])
-  const carts = useSelector(({carts}) => {
-    return Object.values(carts).filter(cart => cart.buyerId === sessionUser?.id);
-  });
-  let cart_arr = Object.values(carts)
-   cart_arr.forEach(element => total+= element.quantity)
-  const shopper = useSelector(getUser(shopperId))
+
+  useEffect(()=>{
+    if(sessionUser){
+      dispatch(fetchCart(sessionUser.id))
+    }
+}, [])
+
+  const carts = useSelector(state => Object.values(state.carts))
+
+  // let carts = Object.values(sessionUser.carts)
+  let total = 0;
+  // let cart_arr = Object.values(carts)
+  carts.forEach(element => total+= element.quantity)
+  // const shopper = useSelector(getUser(shopperId))
+
   if (!carts.length) return (
     <div>
       <CartNotice/>
@@ -32,7 +40,7 @@ function Cart() {
   );
 
   let cartItems
-  if(shopper){
+  if(sessionUser){
     cartItems = carts.map(item => <CartItem key={item.id} item={item}></CartItem>)
   }
 

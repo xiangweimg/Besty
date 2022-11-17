@@ -13,7 +13,10 @@ function Checkout() {
         // `${carts.map(item => `${item.quantity} of ${product.productName}`).join('\n')}`
         );
     }
-    const carts = useSelector(state => Object.values(state.carts))
+    const sessionUser = useSelector(state => state.session.user) //currentuser
+
+    // const carts = useSelector(state => Object.values(state.carts))
+    let carts = Object.values(sessionUser.carts)
     let total = 0
     carts.forEach(element => total += element.quantity * element.price) 
     let total_items = 0
@@ -33,7 +36,7 @@ function Checkout() {
             <p>${total.toFixed(2)}</p>
         </div>
         <div className="items-total">
-            <span>Shospan discont</span>
+            <span>Shop discont</span>
             <p>-${discount}</p>
         </div>
         <hr />

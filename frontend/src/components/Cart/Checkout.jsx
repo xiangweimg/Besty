@@ -9,14 +9,13 @@ function Checkout() {
     const onSubmit = (e) => {
         e.preventDefault();
         window.alert(
-        "Purchased the following:\n" 
+        "You have successfully made the purchase!" 
         // `${carts.map(item => `${item.quantity} of ${product.productName}`).join('\n')}`
         );
     }
     const sessionUser = useSelector(state => state.session.user) //currentuser
 
-    // const carts = useSelector(state => Object.values(state.carts))
-    let carts = Object.values(sessionUser.carts)
+    const carts = useSelector(state => Object.values(state.carts))
     let total = 0
     carts.forEach(element => total += element.quantity * element.price) 
     let total_items = 0
@@ -34,10 +33,6 @@ function Checkout() {
         <div className="items-total">
             <span>Item(s) total</span>
             <p>${total.toFixed(2)}</p>
-        </div>
-        <div className="items-total">
-            <span>Shop discont</span>
-            <p>-${discount}</p>
         </div>
         <hr />
         <div className="items-total-sub">

@@ -34,7 +34,8 @@ function App() {
         <Navigation className='navigation'/>
         <Home/>
       </Route>
-      <Route exact path='/category/:category'>
+      <Route exact path='/categories/:categoryId'>
+        <Navigation />
         <Category/>
       </Route>
 

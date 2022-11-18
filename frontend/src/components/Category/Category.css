@@ -1,0 +1,15 @@
+.category-products{
+    display:flex;
+    flex-wrap:wrap;
+    overflow-y:hidden;
+    padding-left: 0 !important;
+    flex: 1 0 100%;
+}
+.category-products li{
+    list-style: none;
+    /* display: list-item; */
+    flex: 1 1 200px 100px;
+    object-fit: contain;
+    max-width: 330px;
+    padding: 9px;
+}

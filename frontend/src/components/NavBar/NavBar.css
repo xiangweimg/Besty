@@ -1,5 +1,6 @@
 .home-navbar{
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .home-navbar-row{
@@ -12,6 +13,7 @@
     width: 100%;
     justify-content: space-evenly;
     align-self: center;
+    margin-bottom: 0;
 }
 .category{
     font-size: 13px;
@@ -42,4 +44,8 @@
 }
 .nav-divider{
     margin-bottom: 0;
+    /* height: 2px;
+    background: #EFEFEF; */
+    border-top: 2px solid #DFDFDF;
+
 }

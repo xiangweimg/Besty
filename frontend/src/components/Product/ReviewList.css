@@ -22,3 +22,15 @@
 #review-logo{
     margin-right: 6px;
 }
+.review-remove-button{
+    all:unset;
+    font-size:13px ;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 9px;
+    border-radius: 24px;
+}
+.review-remove-button:hover{
+    background-color: rgb(237, 229, 229);
+    transition: all 0.2s ease-in-out;
+}

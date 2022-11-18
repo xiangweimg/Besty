@@ -32,7 +32,7 @@ class User < ApplicationRecord
     dependent: :destroy 
 
     has_many :reviews,
-    foreign_key: :user_id,
+    foreign_key: :reviewer_id,
     class_name: :Review,
     dependent: :destroy 
 

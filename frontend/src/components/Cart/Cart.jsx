@@ -4,7 +4,6 @@ import Checkout from "./Checkout";
 import CartNotice from "./CartNotice";
 import EmptyCart from "./EmptyCart";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, fetchUser} from "../../store/users";
 import { fetchCart } from "../../store/cart";
 import './Cart.css';
 

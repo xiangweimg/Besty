@@ -13,50 +13,6 @@ const SignupFormPage = () =>{
     const [confirmPassword, setConfirmPassword] = useState("")
     const [errors, setErrors] = useState([])
     
-    // let emailAddress;
-    // let firstName;
-    // let pass1
-    // let pass2
-    // useEffect(() => {
-    //   email = document.getElementById('email')
-    //   password2 = document.getElementById('password')
-    // }, [])
-    // useEffect(() => {
-    //   email = document.getElementById('email')
-    //   password2 = document.getElementById('password')
-    // }, [credential, password])
-    
-    // function checkInputs(){
-    //   if(credential.length === 0) {
-    //     //show error
-    //     //add error class
-    //     setErrorFor(email, "Email can't be blank")
-    //   }else{
-    //     setSuccessFor(email)
-    //   }
-    //   if(password.length === 0) {
-    //     setErrorFor(password2,"Password can't be blank")
-    //   }else if(password.length < 6){
-    //     setErrorFor(password2,"Password was incorrect ")
-    //   }else{
-    //     setSuccessFor(password2)
-    //   }
-    // }
-  
-    // function setSuccessFor(input){
-    //   const formControl = input.parentElement;
-    //   formControl.className = 'form-control'
-    // }
-  
-    // function setErrorFor(input, message){
-    //   const formControl = input.parentElement;
-    //   const small = formControl.querySelector('small')
-    //   //add error message inside small
-    //   small.innerText = message
-    //   //add error class
-    //   formControl.className = 'form-control error'
-    // }
-    
     const handleSubmit = e => {
         e.preventDefault()
         if (password === confirmPassword) {

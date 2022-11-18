@@ -233,12 +233,12 @@ ApplicationRecord.transaction do
     })
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
-    puts "Creating reviews..."
-    Review.create!(
-      reviewer_id: 1,
-      product_id:1,
-      content: "good",
-      rating: 5
-    )
+    # puts "Creating reviews..."
+    # Review.create!(
+    #   reviewer_id: 1,
+    #   product_id:1,
+    #   content: "good",
+    #   rating: 5
+    # )
 
 end

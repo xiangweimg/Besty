@@ -11,7 +11,6 @@ ApplicationRecord.transaction do
     # Like.destroy.all
     Category.destroy_all
     Store.destroy_all
-    # Review.destroy_all
     Product.destroy_all
     User.destroy_all
   
@@ -21,7 +20,6 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('categories')
     ApplicationRecord.connection.reset_pk_sequence!('products')
     ApplicationRecord.connection.reset_pk_sequence!('stores')
-    # ApplicationRecord.connection.reset_pk_sequence!('reviews')
   
     puts "Creating categories..."
     Category.create!(
@@ -233,12 +231,6 @@ ApplicationRecord.transaction do
     })
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
-    # puts "Creating reviews..."
-    # Review.create!(
-    #   reviewer_id: 1,
-    #   product_id:1,
-    #   content: "good",
-    #   rating: 5
-    # )
+
 
 end

@@ -6,6 +6,7 @@ import { createReview } from '../../store/reviews';
 import { findReviews } from '../../store/reviews';
 import ReviewList from './ReviewList';
 import './Review.css'
+import LoginFormModal from '../LoginFormModal/Modal';
 
 const ReviewShow = () => {
     const dispatch = useDispatch();
@@ -14,15 +15,24 @@ const ReviewShow = () => {
     if(!product.reviews){
         product.reviews = {}
     }
-    // const reviews = Object.values(product.reviews)
     const sessionUser = useSelector(state => state.session.user);
     const reviews = useSelector(state => state.reviews);
     const [content, setReview] = useState("")
     const [rating, setRating] = useState(0)
+    let submitButton
+    if(sessionUser){
+        submitButton = <input id='submit-review'type="submit" value="Submit review" />
 
+    }else{
+        let message = {
+            text: 'Submit review',
+            type: 'submit-review-button'
+        }
+        submitButton =  <LoginFormModal message={message} />
+    }
     useEffect(()=>{
         dispatch(findReviews(product.reviews))
-    }, [productId])
+    }, [productId, dispatch, product.reviews])
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -86,7 +96,9 @@ const ReviewShow = () => {
                         }}/>
                        </label>
                        <br/>
-                        <input type="submit" value="Submit" />
+                       <div className='submit-button-container'>
+                            {submitButton}
+                       </div>
                     </form>
                 </div>
             </div>

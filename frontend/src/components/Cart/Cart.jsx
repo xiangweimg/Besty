@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import CartItem from './CartItem';
 import Checkout from "./Checkout";
 import CartNotice from "./CartNotice";
@@ -10,30 +10,27 @@ import './Cart.css';
 function Cart() {
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user) //currentuser
-  const [shopperId, setShopperId] = useState("");
+  // const [shopperId, setShopperId] = useState("");
 
-  useEffect(() => {
-    if (sessionUser) setShopperId(sessionUser.id);
-  }, [sessionUser])
+  // useEffect(() => {
+  //   if (sessionUser) setShopperId(sessionUser.id);
+  // }, [sessionUser])
 
   useEffect(()=>{
     if(sessionUser){
       dispatch(fetchCart(sessionUser.id))
     }
-}, [])
+}, [dispatch, sessionUser])
 
   const carts = useSelector(state => Object.values(state.carts))
 
-  // let carts = Object.values(sessionUser.carts)
   let total = 0;
-  // let cart_arr = Object.values(carts)
   carts.forEach(element => total+= element.quantity)
-  // const shopper = useSelector(getUser(shopperId))
 
   if (!carts.length) return (
     <div>
       <CartNotice/>
-      <EmptyCart/>
+      <EmptyCart message="empty"/>
       <hr />
     </div>
   );

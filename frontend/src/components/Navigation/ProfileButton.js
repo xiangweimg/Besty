@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {Redirect} from 'react-router-dom'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import "./ProfileButton.css"
 
 function ProfileButton({ user }) {
@@ -35,17 +36,22 @@ function ProfileButton({ user }) {
   return (
     <>
       <button className="profile-button" onClick={openMenu}>
-        <AccountCircleIcon/>
+        <AccountCircleIcon style={{ fontSize: 30 }} />
       </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
+      <div className="dropdown-wrap">
+        {showMenu && (
+          <ul className="profile-dropdown">
+            <li id="profile-username">
+              <AccountCircleIcon style={{ fontSize: 30 }} />
+              {user.username}
+            </li>
+            <li id="profile-signout" onClick={logout}>
+              <ExitToAppIcon style={{ fontSize: 30 }}/>
+              <button onClick={logout}>Sign out</button>
+            </li>
+          </ul>
+        )}
+      </div>
     </>
   );
 }

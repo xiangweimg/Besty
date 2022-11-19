@@ -6,6 +6,7 @@ import { LOGIN_USER, LOGOUT_USER } from './session';
 const ADD_CART ="cart/ADD_CART"
 const REMOVE_CART="cart/REMOVE_CART"
 const FIND_CART = "cart/FIND_CART"
+// const EMPTY_CART = 'cart/EMPTY_CART'
 
 export const findCart = (cart) => { //action
     return {

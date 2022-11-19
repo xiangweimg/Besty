@@ -9,7 +9,8 @@ const CategoryItemList = ({product}) => {
         <li className='category-product'>
             <Link className='category-product-img' to={`/products/${product.id}`}>
                 <img src={product.img} alt="" />
-                {/* <div  className='home-product-price'>${product.price}</div> */}
+                <span className='category-product-name'>{product.productName}</span>
+                <div  className='category-product-price'>${product.price}</div>
             </Link>
         </li>
     )

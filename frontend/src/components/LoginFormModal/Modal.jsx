@@ -4,7 +4,7 @@ import {Modal} from '../../context/Modal'
 import SignupForm from '../SignupFormModal/SignupForm'
 import './Modal.css'
 
-function LoginFormModal({type}) {
+function LoginFormModal({message}) {
   const [showModal, setShowModal] = useState(false);
   const [signup, setSignup] = useState(false)
 
@@ -14,8 +14,10 @@ function LoginFormModal({type}) {
   }
   return (
     <>
-      <div className={type === 'add-to-cart-button' ? "add-to-cart-button-for-modal" : "login-button-nav"} 
-      onClick={() => setShowModal(true)}>{type === "add-to-cart-button" ? "Add to Cart" : "Sign in"}</div>
+    {/* {type === 'add-to-cart-button' ? "add-to-cart-button-for-modal" : "login-button-nav" */}
+      <div
+      className={message.type}  
+      onClick={() => setShowModal(true)}>{message.text}</div>
       {showModal && (
         <Modal className = "Modal" onClose={() => {setShowModal(false); setSignup(false)}}>
           { signup && (
@@ -29,7 +31,6 @@ function LoginFormModal({type}) {
               <p id='signin-modal'>Sign in</p>
               <input type="submit" className='register_on_modal' onClick={handleClick} value="Register"/>
               </div>
-
               <LoginForm />
             </div>)
           }

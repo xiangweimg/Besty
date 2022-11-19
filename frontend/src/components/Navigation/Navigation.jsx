@@ -32,9 +32,13 @@ function Navigation() {
       <ProfileButton user={sessionUser} />
     );
   } else {
+    let message = {
+      text: 'Sign in',
+      type: 'sign-in-button'
+  }
     sessionLinks = (
       <>
-        <LoginFormModal />
+        <LoginFormModal message={message}/>
       </>
     );
   }

@@ -1,4 +1,4 @@
-.add-to-cart-button-for-modal{
+.add-to-cart-button{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
     background-color: black;
     color: white;
@@ -10,4 +10,37 @@
     font-size: 15px;
     margin-top: 15px;
     text-align: center;
+}
+.submit-review-button{
+    all: unset;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sign-in-button{
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.4;
+    border-radius: 24px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    z-index:10;
+    margin-right: 5px !important;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: normal;
+}
+
+.sign-in-button:hover{
+    background-color: #EFEFEF;
+    transition: all 0.2s ease-in-out;
 }

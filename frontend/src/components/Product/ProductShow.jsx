@@ -31,8 +31,12 @@ const ProductShow = () => {
             <input onClick={add_to_cart} className='add-to-cart' type="submit" value="Add to cart" />
         )
     } else {
+        let message = {
+            text: 'Add to cart',
+            type: 'add-to-cart-button'
+        }
         dynamicAddToCartButton = (
-            <LoginFormModal type={"add-to-cart-button"}/>
+            <LoginFormModal message={message}/>
         )
     }
     const increment = e =>{

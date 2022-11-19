@@ -38,7 +38,7 @@
 #visa-icon>img{
     width: 80%;
 }
-.checkout-button button[type="submit"] {
+.checkout-link {
     background-color: black;
     color: white;
     padding: 15px;
@@ -49,6 +49,7 @@
     font-size: 15px;
     margin-top: 15px;
     width: 95%;
+    text-align: center;
 }
 .checkout-button{
     display: flex;

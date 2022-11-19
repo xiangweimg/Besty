@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 1350px;
 }
 .home-navbar-row{
     display: flex;
-    width: 1350px;
     height: 35px;
 }
 .catergory-bar{

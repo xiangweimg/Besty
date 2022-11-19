@@ -17,7 +17,6 @@
   display: flex;
   max-width: 1350px;
   margin: auto;
-  position: sticky;
   height: 60px;
   align-items: center;
   justify-content: center;
@@ -69,7 +68,6 @@
   color: black;
   padding: 14px;
   border-radius: 100%;
-  /* margin-left: -20px; */
   margin-right: -25px;
 }
 .shoppingIcon:hover{

@@ -3,10 +3,12 @@ import { Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
-import "./App.css"
 import Category from "./components/Category/Category";
 import ProductShow from "./components/Product/ProductShow";
 import ShopPage from "./components/Shop/ShopPage";
+import EmptyCart from "./components/Cart/EmptyCart";
+import CartNotice from "./components/Cart/CartNotice";
+import "./App.css"
 
 
 
@@ -16,7 +18,7 @@ function App() {
     <div className="app">
     <Switch>
       <Route exact path='/cart'>
-        <Navigation />
+        <Navigation className='app-page'/>
         <Cart/>
       </Route>
 
@@ -37,6 +39,11 @@ function App() {
       <Route exact path='/categories/:categoryId'>
         <Navigation />
         <Category/>
+      </Route>
+      <Route exact path='/checkout'>
+        <Navigation />
+        <CartNotice/>
+        <EmptyCart message ='checkout'/>
       </Route>
 
     </Switch>

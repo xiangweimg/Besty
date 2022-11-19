@@ -1,10 +1,9 @@
 import React from "react";
 import "./NavBar.css"
 import { Link } from 'react-router-dom';
-import { useDispatch } from "react-redux";
 
 function Home() {
-    const dispatch = useDispatch()
+
     return(
     <div>
         <div className="home-navbar">

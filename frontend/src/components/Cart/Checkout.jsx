@@ -1,26 +1,27 @@
 import React from "react";
 import LockIcon from '@mui/icons-material/Lock';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import visaicon from "../../img/visaicon.png"
+import { removeCart } from "../../store/cart";
+import { Link } from "react-router-dom";
+
+
 import './Checkout.css';
 
 function Checkout() {
-    // const carts = useSelector({carts})
-    const onSubmit = (e) => {
-        e.preventDefault();
-        window.alert(
-        "You have successfully made the purchase!" 
-        // `${carts.map(item => `${item.quantity} of ${product.productName}`).join('\n')}`
-        );
-    }
-    const sessionUser = useSelector(state => state.session.user) //currentuser
-
+    const dispatch = useDispatch()
     const carts = useSelector(state => Object.values(state.carts))
     let total = 0
     carts.forEach(element => total += element.quantity * element.price) 
     let total_items = 0
     carts.forEach(element => total_items += element.quantity) 
     let discount = 0;
+    
+    const onSubmit = (e) => {
+        e.preventDefault();
+        carts.forEach(cart => dispatch(removeCart(cart.id)))
+    }
+
   return (
     <div className="checkout">
         <div className="secure-payment-header">
@@ -48,8 +49,8 @@ function Checkout() {
             <span>Total({total_items} items)</span>
             <span>${(total + discount).toFixed(2)}</span>
         </div>
-        <form className="checkout-button" onSubmit={onSubmit}>
-            <button type="submit">Proceed to checkout</button>
+        <form className="checkout-button" onClick={onSubmit}>
+            <Link to='/checkout' className="checkout-link">Proceed to checkout</Link>
         </form>
     </div>
   )

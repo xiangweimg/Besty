@@ -10,7 +10,6 @@
     align-items: left;
     text-align: left;
 }
-
 .product-reviews{
     width: 100%;
     font-weight: 200;
@@ -46,4 +45,7 @@
 .review-header h1{
     font-weight: 200;
     font-size: 26px;
+}
+.submit-button-container{
+    margin-top: 18px;
 }

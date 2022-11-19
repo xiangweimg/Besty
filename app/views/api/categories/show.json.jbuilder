@@ -5,6 +5,7 @@ json.products do
         json.set! product.id do 
             json.extract! product, :id, :product_name
             json.img product.photo.url
+            json.price product.price
         end
     end
 end

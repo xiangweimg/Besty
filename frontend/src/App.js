@@ -8,6 +8,7 @@ import ProductShow from "./components/Product/ProductShow";
 import ShopPage from "./components/Shop/ShopPage";
 import EmptyCart from "./components/Cart/EmptyCart";
 import CartNotice from "./components/Cart/CartNotice";
+import UserPage from './components/UserPage/UserPage'
 import "./App.css"
 
 
@@ -45,7 +46,10 @@ function App() {
         <CartNotice/>
         <EmptyCart message ='checkout'/>
       </Route>
-
+      <Route exact path='/users/:userId'>
+        <Navigation />
+        <UserPage/>
+      </Route>
     </Switch>
     </div>
 

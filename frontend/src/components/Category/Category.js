@@ -14,7 +14,6 @@ function Category() {
   },[categoryId, dispatch]);//state add category
   
   const category =  useSelector(getCategory)
-  console.log(category.products);
   let products
   if(category.products){
      products = Object.values(category.products)

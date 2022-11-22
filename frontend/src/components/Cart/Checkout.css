@@ -51,6 +51,10 @@
     width: 95%;
     text-align: center;
 }
+.checkout-link:hover{
+    background-color: rgb(68, 66, 66);
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
 .checkout-button{
     display: flex;
     justify-content: center;

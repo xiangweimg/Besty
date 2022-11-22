@@ -22,7 +22,7 @@ const ProductShow = () => {
     },[productId, dispatch]);//state add product
 
     let prop
-    if(product){
+    if(product && sessionUser){
          prop = {
             productId: productId,
             quantity: quantity,

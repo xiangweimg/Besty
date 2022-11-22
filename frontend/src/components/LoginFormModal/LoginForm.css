@@ -7,21 +7,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
 }
-.register_on_modal{
-    border: 2px solid black;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    height: 30px;
-    justify-content: center;
-    padding-bottom: 22px;
-    padding-top: 10px;
-    padding-right: 13px;
-    padding-left: 13px;
-    justify-content: center;
-}
+
 .register_on_modal:visited {
     color: black;
     text-decoration: none;
@@ -48,6 +34,10 @@
     padding-right: 140px;
     margin-top: 15px;
     font-size: 15px;
+}
+.signin_button:hover{
+    background-color: rgb(68, 66, 66);
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
 }
 .form-control{
     margin-top: 18px;

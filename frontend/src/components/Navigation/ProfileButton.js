@@ -11,22 +11,25 @@ function ProfileButton({ user }) {
   const [showMenu, setShowMenu] = useState(false);
   
   const openMenu = () => {
-    if (showMenu) return;
     setShowMenu(true);
+    if (showMenu) return;
   };
   
   useEffect(() => {
-    if (!showMenu) return;
-
+    // if (!showMenu) return;
     const closeMenu = () => {
       setShowMenu(false);
     };
-
-    document.addEventListener('click', closeMenu);
-  
-    return () => document.removeEventListener("click", closeMenu);
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', closeMenu);
+      // return () => document.removeEventListener("click", closeMenu);
+    }, 0);
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("click", closeMenu);
+    };
   }, [showMenu]);
-
+  
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());

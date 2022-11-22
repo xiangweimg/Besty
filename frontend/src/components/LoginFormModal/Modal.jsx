@@ -14,7 +14,6 @@ function LoginFormModal({message}) {
   }
   return (
     <>
-    {/* {type === 'add-to-cart-button' ? "add-to-cart-button-for-modal" : "login-button-nav" */}
       <div
       className={message.type}  
       onClick={() => setShowModal(true)}>{message.text}</div>
@@ -29,7 +28,7 @@ function LoginFormModal({message}) {
             <div>
               <div className='header_login_modal'>
               <p id='signin-modal'>Sign in</p>
-              <input type="submit" className='register_on_modal' onClick={handleClick} value="Register"/>
+              <input type="submit" id='register_on_modal' onClick={handleClick} value="Register"/>
               </div>
               <LoginForm />
             </div>)

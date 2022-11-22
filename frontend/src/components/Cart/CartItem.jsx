@@ -19,11 +19,12 @@ function CartItem({item}) {
     setCount(count + 1)
     dispatch(updateCart(item.id, item.productId, count + 1, sessionUser.id))
   }
+
   const clickMinusButton= e =>{
     if (count > 0){
       setCount(count - 1)
       dispatch(updateCart(item.id, item.productId, count - 1, sessionUser.id))
-    }else if(e === NaN){
+    }else if(isNaN(e)){
       setCount(0)
     }
   }

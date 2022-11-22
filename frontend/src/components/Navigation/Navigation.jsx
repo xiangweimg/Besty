@@ -16,16 +16,16 @@ function Navigation() {
   const dispatch = useDispatch()
   let total = 0
   carts.forEach(element => total += element.quantity)
-  // useEffect(() =>{
-  //   carts.forEach(element => total += element.quantity)
-  // },[carts])
+
   useEffect(()=>{
     if(sessionUser){
       dispatch(fetchCart(sessionUser.id))
-    }},[])
+    }},[dispatch, sessionUser])
+
   useEffect(()=>{
     total = 0
   }, [sessionUser])
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (

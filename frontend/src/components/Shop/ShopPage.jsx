@@ -23,7 +23,7 @@ const ShopPage = () => {
 
     useEffect(()=>{
         dispatch(fetchShop(shopId))
-    },[shopId]);
+    },[shopId, dispatch]);
 
     if(shop){
         return (

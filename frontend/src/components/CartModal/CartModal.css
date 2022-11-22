@@ -1,0 +1,52 @@
+#add-to-cart{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+#add-to-cart:hover, #view-cart-btn:hover{
+    background-color: rgb(68, 66, 66);
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
+.modal-modal-description{
+    display: flex;
+    flex-direction: column;
+}
+#view-cart-btn{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+    width: 90%;
+}
+#keep-shopping-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+    width:90%;
+}
+#keep-shopping-btn:hover{
+    background-color: #EFEFEF;
+    transition: all 0.2s ease-in-out;
+}

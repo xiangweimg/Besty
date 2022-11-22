@@ -22,7 +22,6 @@ const ReviewShow = () => {
     let submitButton
     if(sessionUser){
         submitButton = <input id='submit-review'type="submit" value="Submit review" />
-
     }else{
         let message = {
             text: 'Submit review',

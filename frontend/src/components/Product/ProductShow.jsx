@@ -1,12 +1,13 @@
+import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct, fetchProduct } from '../../store/product';
-import { createCart } from '../../store/cart';
 import LoginFormModal from '../LoginFormModal/Modal';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Review from './Reviews';
+import CartModal from '../CartModal/CartModal';
 import './ProductShow.css'
 
 const ProductShow = () => {
@@ -18,18 +19,26 @@ const ProductShow = () => {
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
-    },[productId]);//state add product
+    },[productId, dispatch]);//state add product
 
-    const add_to_cart = (e) =>{
-        e.preventDefault()
-        dispatch(createCart(productId, quantity, sessionUser.id))
-    };
+    let prop
+    if(product){
+         prop = {
+            productId: productId,
+            quantity: quantity,
+            sessionUserId: sessionUser.id,
+            availability: product.availability
+        }
+    }
+    
+    // setShowModal(prev => !prev)
 
     let dynamicAddToCartButton;
     if (sessionUser) {
         dynamicAddToCartButton = (
-            <input onClick={add_to_cart} className='add-to-cart' type="submit" value="Add to cart" />
-        )
+            // <input onClick={add_to_cart} className='add-to-cart' type="button" value="Add to cart"/>
+            <CartModal prop={prop}/>
+            )
     } else {
         let message = {
             text: 'Add to cart',
@@ -85,8 +94,7 @@ const ProductShow = () => {
                     </div>
                     </label>
                 </div>
-                <div id='product-stock'>Stock: 
-                { product.availability }</div>
+                <div id='product-stock'>Stock: { product.availability }</div>
                 {dynamicAddToCartButton}
                 <div className='product-description'>
                     <p>Description:</p>

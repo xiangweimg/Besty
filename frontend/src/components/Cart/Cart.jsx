@@ -10,11 +10,6 @@ import './Cart.css';
 function Cart() {
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user) //currentuser
-  // const [shopperId, setShopperId] = useState("");
-
-  // useEffect(() => {
-  //   if (sessionUser) setShopperId(sessionUser.id);
-  // }, [sessionUser])
 
   useEffect(()=>{
     if(sessionUser){
@@ -37,7 +32,7 @@ function Cart() {
 
   let cartItems
   if(sessionUser){
-    cartItems = carts.map(item => <CartItem key={item.id} item={item}></CartItem>)
+    cartItems = carts.map(item => <CartItem key={item.productId} item={item}></CartItem>)
   }
 
   return (

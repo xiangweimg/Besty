@@ -76,6 +76,8 @@ export default function cartReducer(state = {}, action) {
             return {};
         case ADD_CART:
             return { ...newState, ...action.cart.carts }
+            // newState[action.cart.carts.productId] = action.cart.carts;
+            // return newState; 
         case REMOVE_CART:
             delete newState[action.cartId]
             return newState;

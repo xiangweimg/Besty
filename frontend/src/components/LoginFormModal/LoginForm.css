@@ -22,12 +22,10 @@
     padding-left: 13px;
     justify-content: center;
 }
-
 .register_on_modal:visited {
     color: black;
     text-decoration: none;
 }
-
 .header_login_modal{
     display: flex;
     justify-content: space-between;

@@ -14,12 +14,28 @@
     justify-content: space-evenly;
     align-self: center;
     margin-bottom: 0;
+    padding-bottom: 5px;
 }
 .category{
     font-size: 13px;
     /* cursor: pointer; */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 100;
+    padding-bottom: 5px;
+}
+.category::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    margin: auto;
+    margin-top: 7px;
+} 
+.category:hover::after {
+    width: 100%;
+    background-color: black;
 }
 .home-navbar-row ul{
     list-style: none;    
@@ -43,9 +59,9 @@
     margin: 10px;
 }
 .nav-divider{
+    margin-top: 0;
     margin-bottom: 0;
     /* height: 2px;
     background: #EFEFEF; */
     border-top: 2px solid #DFDFDF;
-
 }

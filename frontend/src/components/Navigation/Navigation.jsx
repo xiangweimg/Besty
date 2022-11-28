@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal/Modal';
@@ -8,23 +8,28 @@ import { fetchCart } from "../../store/cart";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NavBar from '../NavBar/NavBar'
+import SearchPage from '../SearchPage/SearchPage';
 import './Navigation.css';
+import { fetchProducts } from '../../store/product';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const carts = useSelector(state => Object.values(state.carts))
+  const [content, setContent] = useState("")
   const dispatch = useDispatch()
+  const search_icon = document.getElementById('searchIcon');
+
   let total = 0
   carts.forEach(element => total += element.quantity)
-
+  
   useEffect(()=>{
     if(sessionUser){
       dispatch(fetchCart(sessionUser.id))
-    }},[dispatch, sessionUser])
-
-  useEffect(()=>{
-    total = 0
-  }, [sessionUser])
+    }},[sessionUser])
+    
+    useEffect(()=>{
+      total = 0
+    }, [sessionUser])
 
   let sessionLinks;
   if (sessionUser) {
@@ -43,6 +48,11 @@ function Navigation() {
     );
   }
 
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      search_icon.click()
+    }
+  }
   return (
     
 <div className='header-wrapper'>
@@ -54,10 +64,14 @@ function Navigation() {
   
         <div className='header_search'>
           <input className='header_searchInput' type="text" 
-          placeholder='  Search feature is coming soon...'/>
-          <span className='searchIcon'>
-            <SearchIcon sx={{ fontSize: 30 }} />
-          </span>
+          placeholder='Search for anything'
+          value={content}
+          onChange={e=> setContent(e.target.value)}
+          onKeyPress={handleKeyPress}/>
+          <Link to={{ pathname:'/search',
+           state:{content: content} }} className='searchIcon' id='searchIcon'>
+            <SearchIcon sx={{ fontSize: 30 }}/>
+          </Link>
         </div>
         <div className='header_option'>
            {sessionLinks}

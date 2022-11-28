@@ -9,6 +9,7 @@ import ShopPage from "./components/Shop/ShopPage";
 import EmptyCart from "./components/Cart/EmptyCart";
 import CartNotice from "./components/Cart/CartNotice";
 import UserPage from './components/UserPage/UserPage'
+import SearchPage from "./components/SearchPage/SearchPage";
 import "./App.css"
 
 
@@ -49,6 +50,11 @@ function App() {
       <Route exact path='/users/:userId'>
         <Navigation />
         <UserPage/>
+      </Route>
+
+      <Route exact path='/search'>
+        <Navigation />
+        <SearchPage/>
       </Route>
     </Switch>
     </div>

@@ -15,7 +15,7 @@ function Cart() {
     if(sessionUser){
       dispatch(fetchCart(sessionUser.id))
     }
-}, [dispatch, sessionUser])
+}, [sessionUser])
 
   const carts = useSelector(state => Object.values(state.carts))
 

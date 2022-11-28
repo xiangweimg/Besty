@@ -3,7 +3,7 @@ import seller_logo from '../../img/seller_logo.png'
 import { useDispatch, useSelector } from "react-redux"
 import { removeReview } from "../../store/reviews"
 
-const ReviewList=({review})=>{
+const ReviewList=({review, handleEdit})=>{
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
     let id
@@ -12,10 +12,11 @@ const ReviewList=({review})=>{
     }else{
         id = ""
     }
-    const handleClick = e =>{
+    const handleDelete = e =>{
         e.preventDefault()
         dispatch(removeReview(review.id))
     }
+
     return(
         <li>
                 <span>Rating: {review.rating}</span>
@@ -26,7 +27,10 @@ const ReviewList=({review})=>{
                     </span>
                     <span>{review.reviewer} {review.createdAt}</span>
                    {id === review.reviewerId &&
-                    <button className="review-remove-button" onClick={handleClick}>Delete</button>
+                    <div>
+                        <button className="review-remove-button" onClick={handleDelete}>Delete</button>
+                        <button className="review-edit-button" onClick={event => handleEdit(review)}>Edit</button>
+                    </div>
                    } 
                 </div>
         </li>

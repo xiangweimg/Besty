@@ -4,6 +4,7 @@ import { fetchProducts } from "../../store/product";
 import {getProducts} from '../../store/product'
 import ProductIndexItem from './ProductIndexItem'
 import "./Home.css"
+import HomeBar from "./HomeBar";
 
 
 function Home() {
@@ -13,14 +14,13 @@ function Home() {
 
     useEffect(() =>{
         dispatch(fetchProducts())
-    },[dispatch])
+    },[])
     
     return(
         <div style={{width: "100%"}}>
-            <div className="home-header">
-                <br />
-                <h1>Fresh finds fit for cozy season.</h1>
-            </div>
+        <div className="home-bar-wrapper">
+            <HomeBar/>
+        </div>
         <div className="home">
             <div style={{width: '100%'}}>
                 <div className="home-products-wrapper">

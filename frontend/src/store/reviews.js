@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 
 const FIND_REVIEWS = 'reviews/FIND_REVIEWS'
 const ADD_REVIEW ="reviews/ADD_REVIEW"
+const CHANGE_REVIEW = "reviews/CHANGE_REVIEW"
 const REMOVE_REVIEW="reviews/REMOVE_REVIEW"
 
 export const findReviews = (reviews) => { //action
@@ -24,7 +25,12 @@ export const deleteReview = (reivewId) => { //action
         reivewId
     };
 };
-
+export const changeReview = (reivew) => { //action
+    return {
+        type: CHANGE_REVIEW,
+        payload: reivew
+    };
+};
 export const createReview = (review) => async dispatch => { 
     const res = await csrfFetch('/api/reviews', {
         method: "POST",
@@ -36,25 +42,18 @@ export const createReview = (review) => async dispatch => {
   }
 }
 
-// export const fetchReviews = () => async dispatch => {
-//     const res = await csrfFetch('/api/reviews', {
-//     })
-//     if (res.ok) {
-//         const data = await res.json();
-//         dispatch(findReviews(data));
-//     }
-// }
-// export const updateCart = (cart_id, product_id, quantity, buyer_id) => async dispatch => { 
-//     const add_product = {product_id, quantity, buyer_id}
-//     const res = await csrfFetch(`/api/cart_items/${cart_id}`, {
-//         method: "PATCH",
-//         body: JSON.stringify(add_product)
-//   })
-//   if (res.ok) {
-//       const data = await res.json();
-//       dispatch(populateCart(data));
-//   }
-// }
+export const updateReview = ({content, product_id, reviewer_id, rating, id}) => async dispatch => { 
+    const update_review = {content, product_id, reviewer_id, rating}
+    const res = await csrfFetch(`/api/reviews/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(update_review)
+  })
+  if (res.ok) {
+      const data = await res.json();
+      console.log(data);
+      dispatch(changeReview(data));
+  }
+}
 export const removeReview = (reivewId) => async dispatch => { 
     const res = await csrfFetch(`/api/reviews/${reivewId}`, {
         method: "DELETE",
@@ -70,6 +69,9 @@ export default function reviewReducer(state = {}, action) {
     switch (action.type) {
         case FIND_REVIEWS:
             newState = action.reviews;
+            return newState;
+        case CHANGE_REVIEW:
+            newState[action.payload.id] = action.payload;
             return newState;
         case ADD_REVIEW:
             // return { ...newState, ...action.payload }

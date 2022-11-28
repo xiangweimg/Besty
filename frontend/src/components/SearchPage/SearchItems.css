@@ -1,11 +1,11 @@
 
-.category-product-img{
+.search-product-img{
     all:unset;
     color: black;
     overflow: hidden;
     cursor: pointer;
 }
-.category-product-img > img {
+.search-product-img > img {
     width: 100%;
     object-fit: fill;
     box-shadow: 0 1px 6px 0 rgb(34 34 34 / 15%);
@@ -13,16 +13,15 @@
     height: 256px;
     border-radius: 2px;
 }
-.category-product-img > img:hover{
+.search-product-img > img:hover{
     box-shadow: 0 1px 6px 0 rgba(26, 25, 25, 0.5);
     border: 1px solid rgba(34, 34, 34, 0.15);
 }
-.category-product-price{
+.search-product-price{
     font-weight: 700;
     font-size: 16px;
 } 
-
-.category-product-name{
+.search-product-name{
     display: block;
     font-weight: 400;
     font-size: 14px;

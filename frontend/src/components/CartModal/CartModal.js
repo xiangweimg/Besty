@@ -25,7 +25,7 @@ const style = {
 export default function CartModal({prop}) {
   const [open, setOpen] = useState(false);
   const [alert, setAlert] = useState("Added to cart")
-  const [message, setMessage] = useState(`${prop.quantity} item(s) added to cart`)
+  const [message, setMessage] = useState("")
   const dispatch = useDispatch()
   const handleClose = () => setOpen(false);
   const carts = useSelector(state => Object.values(state.carts))
@@ -43,9 +43,10 @@ export default function CartModal({prop}) {
     e.preventDefault()
     if(total > prop.availability){
         setAlert("Failed to add")
-        setMessage('Exceed stock, please adjust your quantity')
+        setMessage('Exceed stock, please check your cart or adjust your quantity')
         setOpen(true)
     }else{
+        setMessage(`${prop.quantity} item(s) added to cart`)
         dispatch(createCart(prop.productId, prop.quantity, prop.sessionUserId))
         setOpen(true)
         // setShowModal(prev => !prev)

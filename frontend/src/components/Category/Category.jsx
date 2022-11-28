@@ -4,6 +4,7 @@ import { fetchCategory, getCategory } from "../../store/category"
 import CategoryItemList from './CategoryItemList'
 import { useEffect } from "react"
 import "./Category.css"
+import HomeBar from "../Home/HomeBar"
 
 function Category() {
   const dispatch = useDispatch()
@@ -11,7 +12,7 @@ function Category() {
 
   useEffect(()=>{
     dispatch(fetchCategory(categoryId))
-  },[categoryId, dispatch]);//state add category
+  },[categoryId]);//state add category
   
   const category =  useSelector(getCategory)
   let products
@@ -24,17 +25,19 @@ function Category() {
   }
     
   return (
-      <div className="category-wrapper">
-        <div className="home-header">
-          <br />
-          <h1>{category.name}</h1>
+    <div>
+        <div className="category-top">
+          <HomeBar/>
         </div>
+      <div className="category-wrapper">
         <div className="category-all">
+          <p>Category: {category.name}</p>
           <ul className="category-products">
             {productList}
           </ul>
         </div>
       </div>
+    </div>
     )
   }
   

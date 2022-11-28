@@ -10,18 +10,6 @@
     max-width: 1350px;
     margin: auto;
 }
-.home-header{
-    background-color: #F8EAE6;
-    margin-top: 0;
-    height: 165px;
-    text-align: center;
-    font-weight: 100;
-}
-.home-header > h1 {
-    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
-    font-weight: 100;
-    margin-top: 0;
-}
 
 .home h3{
     font-weight: 400;

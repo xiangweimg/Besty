@@ -19,7 +19,7 @@ const ProductShow = () => {
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
-    },[productId, dispatch]);//state add product
+    },[productId]);//state add product
 
     let prop
     if(product && sessionUser){

@@ -1,0 +1,29 @@
+
+.search-result{
+    display: flex;
+    max-width: 1370px;
+    margin: auto;
+    margin-top: 80px;
+    flex-direction: column;
+}
+.search-result-amount{
+    max-width: 1360px;
+    display: flex;
+    text-align: left;
+    text-indent: 10px;
+}
+.search-products{
+    max-width: 1370px;
+    display:flex;
+    flex-wrap:wrap;
+    overflow-y:hidden;
+    padding-left: 0 !important;
+    flex: 1 0 100%;
+}
+.search-products li{
+    list-style: none;
+    flex: 1 1 200px 100px;
+    object-fit: contain;
+    max-width: 330px;
+    padding: 6px;
+}

@@ -1,4 +1,26 @@
+.category-wrapper{
+    /* max-width: 1350px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category-all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 1350px;
+    width: 1350px;
+}
+.category-all p{
+    font-size: 25px;
+    margin-bottom: -15px;
+    text-indent: 10px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
 .category-products{
+    max-width: 1370px;
     display:flex;
     flex-wrap:wrap;
     overflow-y:hidden;
@@ -10,5 +32,5 @@
     flex: 1 1 200px 100px;
     object-fit: contain;
     max-width: 330px;
-    padding: 9px;
+    padding: 6px;
 }

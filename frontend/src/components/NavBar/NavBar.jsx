@@ -1,6 +1,6 @@
 import React from "react";
-import "./NavBar.css"
 import { Link } from 'react-router-dom';
+import "./NavBar.css"
 
 function Home() {
 
@@ -10,7 +10,7 @@ function Home() {
                 <div className="home-navbar-row">
                     <ul className="catergory-bar">
                     {/* <li onClick={handleClick}><a className="category" href="#">Halloween Hub</a></li>  */}
-                    <li> <Link className="category" to={'/categories/2'}>Pets</Link> 
+                    <li> <Link className="category" to={'/categories/2'}>Pets & Pet Supplies</Link> 
                         {/* <div className="dropdown-menu">
                             <ul>
                                 <li><a href="#">All Pets</a></li>
@@ -21,7 +21,7 @@ function Home() {
                             </ul>
                         </div> */}
                     </li>
-                    <li><Link className="category" to={'/categories/1'}>Pokemon</Link> </li>
+                    <li><Link className="category" to={'/categories/1'}>Pokemon & Pokemon Cards</Link> </li>
                     <li><Link className="category" to={'/categories/3'}>Toys & Entertainment</Link></li>
                     <li><Link className="category" to={'/categories/5'}>Art & Collectibles</Link></li>
                     <li><Link className="category" to={'/categories/6'}>Clothing & Shoes</Link></li>
@@ -30,8 +30,7 @@ function Home() {
                     </ul>
                 </div>
         </div>
-                <hr className="nav-divider"/>
-                
+                <hr className="nav-divider"/>      
     </div>
     )
 }

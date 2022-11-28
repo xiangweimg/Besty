@@ -5,6 +5,7 @@ import { getProduct } from '../../store/product';
 import { findReviews,updateReview, createReview } from '../../store/reviews';
 import ReviewList from './ReviewList';
 import LoginFormModal from '../LoginFormModal/Modal';
+import ReviewModal from './ReviewModal';
 import './Review.css'
 
 const ReviewShow = () => {
@@ -36,14 +37,6 @@ const ReviewShow = () => {
         dispatch(findReviews(product.reviews))
     }, [productId, product.reviews])
 
-    // useEffect(()=>{
-    //     review_arr.forEach(review =>{
-    //         if (review.reviewerId === sessionUser.id){
-    //             setAllowSubmit(false)
-    //         }else{
-    //             setAllowSubmit(true)
-    //         }})
-    // }, [reviews])
     
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -67,7 +60,7 @@ const ReviewShow = () => {
             setRating("")
         }else{
             if(review_arr.some(review =>review.reviewerId === sessionUser.id)){
-                return alert("Only 1 comment allowed")
+                return alert("Only one comment allowed")
             }else{
                 let reviewToSubmit = {
                     content: content,

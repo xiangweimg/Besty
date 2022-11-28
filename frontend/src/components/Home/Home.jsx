@@ -3,8 +3,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import { fetchProducts } from "../../store/product";
 import {getProducts} from '../../store/product'
 import ProductIndexItem from './ProductIndexItem'
-import "./Home.css"
 import HomeBar from "./HomeBar";
+import "./Home.css"
 
 
 function Home() {

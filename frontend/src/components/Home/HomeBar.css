@@ -22,7 +22,7 @@
     margin: 30px;
     margin-top: 30px;
 }
-.home-header ul li span{
+.home-header ul li img{
     list-style: none;
     width: 114px;
     height: 114px;
@@ -30,8 +30,9 @@
     max-width: 114px;
     border-radius: 50% !important;
     overflow: hidden !important;
-    background-color: antiquewhite;
+    object-fit: contain;
 }
+
 .home-header ul li p{
     margin-top: 5px;
     margin-bottom: 0;
@@ -52,4 +53,6 @@
 }
 .category-circle:hover{
     border-bottom: 2px solid black;
+    transform: scale(1.1);
+
 }

@@ -18,7 +18,7 @@ export default function SearchPage() {
    
     const options = {
         includeScore: true,
-        keys: ['productName', 'cateogry'],
+        keys: ['productName', 'category'],
         useExtendedSearch:true,
       }
       const fuse = new Fuse(products, options)

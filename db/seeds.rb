@@ -135,7 +135,7 @@ ApplicationRecord.transaction do
       product2_pic = File.open('./app/asset/images/product_2.jpg')
       product2.photo.attach(io:product2_pic, filename: "product_2.jpg")
   product3= Product.create!({
-        product_name: "Pikachu Large Microbead Plush - 13 ¾ In",
+        product_name: "Pikachu Pokémon Large Microbead Plush - 13 ¾ In",
         seller_id: 3,
         description: "Just when you thought it wasn't possible, Pikachu has gotten even cuter than ever before! This microbead plush features the famous Electric-type Pokémon from Kanto in the form of a rotund orb with tiny arms and feet. 
         At a size like this, Pikachu makes a great cuddle buddy for cozy evenings on the couch.",
@@ -232,5 +232,87 @@ ApplicationRecord.transaction do
     product10_pic = File.open('./app/asset/images/product_10.jpg')
     product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
 
+    product11= Product.create!({
+      product_name: "Gigantamax Gengar Poké Plush - 14 ½ In.",
+      seller_id: 3,
+      description: "Looking eerily similar to a haunted house, 
+      this Gigantamax Gengar plush beckons you to battle—if you're not too scared, 
+      that is! With its mouth opened wide and its tongue sticking out, it's certain to shock everyone who steps foot in your home.",
+      price:"47.99",
+      availability:99,
+      store_id: 3,
+      category_id:3
+  })
+  product11_pic = File.open('./app/asset/images/product_11.jpg')
+  product11.photo.attach(io:product11_pic, filename: "product_11.jpg")
+
+  product12= Product.create!({
+    product_name: "Snorlax Pokémon Pumpkin Celebration Poké Plush - 9 ¼ In.",
+    seller_id: 3,
+    description: "What's a bit silly, a bit spooky, and a whole lot of fun? It's the Pokémon Pumpkin Celebration! 
+    This Snorlax plush seems to be taking it easy during the lively celebration, as it's lying down and enjoying a plate of dinner with cookies by its side. 
+    It also has a couple of pumpkins shaped like Snorlax and Munchlax! If the celebration is too much for you, come chill next to Snorlax!",
+    price:"19.99",
+    availability:99,
+    store_id: 3,
+    category_id:3
+})
+product12_pic = File.open('./app/asset/images/product_12.jpg')
+product12.photo.attach(io:product12_pic, filename: "product_12.jpg")
+
+product13= Product.create!({
+  product_name: "Cactus Print, Printable Wall Art, Modern Home Decor, 2 Piece Print Set, Desert Wall Art, Botanical Print Set, Cactus Wall Art Prints, Scandi",
+  seller_id: 3,
+  description: "Desert Cactus Wall Art #122c Set Of 2 Printable Wall Art offered in a choice of sizes below.
+
+  ( Printable Wall Art, Modern Home Decor, Cactus Print, Set Of 2 Prints, Desert Wall Decor, Botanical Print Set, Cactus Wall Art Prints, Boho, Desert Cactus Prints, Wall Decor, Cactus Wall Decor, Cactus, Nursery Decor, Prints, Succulents, Art Prints, Australia )
+  
+  This is an INSTANT DOWNLOAD of a set of 2 matching prints of the timeless and iconic Eulychnia Desert Cactus featuring soft shades of moss and mint greens that I photographed in a garden I was exploring.",
+  price:"20.39",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+product13_pic = File.open('./app/asset/images/product_13.jpg')
+product13.photo.attach(io:product13_pic, filename: "product_13.jpg")
+
+product14= Product.create!({
+  product_name: "Best Christmas Gift,Hand-Carved Painted Orange Cat Figurines | Wooden Animal | Home Decor Sculpture Ornament | Personalized Gift",
+  seller_id: 3,
+  description: "Painted wooden orange cat ornaments are handcrafted from carved wood and hand-painted in different shades of paint. the orange cat looks cute and funny and comes to life.
+  Ships from the US. You will receive it in about 2-7 days.
+  The perfect gift for animal lovers, kids or family, or your own collection!
+  You can use it as home decoration, gift, table decoration, etc.",
+  price:"25.99",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+product14_pic = File.open('./app/asset/images/product_14.jpg')
+product14.photo.attach(io:product14_pic, filename: "product_14.jpg")
+
+product15= Product.create!({
+  product_name: "Nursery Decor, Nursery Art, Mint Nursery, Instant Downloads, Nursery Print, Ferris Wheel, Wall Art Prints, Nursery Wall Art, Pastel Mint",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:200),
+  price:"19.39",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+product15_pic = File.open('./app/asset/images/product_15.jpg')
+product15.photo.attach(io:product15_pic, filename: "product_15.jpg")
+
+product16= Product.create!({
+  product_name: "Christmas Sweatshirts for Women, Merry and Bright Sweatshirt, Christmas Holiday Sweatshirt for Women, Christmas Sweatshirt, Christmas Gift",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:200) ,
+  price:"14.99",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+product16_pic = File.open('./app/asset/images/product_16.jpg')
+product16.photo.attach(io:product16_pic, filename: "product_16.jpg")
 
 end

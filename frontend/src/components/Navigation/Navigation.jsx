@@ -8,9 +8,7 @@ import { fetchCart } from "../../store/cart";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NavBar from '../NavBar/NavBar'
-import SearchPage from '../SearchPage/SearchPage';
 import './Navigation.css';
-import { fetchProducts } from '../../store/product';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);

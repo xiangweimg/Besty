@@ -14,7 +14,6 @@
     margin: 5px;
     font-size: 13px;
 }
-
 .shop-info{
     max-width: 1350px;
     display: flex;
@@ -112,9 +111,9 @@
       flex: 1 1 260px 100px;
       height: 260px;
       object-fit: contain;
+      width: 260px;
   }
   .shop-products ul li span{
-    
     font-weight: 200;
     color: black;
     font-size: 15px;

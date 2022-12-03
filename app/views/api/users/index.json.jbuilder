@@ -14,6 +14,7 @@
                     json.product cart.product.
                     json.img cart.product.photo.url
                     json.store cart.product.store.store_name
+                    json.stock cart.product.availability
                 end
             end
         end

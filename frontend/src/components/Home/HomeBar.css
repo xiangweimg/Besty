@@ -8,6 +8,13 @@
     text-align: center;
     font-weight: 100;
 }
+.nav-divider{
+    height: 3px;
+    /* color: #EFEFEF; */
+    background: #EFEFEF;
+    margin-top: 0px;
+    border: #EFEFEF;
+}
 .home-header > h1 {
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
     font-weight: 100;
@@ -20,7 +27,7 @@
 .home-header ul li{
     list-style: none;
     margin: 30px;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .home-header ul li img{
     list-style: none;
@@ -32,7 +39,6 @@
     overflow: hidden !important;
     object-fit: contain;
 }
-
 .home-header ul li p{
     margin-top: 5px;
     margin-bottom: 0;
@@ -54,5 +60,4 @@
 .category-circle:hover{
     border-bottom: 2px solid black;
     transform: scale(1.1);
-
 }

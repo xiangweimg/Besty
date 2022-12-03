@@ -11,6 +11,7 @@ json.carts do
       json.img cart.product.photo.url
       json.store_name cart.product.store.store_name
       json.store_id cart.product.store.id
+      json.stock cart.product.availability
     end
   end
 end

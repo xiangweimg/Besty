@@ -84,11 +84,21 @@
     justify-content: center;
     align-items: center;
 }
+.cart-amount-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .cart-amount{
-    height: 100%;
+    /* height: 100%; */
+    padding-top: 73px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+#cart-stock{
+    margin-top: 10px;
+    font-weight: 200;
 }
 .cart-prices{
     display: flex;

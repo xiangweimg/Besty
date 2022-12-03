@@ -17,6 +17,7 @@ export default function HomeBar() {
     }
   return (
     <div className="home-header">
+            <hr className="nav-divider"/>
             <br />
             <h1>{message}</h1>
         <ul>

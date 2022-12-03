@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal/Modal';
@@ -81,9 +81,11 @@ function Navigation() {
           <span className='basket_count'>{total}</span>
         </div>
       </div>
-        <NavBar/>
+      <div className='navbar'>
+          <NavBar/>
+      </div>
     </div>
-    <hr />
+    {/* <hr/> */}
 </div>
   );
 }

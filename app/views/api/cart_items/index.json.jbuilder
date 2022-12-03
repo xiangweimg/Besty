@@ -5,6 +5,7 @@ json.carts do
             json.product cart.product.product_name
             json.price cart.product.price
             json.store_id cart.product.store.id
+            # json.stock cart.product.availability
         end
     end
 end

@@ -1,13 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-import { createCart } from '../../store/cart';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
 import EastIcon from '@mui/icons-material/East';
+import './ReviewModal.css'
 
 const style = {
   position: 'absolute',
@@ -24,10 +21,9 @@ const style = {
 export default function ReviewModal({message}) {
   const [openModal, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
-  if(message === 'Only one comment allowed'){
-    console.log("hi");
-    setOpen(true)
-  }
+  // if(message === 'Only one comment allowed'){
+  //   setOpen(true)
+  // }
   return (
     <div>
       <Modal

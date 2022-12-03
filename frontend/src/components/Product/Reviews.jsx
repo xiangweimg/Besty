@@ -5,7 +5,6 @@ import { getProduct } from '../../store/product';
 import { findReviews,updateReview, createReview } from '../../store/reviews';
 import ReviewList from './ReviewList';
 import LoginFormModal from '../LoginFormModal/Modal';
-import ReviewModal from './ReviewModal';
 import './Review.css'
 
 const ReviewShow = () => {
@@ -96,7 +95,10 @@ const ReviewShow = () => {
                     <form onSubmit={handleSubmit}>
                         <textarea cols="50"rows="10" 
                             value={content}
-                            onChange={(e)=> setContent(e.target.value)}></textarea>
+                            onChange={(e)=> setContent(e.target.value)}
+                            placeholder='Please write your review here'
+                            id='review-text'>
+                        </textarea>
                         <br />
                         Rating:  
                        <label htmlFor="rating1"> 1

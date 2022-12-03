@@ -16,8 +16,12 @@ function CartItem({item}) {
     dispatch(removeCart(item.id));
   }
   const clickPlusButton= e =>{
-    setCount(count + 1)
-    dispatch(updateCart(item.id, item.productId, count + 1, sessionUser.id))
+    if(count < item.stock){
+      setCount(count + 1)
+      dispatch(updateCart(item.id, item.productId, count + 1, sessionUser.id))
+    }else{
+      return alert("Exceed stock, please adjust your quantity.")
+    }
   }
 
   const clickMinusButton= e =>{
@@ -50,25 +54,32 @@ function CartItem({item}) {
                 </button>
               </div>
             </div>
-            <div className='cart-amount'>
-            <button
-                className="cart-additem-button"
-                onClick={clickMinusButton}>
-                -
-              </button>
-              <input
-                id='enter-box'
-                type="text"
-                value={count}
-                onChange={(e) => setCount(parseInt(e.target.value))}
-                required min ="0"
-              />
-              <button
-                className="cart-additem-button"
-                onClick={clickPlusButton}>
-                +
-              </button>
+
+            <div className='cart-amount-container'>
+              <div className='cart-amount'>
+                <button
+                    className="cart-additem-button"
+                    onClick={clickMinusButton}>
+                    -
+                  </button>
+                  <input
+                    id='enter-box'
+                    type="text"
+                    value={count}
+                    onChange={(e) => setCount(parseInt(e.target.value))}
+                    required min ="0"
+                  />
+                  <button
+                    className="cart-additem-button"
+                    onClick={clickPlusButton}>
+                    +
+                  </button>
             </div>
+              <div id='cart-stock'>
+                Stock: {item.stock}
+              </div>
+            </div>
+
             <div className='cart-prices'>
               ${(item.price * count).toFixed(2)}
             </div>

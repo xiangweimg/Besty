@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 1350px;
     max-width: 1350px;
 }
 .home-navbar-row{
@@ -31,7 +32,7 @@
     background: transparent;
     transition: width .5s ease, background-color .5s ease;
     margin: auto;
-    margin-top: 7px;
+    margin-top: 3px;
 } 
 .category:hover::after {
     width: 100%;
@@ -58,10 +59,11 @@
 .dropdown-menu ul{
     margin: 10px;
 }
-.nav-divider{
+/* .nav-divider{
     margin-top: 0;
     margin-bottom: 0;
-    /* height: 2px;
-    background: #EFEFEF; */
+    height: 2px;
+    background: #EFEFEF;
     border-top: 2px solid #DFDFDF;
-}
+    max-width: none;
+} */

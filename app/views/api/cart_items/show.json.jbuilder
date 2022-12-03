@@ -6,6 +6,7 @@ json.carts do
         json.img @cart.product.photo.url
         json.store_id @cart.product.store.id
         json.store_name @cart.product.store.store_name
+        json.stock @cart.product.availability
     end
 end
 json.products do

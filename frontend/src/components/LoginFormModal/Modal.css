@@ -21,6 +21,10 @@
     font-size: 15px;
     font-weight: 500;
 }
+.submit-review-button:hover,.add-to-cart-button:hover{
+    background-color: rgb(68, 66, 66);
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
 .sign-in-button{
     position: relative;
     cursor: pointer;

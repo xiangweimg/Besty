@@ -30,7 +30,6 @@ function Home() {
                     </ul>
                 </div>
         </div>
-                <hr className="nav-divider"/>      
     </div>
     )
 }

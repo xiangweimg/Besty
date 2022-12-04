@@ -28,6 +28,9 @@
     list-style: none;
     margin: 30px;
     margin-top: 0px;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap; */
 }
 .home-header ul li img{
     list-style: none;
@@ -40,14 +43,13 @@
     object-fit: contain;
 }
 .home-header ul li p{
-    margin-top: 5px;
-    margin-bottom: 0;
-    max-height: 40px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    margin: 0 auto;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 40px;/* Fallback for non-webkit */
 }
 .category-circle{
     display: flex;

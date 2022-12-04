@@ -101,31 +101,31 @@ const ReviewShow = () => {
                         </textarea>
                         <br />
                         Rating:  
-                       <label htmlFor="rating1"> 1
+                       <label htmlFor="rating1">1
                         <input type="radio" id="rating1" name="rating" value="1"
-                         onChange={(e) => {
-                            setRating(1)}}
-                            checked={rating === 1}/>
+                        onChange={(e) => {
+                        setRating(1)}}
+                        checked={rating === 1}/>
                        </label>
-                       <label htmlFor="rating2">2
+                       <label htmlFor="rating2"> 2
                         <input type="radio" id="rating2" name="rating" value="2"
                         onChange={(e) => {
                         setRating(2)}}
                         checked={rating === 2}/>
                        </label>
-                       <label htmlFor="rating3">3
+                       <label htmlFor="rating3"> 3
                         <input type="radio" id="rating3" name="rating" value="3"
                         onChange={(e) => {
                         setRating(3)}}
                         checked={rating === 3}/>
                        </label>
-                       <label htmlFor="rating4">4
+                       <label htmlFor="rating4"> 4
                         <input type="radio" id="rating4" name="rating" value="4"
                         onChange={(e) => {
                         setRating(4)}}
                         checked={rating === 4}/>
                        </label>
-                       <label htmlFor="rating5">5
+                       <label htmlFor="rating5"> 5
                         <input type="radio" id="rating5" name="rating" value="5"
                         onChange={(e) => {
                         setRating(5)}}

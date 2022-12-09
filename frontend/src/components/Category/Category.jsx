@@ -32,7 +32,7 @@ function Category() {
         <div className="category-top-container">
           <div className="category-top">
              <h1>
-            <span>{category.name}</span>
+            <span>All {category.name}</span>
               {message}
               </h1>
           </div>

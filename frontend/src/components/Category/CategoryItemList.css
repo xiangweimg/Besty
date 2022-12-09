@@ -22,7 +22,6 @@
     font-weight: 700;
     font-size: 16px;
 } 
-
 .category-product-name{
     display: block;
     font-weight: 400;
@@ -31,5 +30,5 @@
     overflow: hidden !important;
     text-overflow: ellipsis;
     white-space: nowrap !important;
-    max-width: 330px;
+    max-width: 320px;
 } 

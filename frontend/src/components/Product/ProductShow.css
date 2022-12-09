@@ -157,8 +157,9 @@
 }
 /* you may also like */
 .product-suggest h2{
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
+    margin-bottom: 0;
 }
 .product-suggest-product{
     width: 250px;

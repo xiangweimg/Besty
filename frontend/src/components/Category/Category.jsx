@@ -32,8 +32,8 @@ function Category() {
         <div className="category-top-container">
           <div className="category-top">
              <h1>
-            <span>All {category.name}</span>
               {message}
+              <span>All {category.name}</span>
               </h1>
           </div>
         </div>

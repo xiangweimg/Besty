@@ -17,6 +17,7 @@
 .category-top{
     display: flex;
     width: 1350px;
+    align-items: center;
 }
 .category-top h1{
     width: 100%;
@@ -27,11 +28,10 @@
 .category-top span{
     display: flex;
     flex-direction: column; 
-    justify-content: flex-start;   
-    align-items: flex-start;
     font-weight: 300;
     font-size: 25px;
     text-indent: 20px;
+    margin-top: 10px;
 }
 .category-all{
     display: flex;

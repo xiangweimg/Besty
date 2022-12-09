@@ -9,7 +9,7 @@ function Category() {
   const dispatch = useDispatch()
   const {categoryId} = useParams()
   const sessionUser = useSelector(state => state.session.user) //currentuser
-  let message
+  let message = "Fresh finds fit for you"
   if(sessionUser){
       message= `Welcome back, ${sessionUser.username}!`
   }

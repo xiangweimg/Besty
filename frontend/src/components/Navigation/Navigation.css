@@ -105,5 +105,13 @@
 }
 .navbar{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+.navbar-divider{
+  height: 3px;
+  /* color: #EFEFEF; */
+  background: #EFEFEF;
+  border: #EFEFEF;
+  margin-bottom: 0;
 }

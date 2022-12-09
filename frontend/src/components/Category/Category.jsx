@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom"
 import { fetchCategory, getCategory } from "../../store/category"
 import CategoryItemList from './CategoryItemList'
 import { useEffect } from "react"
-import "./Category.css"
 import HomeBar from "../Home/HomeBar"
+import "./Category.css"
 
 function Category() {
   const dispatch = useDispatch()

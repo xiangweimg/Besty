@@ -3,7 +3,7 @@ import seller_logo from '../../img/seller_logo.png'
 import { useDispatch, useSelector } from "react-redux"
 import { removeReview } from "../../store/reviews"
 
-const ReviewList=({review, handleEdit})=>{
+const ReviewList=({review, handleEdit, setNotice})=>{
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
     let id
@@ -15,6 +15,7 @@ const ReviewList=({review, handleEdit})=>{
     const handleDelete = e =>{
         e.preventDefault()
         dispatch(removeReview(review.id))
+        setNotice(false)
     }
 
     return(

@@ -24,8 +24,8 @@ const style = {
 
 export default function CartModal({prop}) {
   const [open, setOpen] = useState(false);
-  const [alert, setAlert] = useState("Added to cart")
   const [message, setMessage] = useState("")
+  const [error, setError] = useState(false)
   const dispatch = useDispatch()
   const handleClose = () => setOpen(false);
   const carts = useSelector(state => Object.values(state.carts))
@@ -41,21 +41,20 @@ export default function CartModal({prop}) {
     let total = prop.quantity + cart_quantity
   const add_to_cart = (e) =>{
     e.preventDefault()
-    if(total > prop.availability){
-        setAlert("Failed to add")
-        setMessage('Exceed stock, please check your cart or adjust your quantity')
-        setOpen(true)
-    }else{
+    if(total <= prop.availability){
         setMessage(`${prop.quantity} item(s) added to cart`)
         dispatch(createCart(prop.productId, prop.quantity, prop.sessionUserId))
         setOpen(true)
-        // setShowModal(prev => !prev)
+        setError(false)
+    }else{
+        setError(true)
     }
 };
 
   return (
     <div>
       <Button id="add-to-cart" onClick={add_to_cart}>Add to cart</Button>
+    {!error && 
       <Modal
         open={open}
         onClose={handleClose}
@@ -64,7 +63,7 @@ export default function CartModal({prop}) {
       >
         <Box sx={style} className='cart-modal'>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-                {alert}
+                Added to cart
             </Typography>
             <Typography className="modal-modal-description" sx={{ mt: 2 }}>
                 {message}.
@@ -73,6 +72,10 @@ export default function CartModal({prop}) {
             </Typography>
         </Box>
       </Modal>
+    }
+    {error && 
+      <div className='cart-error-message'>Exceed stock limit</div>
+      }
     </div>
   );
 }

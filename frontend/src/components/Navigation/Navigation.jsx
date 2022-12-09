@@ -84,8 +84,8 @@ function Navigation() {
       <div className='navbar'>
           <NavBar/>
       </div>
+          <hr  className='navbar-divider' />
     </div>
-    {/* <hr/> */}
 </div>
   );
 }

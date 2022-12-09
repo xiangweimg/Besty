@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {  useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,7 +6,9 @@ import { getProduct } from '../../store/product';
 import { findReviews,updateReview, createReview } from '../../store/reviews';
 import ReviewList from './ReviewList';
 import LoginFormModal from '../LoginFormModal/Modal';
-import './Review.css'
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import './Reviews.css'
 
 const ReviewShow = () => {
     const dispatch = useDispatch();
@@ -18,9 +21,11 @@ const ReviewShow = () => {
     const reviews = useSelector(state => state.reviews);
     const review_arr = Object.values(reviews)
     const [content, setContent] = useState("")
-    const [rating, setRating] = useState("")
+    const [rating, setRating] = useState(0)
     const [allowEdit, setAllowEdit] = useState(false)    
     const [review, setReview] = useState("")
+    const [notice, setNotice] = useState(false)
+    const [errMessage, setErrMessage]= useState("")
 
     let submitButton
     if(sessionUser){
@@ -34,6 +39,9 @@ const ReviewShow = () => {
     }
     useEffect(()=>{
         dispatch(findReviews(product.reviews))
+        if(review_arr.some(review =>review.reviewerId === sessionUser.id)){
+            setNotice(true)
+        }
     }, [productId, product.reviews])
 
     
@@ -41,11 +49,11 @@ const ReviewShow = () => {
         e.preventDefault()
 
         if(content === ""){
-            return alert("Please enter content")
-        }else if(rating === ""){
-            return alert("Please choose rating")
+            return setErrMessage("Please enter your comment")
+        }else if(rating === 0){
+            return setErrMessage("Please rate the product")
         }
-        if(allowEdit){
+        if(allowEdit && rating !== 0){
             let reviewToEdit = {
                 id: review.id,
                 content: content,
@@ -57,10 +65,11 @@ const ReviewShow = () => {
             setAllowEdit(false)
             setContent("")
             setRating("")
+            setNotice(true)
         }else{
             if(review_arr.some(review =>review.reviewerId === sessionUser.id)){
-                return alert("Only one comment allowed")
-            }else{
+                setNotice(true)
+            }else {
                 let reviewToSubmit = {
                     content: content,
                     rating: rating,
@@ -70,6 +79,7 @@ const ReviewShow = () => {
                 dispatch(createReview(reviewToSubmit))
                 setContent("")
                 setRating("")
+                setNotice(true)
             }
             }
         }
@@ -77,69 +87,75 @@ const ReviewShow = () => {
         setContent(e.content)
         setRating(e.rating)
         setAllowEdit(true)
+        setNotice(false)
         setReview(e)
     }
-    const reviewList = Object.values(reviews).map(review => <ReviewList key={review.id} review={review} handleEdit={handleEdit}/>)
+
+    const reviewList = Object.values(reviews).map(review => <ReviewList key={review.id} review={review} handleEdit={handleEdit} setNotice={setNotice}/>)
     if(product){
         return (
-        <div className='reviews-wrapper'>
-            <div className='reviews'>
-                <div className='review-header'>
-                    <h1>{reviews.length} Reviews</h1>
-                </div>
-                <div className='product-reviews'>
-                    <p>Reviews for this item</p> 
-                    <ul>{reviewList}</ul>
-                </div>
-                <div>
-                    <form onSubmit={handleSubmit}>
-                        <textarea cols="50"rows="10" 
-                            value={content}
-                            onChange={(e)=> setContent(e.target.value)}
-                            placeholder='Please write your review here'
-                            id='review-text'>
-                        </textarea>
-                        <br />
-                        Rating:  
-                       <label htmlFor="rating1">1
-                        <input type="radio" id="rating1" name="rating" value="1"
-                        onChange={(e) => {
-                        setRating(1)}}
-                        checked={rating === 1}/>
-                       </label>
-                       <label htmlFor="rating2"> 2
-                        <input type="radio" id="rating2" name="rating" value="2"
-                        onChange={(e) => {
-                        setRating(2)}}
-                        checked={rating === 2}/>
-                       </label>
-                       <label htmlFor="rating3"> 3
-                        <input type="radio" id="rating3" name="rating" value="3"
-                        onChange={(e) => {
-                        setRating(3)}}
-                        checked={rating === 3}/>
-                       </label>
-                       <label htmlFor="rating4"> 4
-                        <input type="radio" id="rating4" name="rating" value="4"
-                        onChange={(e) => {
-                        setRating(4)}}
-                        checked={rating === 4}/>
-                       </label>
-                       <label htmlFor="rating5"> 5
-                        <input type="radio" id="rating5" name="rating" value="5"
-                        onChange={(e) => {
-                        setRating(5)}}
-                        checked={rating === 5}/>
-                       </label>
-                       <br/>
-                       <div className='submit-button-container'>
-                            {submitButton}
-                       </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+            <>
+            <div className='reviews-wrapper'>
+                <div className='reviews'>
+                    <div className='review-header'>
+                        <h1>{reviews.length} Reviews</h1>
+                    </div>
+                    <div className='product-reviews'>
+                        <p>Reviews for this item</p> 
+                        <ul>{reviewList}</ul>
+                    </div>
+                    </div>
+                    </div>
 
+        {!notice && 
+                    <div>
+                        <div id='review-error'>{errMessage}</div>
+                        <form onSubmit={handleSubmit} className='review-form'>
+                            <div>
+                                <textarea cols="60"rows="10" 
+                                    value={content}
+                                    onChange={(e)=> setContent(e.target.value)}
+                                    placeholder='Type comment here'
+                                    id='review-text'>
+                                </textarea>
+                                <br />
+                            </div>
+                            <div className='review-right'>
+                                <h3>Helpful reviews on Besty mention:</h3>
+                                <ul>
+                                    <li>the quality of the item</li>
+                                    <li> if the item matched the description</li>
+                                    <li>if the item met your expectations</li>
+                                </ul>
+                                {/* <br/> */}
+                                <Box
+                                sx={{
+                                    '& > legend': { mt: 2 },
+                                }}
+                                >
+                                {/* <Typography component="legend">Controlled</Typography> */}
+                                <Rating
+                                    name="size-medium"
+                                    value={rating}
+                                    onChange={(event, newValue) => {
+                                    setRating(newValue);
+                                    }}/>
+                                </Box>
+                                <div className='submit-button-container'>
+                                        {submitButton}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+        }
+                {notice && 
+                <>
+                    <hr />
+                    <div className='review-notice'>You have already left comment for this product</div>
+                </>
+                }
+
+            </>
         )
     }
 }

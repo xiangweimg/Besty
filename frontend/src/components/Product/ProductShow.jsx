@@ -8,6 +8,9 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Review from './Reviews';
 import CartModal from '../CartModal/CartModal';
+ import { fetchCategory, getCategory } from '../../store/category';
+ import CategoryItemList from '../Category/CategoryItemList';
+ import _ from 'underscore';
 import './ProductShow.css'
 
 const ProductShow = () => {
@@ -16,11 +19,31 @@ const ProductShow = () => {
     const {productId} = useParams(); 
     const product = useSelector(getProduct(productId)) //get product from state
     const sessionUser = useSelector(state => state.session.user);
+    const [render, setRender] = useState(false)
+    // const [category, seCategory] = useState(useSelector(getCategory))
+    const category =  useSelector(getCategory)
 
     useEffect(()=>{
         dispatch(fetchProduct(productId))
+        setRender(true)
     },[productId]);//state add product
 
+    if(product && render){
+        setRender(false)
+        dispatch(fetchCategory(product.categoryId))
+    }
+
+    let products
+    let result
+    if(category.products){
+        result = Object.values(category.products).filter(product => product.id !== parseInt(productId));
+        products = _.sample( result, 2);
+    }
+    let productList
+    if(result){
+      productList =  products.map(product => <CategoryItemList key={product.id} product={product}></CategoryItemList>)
+    }
+      
     let prop
     if(product && sessionUser){
          prop = {
@@ -31,12 +54,9 @@ const ProductShow = () => {
         }
     }
     
-    // setShowModal(prev => !prev)
-
     let dynamicAddToCartButton;
     if (sessionUser) {
         dynamicAddToCartButton = (
-            // <input onClick={add_to_cart} className='add-to-cart' type="button" value="Add to cart"/>
             <CartModal prop={prop}/>
             )
     } else {
@@ -54,7 +74,7 @@ const ProductShow = () => {
         }
     }
     const decrement = e =>{
-        if(quantity > 0){
+        if(quantity > 1){
             setQuantity(quantity - 1)
         }
     }
@@ -79,7 +99,6 @@ const ProductShow = () => {
                     { product.productName }
                 </div>
                 <p className='product-price'>${ product.price }+</p>
-                {/* <p>Pay in 4 installments of ${ (product.price)/4}</p> */}
                 <p className='product-quantity-text'>Quantity:</p>
                 <div className='product-options'>
                     <label className='product-option-title'>
@@ -96,9 +115,13 @@ const ProductShow = () => {
                 </div>
                 <div id='product-stock'>Stock: { product.availability }</div>
                 {dynamicAddToCartButton}
+                <p id='product-description-title'>Description:</p>
                 <div className='product-description'>
-                    <p>Description:</p>
                     <span>{ product.description }</span>
+                </div>
+                <div className='product-suggest'>
+                    <h2>You may also like...</h2>
+                    <ul className='product-suggest-product'>{productList}</ul>
                 </div>
             </div>
         </div>

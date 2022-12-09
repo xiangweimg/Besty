@@ -1,0 +1,104 @@
+.reviews-wrapper{
+    font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+    font-weight: 200;
+}
+.reviews{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+.review-form{
+    display: flex;
+}
+#review-text{
+    border-radius: 5px;
+    box-shadow: 0 0 2px #ccc;
+    border: 1px solid lightgray;
+    text-indent: 5px;
+}
+.product-reviews{
+    width: 100%;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.product-reviews p{
+    border-bottom: 2px solid rgba(34, 34, 34, 0.15);
+    width: 100%;
+}
+.product-reviews ul{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+}
+.product-reviews ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+.review-header{
+    align-self: flex-start;
+}
+.review-header h1{
+    font-weight: 200;
+    font-size: 26px;
+}
+#review-error{
+    color:#A61A2E;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.review-notice{
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 28px;
+}
+/* riviewright */
+.review-right{
+    margin-left: 30px;
+}
+.review-right > h3{
+    margin-top: 0;
+    margin-bottom: -10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.review-right ul li{
+    font-weight: 300;
+    font-size: 16px;
+}
+#submit-review{
+    all: unset;
+    background-color: black;
+    color: white;
+    padding: 13px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+}
+#submit-review:hover{
+    background-color: rgb(68, 66, 66);
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
+.checked {
+    color: orange;
+  }
+.fa{
+    color: lightgray;
+    cursor: pointer;
+}
+.fa:hover{
+    color: orange;
+}

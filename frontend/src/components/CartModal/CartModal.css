@@ -49,4 +49,10 @@
 #keep-shopping-btn:hover{
     background-color: #EFEFEF;
     transition: all 0.2s ease-in-out;
+} 
+/* error */
+.cart-error-message{
+    color: #A61A2E;
+    text-align: center;
+    margin-top: 5px;
 }

@@ -11,6 +11,7 @@ import CartModal from '../CartModal/CartModal';
  import { fetchCategory, getCategory } from '../../store/category';
  import CategoryItemList from '../Category/CategoryItemList';
  import _ from 'underscore';
+ import LocalShippingTwoToneIcon from '@mui/icons-material/LocalShippingTwoTone';
 import './ProductShow.css'
 
 const ProductShow = () => {
@@ -115,6 +116,7 @@ const ProductShow = () => {
                 </div>
                 <div id='product-stock'>Stock: { product.availability }</div>
                 {dynamicAddToCartButton}
+                <div className='shipping'><LocalShippingTwoToneIcon color="primary" sx={{ fontSize: 45 }}/><p>Hooray!</p> This item ships free to the US.</div>
                 <p id='product-description-title'>Description:</p>
                 <div className='product-description'>
                     <span>{ product.description }</span>

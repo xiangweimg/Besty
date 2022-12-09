@@ -1,4 +1,5 @@
 #add-to-cart{
+    text-transform: unset !important;
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
     background-color: black;
     color: white;
@@ -9,6 +10,7 @@
     border-radius: 30px;
     font-size: 15px;
     margin-top: 15px;
+    text-align: center;
     width: 100%;
 }
 #add-to-cart:hover, #view-cart-btn:hover{

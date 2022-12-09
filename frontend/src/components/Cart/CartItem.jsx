@@ -10,6 +10,7 @@ function CartItem({item}) {
   const dispatch = useDispatch() 
   const [count, setCount] = useState(item.quantity);
   const sessionUser = useSelector(state => state.session.user);
+  const [alert, setAlert] = useState(false)
 
   const handleClick = e =>{
     e.preventDefault()
@@ -17,21 +18,28 @@ function CartItem({item}) {
   }
   const clickPlusButton= e =>{
     if(count < item.stock){
+      setAlert(false)
       setCount(count + 1)
       dispatch(updateCart(item.id, item.productId, count + 1, sessionUser.id))
     }else{
-      return alert("Exceed stock, please adjust your quantity.")
+      setAlert(true)
     }
   }
 
   const clickMinusButton= e =>{
     if (count > 0){
+      setAlert(false)
       setCount(count - 1)
       dispatch(updateCart(item.id, item.productId, count - 1, sessionUser.id))
     }else if(isNaN(e)){
       setCount(0)
     }
   }
+ const someFunc = (e) => {
+   setCount(parseInt(e.target.value))
+    setAlert(false);
+}
+
   if (!item) return null;
   return (
     <li key={item.id} className="cart-item">
@@ -66,8 +74,8 @@ function CartItem({item}) {
                     id='enter-box'
                     type="text"
                     value={count}
-                    onChange={(e) => setCount(parseInt(e.target.value))}
                     required min ="0"
+                    disabled
                   />
                   <button
                     className="cart-additem-button"
@@ -78,6 +86,9 @@ function CartItem({item}) {
               <div id='cart-stock'>
                 Stock: {item.stock}
               </div>
+              {alert && 
+              <div className='cart-alert'>Exceed stock limit</div>
+              }
             </div>
 
             <div className='cart-prices'>

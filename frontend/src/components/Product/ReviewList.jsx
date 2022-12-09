@@ -2,7 +2,8 @@ import "./ReviewList.css"
 import seller_logo from '../../img/seller_logo.png'
 import { useDispatch, useSelector } from "react-redux"
 import { removeReview } from "../../store/reviews"
-
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 const ReviewList=({review, handleEdit, setNotice})=>{
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
@@ -20,7 +21,12 @@ const ReviewList=({review, handleEdit, setNotice})=>{
 
     return(
         <li>
-                <span>Rating: {review.rating}</span>
+                <Box
+                    sx={{
+                    '& > legend': { mt: 2 },
+                        }}>
+                <Rating name="read-only" value={review.rating} readOnly />
+                </Box>
                 <span className="review-content">{review.content}</span> 
                 <div className="review-author">
                     <span id="review-logo">

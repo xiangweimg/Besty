@@ -5,6 +5,7 @@
     font-weight: 200;
     font-size: 16px;
     line-height: 28px;
+    margin-top: -10px;
 }
 .review-author{
     display: flex;

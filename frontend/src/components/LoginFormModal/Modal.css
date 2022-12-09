@@ -3,19 +3,23 @@
     background-color: black;
     color: white;
     padding: 15px;
+    padding-top: 19px;
+    padding-bottom: 19px;
     text-decoration: none;
     border: none;
     cursor: pointer;
     border-radius: 30px;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 15px;
     text-align: center;
+    font-weight: 500;
+    /* height: 26px; */
 }
 .submit-review-button{
     all: unset;
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 13px;
     cursor: pointer;
     border-radius: 30px;
     font-size: 15px;

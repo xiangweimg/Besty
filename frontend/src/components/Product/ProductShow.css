@@ -120,6 +120,18 @@
     object-fit: contain;
     height: 100%;
 }
+.shipping{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.shipping p{
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+/* description  */
 .product-description{
     font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
     font-weight: 300;
@@ -146,6 +158,7 @@
 /* you may also like */
 .product-suggest h2{
     font-weight: 400;
+    text-align: center;
 }
 .product-suggest-product{
     width: 250px;

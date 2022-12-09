@@ -23,10 +23,10 @@ ApplicationRecord.transaction do
   
     puts "Creating categories..."
     Category.create!(
-      name:'Pokemon'
+      name:'Pokemon & Pokemon Cards'
     )
     Category.create!(
-      name: 'Pets'
+      name: 'Pets & Pet Supplies'
     )
     Category.create!(
       name: 'Toys & Entertainment'
@@ -315,4 +315,386 @@ product16= Product.create!({
 product16_pic = File.open('./app/asset/images/product_16.jpg')
 product16.photo.attach(io:product16_pic, filename: "product_16.jpg")
 
+pet3= Product.create!({
+  product_name: "Pet Memorial Stone | Granite Headstone for your dog, cat or any pet | Stone marker personalized and engraved",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:200) ,
+  price:"28.06",
+  availability:50,
+  store_id: 4,
+  category_id:2
+})
+pet3_pic = File.open('./app/asset/images/pet3.jpg')
+pet3.photo.attach(io:pet3_pic, filename: "pet3.jpg")
+
+pet4= Product.create!({
+  product_name: "Dog Toy Basket,Personalized Pet Toy Bin,Custom Dog Storage Box,Cat Toy Bag,Foldable Dog Toy Organizer,Dog Gift Basket,New Puppy Gift Basket",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:200) ,
+  price:"17.92",
+  availability:50,
+  store_id: 4,
+  category_id:2
+})
+pet4_pic = File.open('./app/asset/images/pet4.jpg')
+pet4.photo.attach(io:pet4_pic, filename: "pet4.jpg")
+pet5= Product.create!({
+  product_name: "Mini Custom Watercolor Pet Portrait, Dog Portraits from Photos,Dog Portraits From Photos, Pet Painting, Custom Tiny Paintings, Miniature",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"29.99",
+  availability:50,
+  store_id: 4,
+  category_id:2
+})
+pet5_pic = File.open('./app/asset/images/pet5.jpg')
+pet5.photo.attach(io:pet5_pic, filename: "pet5.jpg")
+
+pet6= Product.create!({
+  product_name: "Custom Pet Portrait, Cat Portrait, Dog Portrait, Personalised Pet Portrait from Photo, Pet Memorial, Personalised Gift, Unique Gift, UK & US",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"28.06",
+  availability:50,
+  store_id: 4,
+  category_id:2
+})
+pet6_pic = File.open('./app/asset/images/pet6.jpg')
+pet6.photo.attach(io:pet6_pic, filename: "pet6.jpg")
+
+pet7= Product.create!({
+  product_name: "Custom Pet Portraits Set of 3, Funny Dog or Cat Portrait, Pet in Bathtub, Dog in Toilet, Personalized pet gift, Kids Bathroom Art, Dog Mom",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"31.91",
+  availability:99,
+  store_id: 4,
+  category_id:2
+})
+pet7_pic = File.open('./app/asset/images/pet7.jpg')
+pet7.photo.attach(io:pet7_pic, filename: "pet7.jpg")
+
+pet8= Product.create!({
+  product_name: "Personalized Dog Leash Holder, Dog Butt Leash Holder for Wall, Gift for Dogs, Engagement Gift Dog, Mudroom Hook, Dog Hanging Sign",
+  seller_id: 4,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"42.00",
+  availability:10,
+  store_id: 4,
+  category_id:2
+})
+pet8_pic = File.open('./app/asset/images/pet8.jpg')
+pet8.photo.attach(io:pet8_pic, filename: "pet8.jpg")
+
+toy5= Product.create!({
+  product_name: "Lost for Words, a personalized book featuring father and child - a perfect gift for dads",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"40.00",
+  availability:99,
+  store_id: 3,
+  category_id:3
+})
+toy5_pic = File.open('./app/asset/images/toy5.jpg')
+toy5.photo.attach(io:toy5_pic, filename: "toy5.jpg")
+
+toy6= Product.create!({
+  product_name: "Stack the Cats! Cat lover gift. Bag of twelve mini wooden cats",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"17.80",
+  availability:99,
+  store_id: 3,
+  category_id:3
+})
+toy6_pic = File.open('./app/asset/images/toy6.jpg')
+toy6.photo.attach(io:toy6_pic, filename: "toy6.jpg")
+
+toy7= Product.create!({
+  product_name: "New 12pcs Bamboo Wood Crochet Hooks,Weave Craft ,Crocheted Tools,Size 3-10mm",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150) ,
+  price:"6.87",
+  availability:99,
+  store_id: 3,
+  category_id:3
+})
+toy7_pic = File.open('./app/asset/images/toy7.jpg')
+toy7.photo.attach(io:toy7_pic, filename: "toy7.jpg")
+
+toy8= Product.create!({
+  product_name: "Wooden Toy Train. The No Paint Special. A handmade toy. A natural wood toy.",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"6.87",
+  availability:99,
+  store_id: 3,
+  category_id:3
+})
+toy8_pic = File.open('./app/asset/images/toy8.jpg')
+toy8.photo.attach(io:toy8_pic, filename: "toy8.jpg")
+
+art4= Product.create!({
+  product_name: "Japanese Art, Hokusai Under the great wave off Kanagawa, 1832 | Vintage Poster Wall Art Print |",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"34.5",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+art4_pic = File.open('./app/asset/images/art4.jpg')
+art4.photo.attach(io:art4_pic, filename: "art4.jpg")
+
+art5= Product.create!({
+  product_name: "Deer Print, Woodland Nursery, Nursery Wall Art, Printable Art, Deer Head, Nursery Decor, Woodland Animal Print, Downloadable Prints, Poster",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"6.99",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+art5_pic = File.open('./app/asset/images/art5.jpg')
+art5.photo.attach(io:art5_pic, filename: "art5.jpg")
+
+art6= Product.create!({
+  product_name: "Art Print Flowery Brain collage Printed on Vintage Dictionary Book page. Wall decor art, Anatomy decor, Flower print art",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"5.99",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+art6_pic = File.open('./app/asset/images/art6.jpg')
+art6.photo.attach(io:art6_pic, filename: "art6.jpg")
+
+art7= Product.create!({
+  product_name: "Amethyst Crystal Sun Catcher, Suncatcher with Gemstone, Rainbow Maker, Prism Suncatcher, Indie Room Decor, Boho Housewarming Gift",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"11.59",
+  availability:99,
+  store_id: 5,
+  category_id:5
+})
+art7_pic = File.open('./app/asset/images/art7.jpg')
+art7.photo.attach(io:art7_pic, filename: "art7.jpg")
+
+art8= Product.create!({
+  product_name: "Cat - Recycled Garden Art Sculpture",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"60.00",
+  availability:5,
+  store_id: 5,
+  category_id:5
+})
+art8_pic = File.open('./app/asset/images/art8.jpg')
+art8.photo.attach(io:art8_pic, filename: "art8.jpg")
+
+pokemon3= Product.create!({
+  product_name: "Pokemon Trading Card Game: Sword and Shield Silver Tempest Elite Trainer Box",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"39.99",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon3_pic = File.open('./app/asset/images/pokemon3.jpg')
+pokemon3.photo.attach(io:pokemon3_pic, filename: "pokemon3.jpg")
+
+pokemon4= Product.create!({
+  product_name: "Pokemon Trading Card Game: Pikachu and Zekrom-GX Premium Collection GameStop Exclusive",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"39.99",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon4_pic = File.open('./app/asset/images/pokemon4.jpg')
+pokemon4.photo.attach(io:pokemon4_pic, filename: "pokemon4.jpg")
+
+pokemon5= Product.create!({
+  product_name: "Pokemon Snorlax Novelty Mug",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"19.99",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon5_pic = File.open('./app/asset/images/pokemon5.jpg')
+pokemon5.photo.attach(io:pokemon5_pic, filename: "pokemon5.jpg")
+
+pokemon6= Product.create!({
+  product_name: "Jazwares Pokemon Pikachu Deluxe Collector 13-in Statue",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"24.98",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon6_pic = File.open('./app/asset/images/pokemon6.jpg')
+pokemon6.photo.attach(io:pokemon6_pic, filename: "pokemon6.jpg")
+
+pokemon7= Product.create!({
+  product_name: "Pokemon Pikachu Ramen Bowl with Chopsticks",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"24.99",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon7_pic = File.open('./app/asset/images/pokemon7.jpg')
+pokemon7.photo.attach(io:pokemon7_pic, filename: "pokemon7.jpg")
+
+pokemon8= Product.create!({
+  product_name: "PowerA Enhanced Wired Controller for Nintendo Switch - Pokemon Pixel Pikachu",
+  seller_id: 2,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"19.99",
+  availability:10,
+  store_id: 2,
+  category_id:1
+})
+pokemon8_pic = File.open('./app/asset/images/pokemon8.jpg')
+pokemon8.photo.attach(io:pokemon8_pic, filename: "pokemon8.jpg")
+
+clothes3= Product.create!({
+  product_name: "Minimalist Chest Bag, Nylon Dumpling Bag, School Travel Shoulder Bag, Casual Crossbody Bag, Saddle Bag, Messenger Bag, Half Moon Bag Women",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"20.17",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes3_pic = File.open('./app/asset/images/clothes3.jpg')
+clothes3.photo.attach(io:clothes3_pic, filename: "clothes3.jpg")
+
+clothes4= Product.create!({
+  product_name: "Auntie Best Auntie Ever Womens T Shirt Auntie Shirt I love my Aunt Gift for Aunt Funny shirt I love my Aunt",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"15.85",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes4_pic = File.open('./app/asset/images/clothes4.jpg')
+clothes4.photo.attach(io:clothes4_pic, filename: "clothes4.jpg")
+
+clothes5= Product.create!({
+  product_name: "me and mama Whale Sweatshirt, Gift for Mom, Whale Gift, Cute Sweatshirt, Yoga Top, New Mom, Baby Shower, Blue Whale",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"37.80",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes5_pic = File.open('./app/asset/images/clothes5.jpg')
+clothes5.photo.attach(io:clothes5_pic, filename: "clothes5.jpg")
+
+clothes6= Product.create!({
+  product_name: "Penguin Feet Slippers for Adults",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"29.00",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes6_pic = File.open('./app/asset/images/clothes6.jpg')
+clothes6.photo.attach(io:clothes6_pic, filename: "clothes6.jpg")
+
+clothes7= Product.create!({
+  product_name: "Touch Me And I Will Bite You Stitch Hoodie, Disney Stitch Hoodie, Lilo And Stitch, Disney Movie Sweatshirt, Ohana Means Family Shirt, Gift",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"25.50",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes7_pic = File.open('./app/asset/images/clothes7.jpg')
+clothes7.photo.attach(io:clothes7_pic, filename: "clothes7.jpg")
+
+clothes8= Product.create!({
+  product_name: "Unisex Love Yourself Hoodie, Love Yourself Heart Hoodie, Love Yourself Oversized Hoodie, Bangtan Boys Hoodie, Korean Music Group",
+  seller_id: 3,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"21.59",
+  availability:99,
+  store_id: 4,
+  category_id:6
+})
+clothes8_pic = File.open('./app/asset/images/clothes8.jpg')
+clothes8.photo.attach(io:clothes8_pic, filename: "clothes8.jpg")
+
+home4= Product.create!({
+  product_name: "Horse Led Lights Table Lamp Gift for Kids. Equestrian Gifts Acrylic Light Art Deco Lamp. Horse Gifts Night Light 3D Led Lamp Kids Desk Decor",
+  seller_id: 1,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"29.39",
+  availability:20,
+  store_id: 1,
+  category_id:4
+})
+home4_pic = File.open('./app/asset/images/home4.jpg')
+home4.photo.attach(io:home4_pic, filename: "home4.jpg")
+
+home5= Product.create!({
+  product_name: "MOOSHIE™ Table Lamp - Mushroom Lamp - Desk Lamp - Mood Lamp - Designed and Crafted by Honey & Ivy Studio in Portland, OR",
+  seller_id: 1,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"34.99",
+  availability:20,
+  store_id: 1,
+  category_id:4
+})
+home5_pic = File.open('./app/asset/images/home5.jpg')
+home5.photo.attach(io:home5_pic, filename: "home5.jpg")
+
+home6= Product.create!({
+  product_name: "Mid century Modern Lounge Chair, Retro Chair, Handmade Lounge Chair",
+  seller_id: 1,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"1240.00",
+  availability:20,
+  store_id: 1,
+  category_id:4
+})
+home6_pic = File.open('./app/asset/images/home6.jpg')
+home6.photo.attach(io:home6_pic, filename: "home6.jpg")
+
+home7= Product.create!({
+  product_name: "Solid Walnut Key Hook Entryway Organizer, Mail Holder, Key Hooks with Mail Holder, Wall Mount Key Hooks, Mail Organizer",
+  seller_id: 1,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"115.00",
+  availability:20,
+  store_id: 1,
+  category_id:4
+})
+home7_pic = File.open('./app/asset/images/home7.jpg')
+home7.photo.attach(io:home7_pic, filename: "home7.jpg")
+
+home8= Product.create!({
+  product_name: "Wild Mushroom Lights, Glass Container Lights Night Lights Morel Mushroom Lights, Handmade Morel Lights, USB Gift Lights",
+  seller_id: 1,
+  description:Faker::Lorem.sentence(word_count:150),
+  price:"62.89",
+  availability:20,
+  store_id: 1,
+  category_id:4
+})
+home8_pic = File.open('./app/asset/images/home8.jpg')
+home8.photo.attach(io:home8_pic, filename: "home8.jpg")
 end

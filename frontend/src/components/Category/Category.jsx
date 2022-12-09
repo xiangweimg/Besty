@@ -3,13 +3,16 @@ import { useParams } from "react-router-dom"
 import { fetchCategory, getCategory } from "../../store/category"
 import CategoryItemList from './CategoryItemList'
 import { useEffect } from "react"
-import HomeBar from "../Home/HomeBar"
 import "./Category.css"
 
 function Category() {
   const dispatch = useDispatch()
   const {categoryId} = useParams()
-
+  const sessionUser = useSelector(state => state.session.user) //currentuser
+  let message
+  if(sessionUser){
+      message= `Welcome back, ${sessionUser.username}!`
+  }
   useEffect(()=>{
     dispatch(fetchCategory(categoryId))
   },[categoryId]);//state add category
@@ -26,12 +29,16 @@ function Category() {
     
   return (
     <div>
-        <div className="category-top">
-          <HomeBar/>
+        <div className="category-top-container">
+          <div className="category-top">
+             <h1>
+            <span>{category.name}</span>
+              {message}
+              </h1>
+          </div>
         </div>
       <div className="category-wrapper">
         <div className="category-all">
-          <p>Category: {category.name}</p>
           <ul className="category-products">
             {productList}
           </ul>

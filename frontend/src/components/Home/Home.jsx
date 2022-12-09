@@ -4,13 +4,14 @@ import { fetchProducts } from "../../store/product";
 import {getProducts} from '../../store/product'
 import ProductIndexItem from './ProductIndexItem'
 import HomeBar from "./HomeBar";
+import _ from "underscore";
 import "./Home.css"
 
 
 function Home() {
     const dispatch = useDispatch()
     const products = useSelector(getProducts)
-    const productList =  products.map(product => <ProductIndexItem key={product.id} product={product}></ProductIndexItem>)
+    const productList = _.sample(products, 10).map(product => <ProductIndexItem key={product.id} product={product}></ProductIndexItem>)
 
     useEffect(() =>{
         dispatch(fetchProducts())

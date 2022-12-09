@@ -19,13 +19,13 @@ const ReviewShow = () => {
     }
     const sessionUser = useSelector(state => state.session.user);
     const reviews = useSelector(state => state.reviews);
-    const review_arr = Object.values(reviews)
     const [content, setContent] = useState("")
     const [rating, setRating] = useState(0)
     const [allowEdit, setAllowEdit] = useState(false)    
     const [review, setReview] = useState("")
     const [notice, setNotice] = useState(false)
     const [errMessage, setErrMessage]= useState("")
+    const review_arr = Object.values(reviews)
 
     let submitButton
     if(sessionUser){
@@ -38,18 +38,23 @@ const ReviewShow = () => {
         submitButton =  <LoginFormModal message={message} />
     }
     useEffect(()=>{
+        const review_arr = Object.values(reviews)
         dispatch(findReviews(product.reviews))
-        if(review_arr.some(review =>review.reviewerId === sessionUser.id)){
-            setNotice(true)
+        if(sessionUser){
+            if(review_arr.some(review =>review.reviewerId === sessionUser.id)){
+                setNotice(true)
+            }
+        }else{
+            setNotice(false)
         }
-    }, [productId, product.reviews])
+    }, [productId, product.reviews, sessionUser])
 
     
     const handleSubmit = (e) =>{
         e.preventDefault()
 
         if(content === ""){
-            return setErrMessage("Please enter your comment")
+            return setErrMessage("Please write comment")
         }else if(rating === 0){
             return setErrMessage("Please rate the product")
         }
@@ -104,8 +109,8 @@ const ReviewShow = () => {
                         <p>Reviews for this item</p> 
                         <ul>{reviewList}</ul>
                     </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
 
         {!notice && 
                     <div>
@@ -133,7 +138,6 @@ const ReviewShow = () => {
                                     '& > legend': { mt: 2 },
                                 }}
                                 >
-                                {/* <Typography component="legend">Controlled</Typography> */}
                                 <Rating
                                     name="size-medium"
                                     value={rating}
@@ -146,6 +150,8 @@ const ReviewShow = () => {
                                 </div>
                             </div>
                         </form>
+                        <div className='review-policy'>Due to shipping carrier delays resulting from weather or other issues, some orders are arriving late no matter how quickly sellers ship out your package.
+                        By submitting, you agree to Betsy's Review Policy</div>
                     </div>
         }
                 {notice && 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {createRoot} from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -50,10 +49,3 @@ if (
   renderApplication();
 }
 
-// if (sessionStorage.getItem("X-CSRF-Token") === null) {
-//   console.log('before')
-//   restoreCSRF().then(renderApplication);
-// } else {
-//   console.log('after')
-//   renderApplication();
-// }

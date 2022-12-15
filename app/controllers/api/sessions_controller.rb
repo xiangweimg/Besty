@@ -2,7 +2,6 @@ class Api::SessionsController < ApplicationController
   before_action :require_logged_in, only:[:destroy]
 
   def show
-    # debugger
     if current_user
       # render json: {user: current_user}
       @user = current_user
@@ -16,7 +15,6 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(
       params[:credential],
       params[:password])
-    
     if @user
       login!(@user)
       # render json: {user: @user}

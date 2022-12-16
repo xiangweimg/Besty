@@ -8,8 +8,10 @@ import ReviewsIcon from '@mui/icons-material/Reviews';
 import ShopProductList from './ShopProductList'
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { purple } from '@mui/material/colors';
-import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import seller_logo from '../../img/seller_logo.png'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import './ShopPage.css'
 
 const ShopPage = () => {
@@ -53,9 +55,16 @@ const ShopPage = () => {
                                     <div className='shop-icon'><ReviewsIcon sx={{ color: purple[300] }} /><span>Rave reviews</span>Average review rating is 4.8 or higher</div>
                                 </div>
                                 <div className='shop-owner'>
-                                        <img src={seller_logo} alt="" />
+                                    <span><img src={seller_logo} alt="" /></span>
                                     <Link id="seller" to={`/users/${shop.ownerId}`}>{shop.owner}</Link>
-                                    <span><MailOutlinedIcon/> Contact</span>
+                                    <div className='contact'>
+                                        <span>Contact</span>
+                                        <span>
+                                            <a href="https://www.linkedin.com/in/xiangwei0816/"><LinkedInIcon/></a>
+                                            <a href="https://github.com/xiangweimg"><GitHubIcon/></a>
+                                            <a href="https://xiangweimg.github.io/PersonalPage/"><AccountBoxIcon/></a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -84,10 +84,10 @@ function CartItem({item}) {
                   </button>
             </div>
               <div id='cart-stock'>
-                Stock: {item.stock}
+                Purchase limit: {item.stock}
               </div>
               {alert && 
-              <div className='cart-alert'>Exceed stock limit</div>
+              <div className='cart-alert'>Exceed purchase limit</div>
               }
             </div>
 

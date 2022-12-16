@@ -74,7 +74,7 @@ export default function CartModal({prop}) {
       </Modal>
     }
     {error && 
-      <div className='cart-error-message'>Exceed stock limit</div>
+      <div className='cart-error-message'>Exceed purchase limit</div>
       }
     </div>
   );

@@ -114,7 +114,7 @@ const ProductShow = () => {
                     </div>
                     </label>
                 </div>
-                <div id='product-stock'>Stock: { product.availability }</div>
+                <div id='product-stock'>Purchase limit: { product.availability }</div>
                 {dynamicAddToCartButton}
                 <div className='shipping'><LocalShippingTwoToneIcon color="primary" sx={{ fontSize: 45 }}/><p>Hooray!</p> This item ships free to the US.</div>
                 <p id='product-description-title'>Description:</p>

@@ -20,7 +20,7 @@
 }
 .shop-header-img{
     width: 100%;
-    background-image: url('../../img/2749398.jpg');
+    background-image: url('../../img/banner.jpg');
     height:360px;
     object-fit: contain;
 }
@@ -138,7 +138,10 @@
     display: flex;
     justify-content: center;
   }
+  .contact span a{
+    color: black;
+  }
 .contact span a:hover{
-    color: gray;
+    color: #888;
 }
 

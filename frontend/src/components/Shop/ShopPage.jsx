@@ -60,9 +60,9 @@ const ShopPage = () => {
                                     <div className='contact'>
                                         <span>Contact</span>
                                         <span>
-                                            <a href="https://www.linkedin.com/in/xiangwei0816/"><LinkedInIcon/></a>
-                                            <a href="https://github.com/xiangweimg"><GitHubIcon/></a>
-                                            <a href="https://xiangweimg.github.io/PersonalPage/"><AccountBoxIcon/></a>
+                                            <a href="https://www.linkedin.com/in/xiangwei0816/" target="_blank"><LinkedInIcon/></a>
+                                            <a href="https://github.com/xiangweimg" target="_blank"><GitHubIcon/></a>
+                                            <a href="https://xiangweimg.github.io/PersonalPage/" target="_blank"><AccountBoxIcon/></a>
                                         </span>
                                     </div>
                                 </div>

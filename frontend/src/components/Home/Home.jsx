@@ -5,6 +5,10 @@ import {getProducts} from '../../store/product'
 import ProductIndexItem from './ProductIndexItem'
 import HomeBar from "./HomeBar";
 import _ from "underscore";
+import ContactForm from "../Contact/Contact";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import "./Home.css"
 
 
@@ -36,6 +40,25 @@ function Home() {
                 </div>
             </div>
         </div>
+            <div className="footer">
+                <h2>What is Besty?</h2>
+                <ul>
+                    <li>A full-stack e-commerce website based on Etsy built in a short period of time.</li>
+                    <li>Implemented a number of features, including search, product listings, shopping cart, and shop profiles.</li>
+                    <li>Implemented Ruby on Rails with PostgreSQL database as backend and React as frontend.</li>
+                </ul>
+                <h2>Contact</h2>
+                <div>
+                    <ContactForm/>
+                </div>
+                <h2>Developed by: Ivy Liu&nbsp;
+                    <span>
+                        <a href="https://www.linkedin.com/in/xiangwei0816/" target="_blank"><LinkedInIcon/></a>
+                        <a href="https://github.com/xiangweimg" target="_blank"><GitHubIcon/></a>
+                        <a href="https://xiangweimg.github.io/PersonalPage/" target="_blank"><AccountBoxIcon/></a>
+                    </span>
+                </h2>
+            </div>
         </div>
 
     )
